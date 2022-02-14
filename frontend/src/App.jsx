@@ -16,7 +16,7 @@ function App() {
   let xappToken = [];
 
   const token = async () => {
-    const response = await axios
+    await axios
       .post(apiUrl, {
         client_id: clientID,
         client_secret: clientSecret,
@@ -27,16 +27,29 @@ function App() {
       .catch(function (error) {
         console.log(error);
       });
+    load();
   };
 
   const load = async () => {
-    const response = await axios.get("http://localhost:3000/api/serieses");
-    setSerieses(response.data);
+    const response = await axios.get("https://api.artsy.net/api/artworks", {
+      headers: { "X-Xapp-Token": xappToken },
+    });
+    console.log(response.data._embedded.artworks[0]._links.thumbnail.href);
+    setSerieses(response);
   };
+
+  /*axios 
+    .get(URL, { headers: { Authorization: AuthStr } })
+    .then((response) => {
+      // If request is good...
+      console.log(response.data);
+    })
+    .catch((error) => {
+      console.log("error " + error);
+    }); */
 
   useEffect(() => {
     token();
-    load();
   }, []);
 
   return (
