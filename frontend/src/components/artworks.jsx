@@ -17,13 +17,21 @@ const Artworks = () => {
   }, []);
 
   console.log(artworks);
-  console.log(artworks.map((item) => item.title));
+  const titleList = artworks.map((item) => item.title)
+  console.log(titleList);
+
+  //képek az images -> web -> url utvonalon
+
+  const accessNumList = artworks.map((item) => item.accession_number)
+  console.log(accessNumList);
+  //kép elérése: https://openaccess-cdn.clevelandart.org/1915.534/1915.534_web.jpg <--- '1915.534', ezt mind a két helyen {} az accessNumList
+
 
   return (
     <div className="characterHolder">
       <ol>
         {artworks.map((item) => (
-          <li>{item.title}</li>
+          <li key={item.accession_number}>{item.title}</li>
         ))}
       </ol>
     </div>
