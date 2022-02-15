@@ -9,7 +9,7 @@ function SignupForm() {
 
     const signup = async () => {
         try {
-            await http.post('http://localhost:4000/api/signup', {
+            await http.post('http://localhost:3000/signup', {
                 name: nameValue,
                 password: password,
                 email: email
