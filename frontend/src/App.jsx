@@ -2,9 +2,10 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
 import { useArtworks } from "./api/useData";
+import Artworks from "./components/artworks";
 
 function App() {
-  const [artworks, setArtworks] = useState([]);
+  /*   const [artworks, setArtworks] = useState([]);
   const [xappToken, setXappToken] = useState([]);
   const clientID = "efcb8eb8f8778d39695f",
     clientSecret = "bb837994bfd8df9f962b9862c81e3a83",
@@ -16,26 +17,25 @@ function App() {
       client_secret: clientSecret,
     });
     setXappToken(response.data.token);
-    console.log(xappToken);
   };
 
   const load = async () => {
     const response = await axios.get("https://api.artsy.net/api/artworks", {
       headers: { "X-Xapp-Token": xappToken },
     });
-    console.log(response);
-    setArtworks(response.data._embedded);
+    setArtworks(response);
   };
 
   useEffect(() => {
     token();
     load();
   }, [xappToken]);
-  console.log(artworks);
+  console.log(artworks); */
 
   return (
     <div>
       <p>szoveg</p>
+      <Artworks />
     </div>
   );
 }

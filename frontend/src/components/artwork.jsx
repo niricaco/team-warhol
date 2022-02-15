@@ -1,31 +1,30 @@
 import React, { useState } from "react";
 
 const Artwork = (props) => {
-  const [style, setStyle] = useState("card-desc");
+  /* const [style, setStyle] = useState("card-desc"); */
 
-  const showCardDesc = () => {
+  /*   const showCardDesc = () => {
     setStyle("card-desc-show");
   };
   const doNotShowCardDesc = () => {
     setStyle("card-desc");
-  };
+  }; */
 
-  const { name, image, species, status, gender, origin } = props;
+  const { id, title, thumbnail, name, image, species, status, gender, origin } =
+    props;
   return (
     <>
-      <div key={name} className="card">
+      <div key={id} className="card">
         <div className="card-title">
-          <h5>
-            {name}, {species}
-          </h5>
+          <h5>{title}</h5>
         </div>
-        <img
+        {/*         <img
           className="charImg"
-          src={image}
+          src={thumbnail}
           onClick={showCardDesc}
           alt="Artwork"
-        ></img>
-        <div className={style} onClick={doNotShowCardDesc}>
+        ></img> */}
+        {/* <div className={style} onClick={doNotShowCardDesc}>
           <p className="charName">{name}</p>
           <p className="charInfo">
             <b>Species:</b> {species}
@@ -39,7 +38,7 @@ const Artwork = (props) => {
           <p className="charInfo">
             <b>Origin:</b> {origin};
           </p>
-        </div>
+        </div> */}
       </div>
     </>
   );
