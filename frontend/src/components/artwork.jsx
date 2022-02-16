@@ -10,8 +10,7 @@ const Artwork = (props) => {
     setStyle("card-desc");
   }; */
 
-  const { id, title, thumbnail, name, image, species, status, gender, origin } =
-    props;
+  const { id, title } = props;
   return (
     <>
       <div key={id} className="card">
