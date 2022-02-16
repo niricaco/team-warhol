@@ -1,43 +1,23 @@
 import React, { useState } from "react";
+import "./artwork.css";
 
 const Artwork = (props) => {
-  /* const [style, setStyle] = useState("card-desc"); */
-
-  /*   const showCardDesc = () => {
-    setStyle("card-desc-show");
-  };
-  const doNotShowCardDesc = () => {
-    setStyle("card-desc");
-  }; */
-
-  const { id, title } = props;
+  const {key, title, creator, img, funfact, date, desc } = props.params[0];
+  
   return (
     <>
-      <div key={id} className="card">
-        <div className="card-title">
-          <h5>{title}</h5>
+      <h1>Title: {title}</h1>
+      <div key={key} className="artwork">
+        <div className="art_image">
+          <img src={img} alt="" />
         </div>
-        {/*         <img
-          className="charImg"
-          src={thumbnail}
-          onClick={showCardDesc}
-          alt="Artwork"
-        ></img> */}
-        {/* <div className={style} onClick={doNotShowCardDesc}>
-          <p className="charName">{name}</p>
-          <p className="charInfo">
-            <b>Species:</b> {species}
-          </p>
-          <p className="charInfo">
-            <b>Gender:</b> {gender};
-          </p>
-          <p className="charInfo">
-            <b>Status:</b> {status};
-          </p>
-          <p className="charInfo">
-            <b>Origin:</b> {origin};
-          </p>
-        </div> */}
+        <div className="art_desc">
+          <h3>Creator name: {creator}</h3>
+          <h3>Creation year: {date}</h3>
+          <p>{desc}</p>
+          <p>{funfact}</p>
+          <button onClick={() => window.location.reload()}>Back...</button>
+        </div>
       </div>
     </>
   );
