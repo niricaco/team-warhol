@@ -28,8 +28,14 @@ h1{
 h3{
     font-size: 2rem;
     margin: auto auto 20px auto; 
+    text-align: center;
 }
 
+h5{
+    font-size: 1.5rem;
+    margin: auto auto 20px auto; 
+    
+}
 p {
     font-size: 1.5rem;
     text-align: justify;
