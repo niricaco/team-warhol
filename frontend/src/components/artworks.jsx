@@ -13,8 +13,10 @@ const Artworks = () => {
     const response = await axios.get(
       "https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=10"
     );
+    /* "https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=10&artists=John%Constable" */
     setArtworks(response.data.data);
   };
+  console.log(artworks);
 
   useEffect(() => {
     load();
@@ -39,41 +41,62 @@ const Artworks = () => {
   const loadartwork = (key, title, creator, img, funfact, date, desc) => {
     //console.log(key, title, creator, img, funfact, date, desc);
     setToShow(false);
-    setParameters([{
-      key: key,
-      title: title,
-      creator: creator,
-      img: img,
-      funfact: funfact,
-      date: date,
-      desc: desc
-    }])
+    setParameters([
+      {
+        key: key,
+        title: title,
+        creator: creator,
+        img: img,
+        funfact: funfact,
+        date: date,
+        desc: desc,
+      },
+    ]);
     console.log(parameters);
-  }
+  };
 
   return (
     <>
-    {toShow ?  
-      <div className="grid">
-        {artworks.map((item) => (
-          <div className="grid_item" key={item.accession_number}>
-            <div className="card">
-              {/* {item.creators[0].description}:  */}
+      {toShow ? (
+        <div className="grid">
+          {artworks.map((item) => (
+            <div className="grid_item" key={item.accession_number}>
+              <div className="card">
+                {/* {item.creators[0].description}:  */}
 
-              <img className="card_img" src={item.images.web.url} alt=""></img>
+                <img
+                  className="card_img"
+                  src={item.images.web.url}
+                  alt=""
+                ></img>
 
-              <div className="card_content">
-                <h1 className="card_header">{item.title}</h1>
-                <p className="card_text">{item.creators[0].description}</p>
-                <button className="card_btn" onClick={() => loadartwork(item.accession_number, item.title, item.creators[0].description, item.images.web.url, item.fun_fact, item.creation_date, item.wall_description)}>
-                  More info... <span>&rarr;</span>
-                </button>
+                <div className="card_content">
+                  <h1 className="card_header">{item.title}</h1>
+                  <p className="card_text">{item.creators[0].description}</p>
+                  <button
+                    className="card_btn"
+                    onClick={() =>
+                      loadartwork(
+                        item.accession_number,
+                        item.title,
+                        item.creators[0].description,
+                        item.images.web.url,
+                        item.fun_fact,
+                        item.creation_date,
+                        item.wall_description
+                      )
+                    }
+                  >
+                    More info... <span>&rarr;</span>
+                  </button>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-      : <Artwork params={parameters} />}
+          ))}
+        </div>
+      ) : (
+        <Artwork params={parameters} />
+      )}
     </>
   );
 };
