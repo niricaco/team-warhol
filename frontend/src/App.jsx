@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom'; import axios from "axios";
+import React, { Component } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import axios from "axios";
 // import { useEffect, useState } from "react";
 import "./App.css";
 // import { useArtworks } from "./api/useData";
 import Artworks from "./components/artworks";
-import Registration from './components/RegistrationForm';
+import Registration from "./components/RegistrationForm";
+import Home from "./components/Home";
 
 // import About from './components/About';
 // import Contact from './components/Contact';
-import Error from './components/Error';
-import Navigation from './components/Navigation';
+import Error from "./components/Error";
+import Navigation from "./components/Navigation";
 
 class App extends Component {
   render() {
@@ -18,7 +20,7 @@ class App extends Component {
         <div>
           <Navigation />
           <Routes>
-            <Route path="/" element={<Artworks />} />
+            <Route path="/" element={<Home />} />
             <Route path="/artworks" element={<Artworks />} />
             <Route path="/signup" element={<Registration />} />
             <Route element={<Error />} />
