@@ -3,27 +3,20 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./style/artworks.css";
 import Artwork from "./artwork";
+import ReactPaginate from "react-paginate";
+
 
 const Artworks = () => {
-  const [artworks, setArtworks] = useState([]);
+    const [artworks, setArtworks] = useState([]);  
+    const [pageNumber, setPageNumber] = useState(0)
 
-  const load = async () => {
-    const response = await axios.get(
-      "https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=10"
-    );
-    setArtworks(response.data.data);
-  };
-  //console.log(artworks);
+    const artworksPerPage = 9;
+    const pagesVisited = pageNumber * artworksPerPage
 
-  useEffect(() => {
-    load();
-  }, []);
-
-
-  return (
-    <>
-      <div className="grid">
-        {artworks.map((item) => (
+    const displayArts = artworks
+        .slice(pagesVisited, pagesVisited + artworksPerPage)
+        .map((item) => {
+            return (
           
             <Artwork
                     title={item.title}
@@ -35,8 +28,43 @@ const Artworks = () => {
                     funfact={item.fun_fact} 
             />
           
-        ))}
+        )});
+
+    const pageCount = Math.ceil(artworks.length / artworksPerPage);
+    const changePage = ({selected}) => {
+            setPageNumber(selected);
+    };
+       
+
+    const load = async () => {
+        const response = await axios.get(
+            `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=100&page=${pageNumber}`
+            );
+        setArtworks(response.data.data);
+    };
+    //console.log(artworks);
+
+    useEffect(() => {
+        load();
+    }, []);
+
+
+  return (
+    <>
+      <div className="grid">
+        {displayArts}
       </div>
+      <ReactPaginate
+        previousLabel={"Previous Arts"}
+        nextLabel={"Next Arts"}
+        pageCount={pageCount}
+        onPageChange={changePage}
+        containerClassName={"paginationBttns"}
+        previousLinkClassName={"previousBttn"}
+        nextLinkClassName={"nextBttn"}
+        disabledClassName={"paginationDisabled"}
+        activeClassName={"paginationActive"}
+      />
     </>
   );
 };
