@@ -20,7 +20,7 @@ const Navigation = () => {
 	    <div class="dot"></div>
 	    <ul>
 		    <li class="active"><NavLink to="/">Home</NavLink></li>
-		    <li><NavLink to="/signup">Register</NavLink></li>
+		    <li><NavLink to="/signup">Sign up or Login</NavLink></li>
 		    <li><NavLink to="/artworks">Artworks</NavLink></li>
 	    </ul>
     </nav>

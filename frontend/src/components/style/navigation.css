@@ -48,6 +48,7 @@ nav ul li a {
 }
 nav ul li a:hover {
   color: white;
+  font-size: 2.5rem;
 }
 nav ul li.active a {
   color: white;
@@ -67,13 +68,5 @@ nav ul li:nth-child(4n) a {
 nav ul li:nth-child(5n) a {
   background-color: #FAFAFA;
 }
-nav .dot {
-  background-color: red;
-  width: 6px;
-  height: 6px;
-  position: absolute;
-  bottom: -20px;
-  left: 0;
-  border-radius: 50%;
-  transition-duration: 0.5s;
-}
+
+
