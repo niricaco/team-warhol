@@ -41,7 +41,7 @@ function SignupForm() {
           <img src={Picture} alt="" height={500} />{" "}
         </div>
         <div className="form-register">
-          <h3>Register to the Art Magazine</h3>
+          <h3 className="h3Reg">Register to the Art Magazine</h3>
           {/* <input type='text' placeholder='Username' value={nameValue} onChange={(e) => setNameValue(e.target.value)} ></input> */}
           <input
             type="email"
