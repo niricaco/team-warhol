@@ -23,11 +23,14 @@ const Home = () => {
         </section>
 
         <section className="artworkShow">
+          <div className="hrHolder"><hr /><hr className="separator" /></div>
+          <h2 className="h2Art">Gallery's finest</h2>
+
           {/* ide jön még néhány kép, 5-10 kb, csak képek */}
         </section>
 
         <section className="artServices">
-          <hr className="separator" />
+          <div className="hrHolder"><hr /><hr className="separator" /></div>
           <h2 className="h2Art">Dive deep into art with us</h2>
 
           <div className="serviceHolder">
@@ -39,31 +42,31 @@ const Home = () => {
                 alt="painting"
               ></img>
 
-              <p>
+              <p className="serviceText">
                 Search, browse, like and do stuff. Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua.{" "}
               </p>
-              <button>More</button>
+              <button className="serviceButtons">Wan to see more</button>
             </div>
 
             <div className="saveArt">
-              <h3 className="h3Art">Save your favorite</h3>
+              <h3 className="h3Art">Save your favorites</h3>
               <div className="picHolder">
                 <img
-                  className='responsiveImage' src="https://images.unsplash.com/photo-1533481051286-d6396b74c877"
+                  className='responsiveImage' src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
                   alt="painting"
                 ></img>
               </div>
-              <p>
+              <p className="serviceText">
                 Search, browse, like and do stuff. Lorem ipsum dolor sit amet,
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua.{" "}
               </p>
-              <button>More</button>
+              <button className="serviceButtons">Let's make a collection</button>
             </div>
           </div>
-          <div className="hrHolder"><hr className="separator" /></div>
+          <div className="hrHolder"><hr /><hr className="separator" /></div>
         </section>
       </div>
     </>
