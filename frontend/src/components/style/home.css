@@ -121,4 +121,13 @@
   margin: 20px 0 0;
   height: fit-content;
 }
+
+.serviceHolder {
+  flex-direction: column;
+}
+
+.browseArt,
+.saveArt {
+  max-width: 100%;
+}
 }
