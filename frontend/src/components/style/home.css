@@ -7,7 +7,7 @@
 }
 
 .headerBlock,
-.artServices, .artworkShow {
+.artServices, .gallery {
   margin: 20px 60px 0;
 }
 
@@ -44,7 +44,20 @@
 }
 
 /* GALLERY */
+.gallery {
+  grid-auto-rows: minmax(min-content, max-content);
+  width: 100%;
+}
 
+.responsiveItem {
+  display: inline;
+}
+
+.respImage {
+  object-fit: cover;
+  width: 20%;
+
+}
 
 /* ART SERVICES */
 .h2Art {
@@ -91,15 +104,15 @@
   border-radius: 50px;
   border: none;
   outline: none;
-  background: #F7D08A;
+  background: #E5890A;
   font-size: 17px;
   padding: 10px 40px;
   color: #fff;
-  box-shadow: 1px 1px 3px #E5890A;
+  box-shadow: 1px 1px 3px #91550C;
 }
 
 .serviceButtons:hover {
-  box-shadow: 1px 1px 3px #F7D08A;
+  box-shadow: 1px 1px 5px #E5890A;
 }
 
 /* LINE */

@@ -1,6 +1,31 @@
+import { useState, useEffect } from "react";
 import "./style/home.css";
+import Gallery from './Gallery'
+import axios from "axios";
 
 const Home = () => {
+  const [artworks, setArtworks] = useState([]);
+
+  const displayImages = artworks.map((item) => {
+    return (
+
+      <Gallery
+        image={item.images.web.url}
+      />
+
+    )
+  })
+
+  const load = async () => {
+    const response = await axios.get(
+      `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=4`
+    );
+    setArtworks(response.data.data);
+  }
+
+  useEffect(() => {
+    load();
+  }, []);
   return (
     <>
       <div id="homepageContainer">
@@ -22,10 +47,10 @@ const Home = () => {
           </div>
         </section>
 
-        <section className="artworkShow">
+        <section className="gallery">
           <div className="hrHolder"><hr /><hr className="separator" /></div>
           <h2 className="h2Art">Gallery's finest</h2>
-
+          {displayImages}
           {/* ide jön még néhány kép, 5-10 kb, csak képek */}
         </section>
 
