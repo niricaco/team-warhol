@@ -47,13 +47,13 @@ html {
   border-radius: 0.4rem;
   overflow: hidden;
   box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
-  cursor: pointer;
   transition: 0.2s;
 }
-.grid_item:hover {
+
+/*.grid_item:hover {
   transform: translateY(-0.5%);
   box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.2);
-}
+}*/
 
 .card_img {
   display: block;
@@ -109,11 +109,13 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   display: flex;
   align-items: center;
   background: grey;
   width: 80%;
   border: 1px solid black;
+  z-index: 100;
 }
 .art_image {
   flex: 50%;

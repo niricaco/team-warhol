@@ -5,9 +5,9 @@ import { NavLink } from "react-router-dom";
 
 /*
     <nav>
-	<div class="dot"></div>
+	<div className="dot"></div>
 	<ul>
-		<li class="active"><NavLink to="/">Home</NavLink></li>
+		<li className="active"><NavLink to="/">Home</NavLink></li>
 		<li><NavLink to="/signup">Register</NavLink></li>
 		<li><NavLink to="/artworks">Artworks</NavLink></li>
 	</ul>

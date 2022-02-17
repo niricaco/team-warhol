@@ -6,7 +6,6 @@ import Artwork from "./artwork";
 
 const Artworks = () => {
   const [artworks, setArtworks] = useState([]);
-  const [toShow, setToShow] = useState("hidden");
 
   const load = async () => {
     const response = await axios.get(
@@ -15,7 +14,7 @@ const Artworks = () => {
     /* "https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=10&artists=John%Constable" */
     setArtworks(response.data.data);
   };
-  console.log(artworks);
+  //console.log(artworks);
 
   useEffect(() => {
     load();
@@ -41,37 +40,17 @@ const Artworks = () => {
     <>
       <div className="grid">
         {artworks.map((item) => (
-          <>
-            <div className="grid_item" key={item.accession_number}>
-              <div className="card">
-                {/* {item.creators[0].description}:  */}
-
-                <img
-                  className="card_img"
-                  src={item.images.web.url}
-                  alt=""
-                ></img>
-
-                <div className="card_content">
-                  <h1 className="card_header">{item.title}</h1>
-                  <p className="card_text">{item.creators[0].description}</p>
-                  <button className="card_btn" onClick={() => setToShow(" ")}>
-                    More info... <span>&rarr;</span>
-                  </button>
-                </div>
-                <div class={toShow}>
-                  {/*<Artwork
+          
+            <Artwork
                     title={item.title}
+                    index={item.accession_number}
                     image={item.images.web.url}
                     creator={item.creators[0].description}
                     date={item.creation_date}
                     desc={item.wall_description}
-                    funfact={item.fun_fact}
-                  />*/}
-                </div>
-              </div>
-            </div>
-          </>
+                    funfact={item.fun_fact} 
+            />
+          
         ))}
       </div>
     </>
@@ -82,4 +61,13 @@ export default Artworks;
 
 /*
 onClick={() => loadartwork(item.accession_number, item.title, item.creators[0].description, item.images.web.url, item.fun_fact, item.creation_date, item.wall_description )}>
+
+{<Artwork
+                    title={item.title}
+                    image={item.images.web.url}
+                    creator={item.creators[0].description}
+                    date={item.creation_date}
+                    desc={item.wall_description}
+                    funfact={item.fun_fact}
+                  />}
 */
