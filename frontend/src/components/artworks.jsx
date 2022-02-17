@@ -11,7 +11,7 @@ const Artworks = () => {
     const [artworks, setArtworks] = useState([]);  
     const [pageNumber, setPageNumber] = useState(0)
 
-    const artworksPerPage = 9;
+    const artworksPerPage = 20;
     const pagesVisited = pageNumber * artworksPerPage
 
     const displayArts = artworks
