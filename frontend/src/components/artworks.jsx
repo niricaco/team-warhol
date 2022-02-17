@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 // import Artwork from "./artwork";
 import axios from "axios";
-import "./artworks.css";
+import "./style/artworks.css";
 import Artwork from "./artwork";
 
 const Artworks = () => {

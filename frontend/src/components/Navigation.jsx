@@ -1,28 +1,28 @@
 import React from "react";
-import "./navigation.css";
+import "./style/navigation.css";
 
 import { NavLink } from "react-router-dom";
 
 /*
-    
+    <nav>
+	<div class="dot"></div>
+	<ul>
+		<li class="active"><NavLink to="/">Home</NavLink></li>
+		<li><NavLink to="/signup">Register</NavLink></li>
+		<li><NavLink to="/artworks">Artworks</NavLink></li>
+	</ul>
+</nav>
 */
 
 const Navigation = () => {
   return (
     <nav>
-      <div className="navicon">
-        <div></div>
-      </div>
-
-      <div className="nav_item">
-        <NavLink to="/">Home</NavLink>
-      </div>
-      <div className="nav_item">
-        <NavLink to="/signup">Register</NavLink>
-      </div>
-      <div className="nav_item">
-        <NavLink to="/artworks">Artworks</NavLink>
-      </div>
+	    <div class="dot"></div>
+	    <ul>
+		    <li class="active"><NavLink to="/">Home</NavLink></li>
+		    <li><NavLink to="/signup">Register</NavLink></li>
+		    <li><NavLink to="/artworks">Artworks</NavLink></li>
+	    </ul>
     </nav>
   );
 };

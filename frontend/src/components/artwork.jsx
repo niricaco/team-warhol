@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./artwork.css";
+import "./style/artwork.css";
 
 const Artwork = (props) => {
   const {key, title, creator, img, funfact, date, desc } = props.params[0];
