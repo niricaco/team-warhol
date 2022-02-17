@@ -1,6 +1,8 @@
 // import axios from "axios";
 import http from 'axios';
 import { useState } from "react";
+import "./registrationForm.css";
+import Picture from './style/peakpx.jpg'
 
 function SignupForm() {
     const [nameValue, setNameValue] = useState('');
@@ -36,14 +38,25 @@ function SignupForm() {
 
 
     return (
-        <div>
-            <h1>Register to the Art Magazine</h1>
-            <input type='text' placeholder='username' value={nameValue} onChange={(e) => setNameValue(e.target.value)} ></input>
-            <input type='email' placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-            <input type='password' placeholder='password' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+        <>
+            <hr class="separator1" /> <br/>
 
-            <button onClick={signup}>Reg me in</button>
-        </div>
+            <div className='form-container'>
+                <div className='form-picture'>
+                    <img src={Picture} alt='' height={500} />                </div>
+                <div className='form-register'>
+                    <h3>Register to the Art Magazine</h3>
+                    <input type='text' placeholder='Username' value={nameValue} onChange={(e) => setNameValue(e.target.value)} ></input>
+                    <input type='email' placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                    <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)}></input>
+                    <button className='form-btn' onClick={signup}>Sign up</button>
+                </div>
+            </div>
+            <br></br>
+            <br></br>
+            <hr class="separator1" /> <br/>
+
+        </>
     )
 }
 
