@@ -5,19 +5,19 @@ import "./style/registrationForm.css";
 import Picture from "./style/img/peakpx.jpg";
 
 function SignupForm() {
-  const [nameValue, setNameValue] = useState("");
+//  const [nameValue, setNameValue] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signup = async () => {
     try {
-      await http.post("http://localhost:3000/signup", {
-        name: nameValue,
+      await http.post("http://localhost:3000/api/signup", {
+//        name: nameValue,
         password: password,
         email: email,
       });
       alert("Successful sign up");
-      setNameValue("");
+//      setNameValue("");
       setPassword("");
       setEmail("");
     } catch (err) {
@@ -25,7 +25,8 @@ function SignupForm() {
         alert("Ooops... something went wrong");
       }
       if (err.response.status === 409) {
-        alert("user already exists");
+        alert("user already exists, please use the login");
+        login ()
       }
       if (err.response.status === 400) {
         alert("Missing credentials");
@@ -33,15 +34,19 @@ function SignupForm() {
     }
   };
 
+  const login = () => {
+    console.log("itt");
+  }
+
   return (
     <>
-      <hr class="separator1" /> <br />
+      <hr className="separator1" /> <br />
       <div className="form-container">
         <div className="form-picture">
           <img src={Picture} alt="" height={500} />{" "}
         </div>
         <div className="form-register">
-          <h3 className="h3Reg">Register to the Art Magazine</h3>
+          <h3 className="h3Reg">Login to the Art Magazine</h3>
           {/* <input type='text' placeholder='Username' value={nameValue} onChange={(e) => setNameValue(e.target.value)} ></input> */}
           <input
             type="email"
