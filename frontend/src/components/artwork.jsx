@@ -1,34 +1,52 @@
 import React, { useState } from "react";
 
 const Artwork = (props) => {
-  /*
+  
   const [style, setStyle] = useState("artwork");
-  const showCardDesc = () => {
-    setStyle("artwork");
-  };
+  const [toShow, setToShow] = useState("hidden");
+
   const doNotShowCardDesc = () => {
     setStyle("artwork hidden");
   };
 
-  const { name, image, species, status, gender, origin } = props;
+  const { title, index, image, creator, date, desc, funfact } = props;
   return (
-    <>
-      <div className="artwork">
-        <div className="art_image">
-          <img src={item.images.web.url} alt="" />
-        </div>
-        <div className="art_desc">
-          <h1>{item.title}</h1>
-          <h3>{item.creators[0].description}</h3>
-          <p>{item.wall_description}</p>
-          <p>{item.fun_fact}</p>
-          <h5>Creation year: {item.creation_date}</h5>
-          <button onClick={doNotShowCardDesc}>Back...</button>
-        </div>
-      </div>
-    </>
+  
+      <div className="grid_item" key={index}>
+              <div className="card">
+                <img
+                  className="card_img"
+                  src={image}
+                  alt=""
+                ></img>
+
+                <div className="card_content">
+                  <h1 className="card_header">{title}</h1>
+                  <p className="card_text">{creator}</p>
+                  <button className="card_btn" onClick={() => setToShow("show")}>
+                    More info... <span>&rarr;</span>
+                  </button>
+                </div>
+                <div className={toShow} key={title} n onClick={() => setToShow("hidden")}>
+                  <div className="artwork">
+                    <div className="art_image">
+                      <img src={image} alt="" />
+                    </div>
+                    <div className="art_desc">
+                      <h1>{title}</h1>
+                      <h3>{creator}</h3>
+                      <p>{desc}</p>
+                      <p>{funfact}</p>
+                      <h5>Creation year: {date}</h5>
+                      <button onClick={() => setToShow("hidden")}>Back...</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
   );
-*/
+
 };
 
 export default Artwork;
