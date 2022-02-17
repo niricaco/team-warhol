@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const Artwork = (props) => {
+  /*
   const [style, setStyle] = useState("artwork");
   const showCardDesc = () => {
     setStyle("artwork");
@@ -27,6 +28,7 @@ const Artwork = (props) => {
       </div>
     </>
   );
+*/
 };
 
 export default Artwork;

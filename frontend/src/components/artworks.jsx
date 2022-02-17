@@ -6,7 +6,7 @@ import Artwork from "./artwork";
 
 const Artworks = () => {
   const [artworks, setArtworks] = useState([]);
-  const [toShow, setToShow] = useState("none");
+  const [toShow, setToShow] = useState("hidden");
 
   const load = async () => {
     const response = await axios.get(
@@ -55,12 +55,19 @@ const Artworks = () => {
                 <div className="card_content">
                   <h1 className="card_header">{item.title}</h1>
                   <p className="card_text">{item.creators[0].description}</p>
-                  <button
-                    className="card_btn"
-                    onClick={() => setToShow("block")}
-                  >
+                  <button className="card_btn" onClick={() => setToShow(" ")}>
                     More info... <span>&rarr;</span>
                   </button>
+                </div>
+                <div class={toShow}>
+                  {/*<Artwork
+                    title={item.title}
+                    image={item.images.web.url}
+                    creator={item.creators[0].description}
+                    date={item.creation_date}
+                    desc={item.wall_description}
+                    funfact={item.fun_fact}
+                  />*/}
                 </div>
               </div>
             </div>
