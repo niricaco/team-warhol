@@ -57,10 +57,11 @@
   max-width: 50%;
 }
 
-.browseArt h3,
-.saveArt h3 {
+.h3Art {
   text-align: left;
+  padding-bottom: 10px;
 }
+
 .browseArt p,
 .saveArt p {
   max-width: 100%;

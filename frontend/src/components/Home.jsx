@@ -32,7 +32,7 @@ const Home = () => {
 
           <div className="serviceHolder">
             <div className="browseArt">
-              <h3>Search categories</h3>
+              <h3 className="h3Art">Search categories</h3>
 
               <img
                 className='responsiveImage' src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
@@ -48,10 +48,10 @@ const Home = () => {
             </div>
 
             <div className="saveArt">
-              <h3>Save your favorite</h3>
+              <h3 className="h3Art">Save your favorite</h3>
               <div className="picHolder">
                 <img
-                  className='responsiveImage' src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
+                  className='responsiveImage' src="https://images.unsplash.com/photo-1533481051286-d6396b74c877"
                   alt="painting"
                 ></img>
               </div>
