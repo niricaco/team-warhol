@@ -12,7 +12,7 @@ const Home = () => {
               Painting is poetry that is seen rather than felt, and poetry is
               painting that is felt rather than seen.
             </h2>
-            <p>
+            <p className='homeText'>
               Search, browse, like and do stuff. Lorem ipsum dolor sit amet,
               consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
               labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -20,7 +20,6 @@ const Home = () => {
               consequat.
             </p>
           </div>
-          <hr className="separator" />
         </section>
 
         <section className="artworkShow">
@@ -36,8 +35,8 @@ const Home = () => {
               <h3>Search categories</h3>
 
               <img
-                src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
-                alt=""
+                className='responsiveImage' src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
+                alt="painting"
               ></img>
 
               <p>
@@ -52,8 +51,8 @@ const Home = () => {
               <h3>Save your favorite</h3>
               <div className="picHolder">
                 <img
-                  src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
-                  alt=""
+                  className='responsiveImage' src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
+                  alt="painting"
                 ></img>
               </div>
               <p>
@@ -64,7 +63,7 @@ const Home = () => {
               <button>More</button>
             </div>
           </div>
-          <hr className="separator" />
+          <div className="hrHolder"><hr className="separator" /></div>
         </section>
       </div>
     </>
