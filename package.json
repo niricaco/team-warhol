@@ -1,0 +1,19 @@
+{
+  "name": "team-warhol-1",
+  "version": "1.0.0",
+  "description": "Harvard Art Museums API key: a935e3b6-39b3-439a-baab-64f82bef02df\r Documentation is at https://github.com/harvardartmuseums/api-docs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/niricaco/team-warhol.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/niricaco/team-warhol/issues"
+  },
+  "homepage": "https://github.com/niricaco/team-warhol#readme"
+}
