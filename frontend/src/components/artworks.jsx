@@ -6,8 +6,7 @@ import Artwork from "./artwork";
 
 const Artworks = () => {
   const [artworks, setArtworks] = useState([]);
-  const [toShow, setToShow] = useState(true);
-  const [parameters, setParameters] = useState([]);
+  const [toShow, setToShow] = useState("none");
 
   const load = async () => {
     const response = await axios.get(
@@ -38,28 +37,11 @@ const Artworks = () => {
         ))}
       </ol> */
 
-  const loadartwork = (key, title, creator, img, funfact, date, desc) => {
-    //console.log(key, title, creator, img, funfact, date, desc);
-    setToShow(false);
-    setParameters([
-      {
-        key: key,
-        title: title,
-        creator: creator,
-        img: img,
-        funfact: funfact,
-        date: date,
-        desc: desc,
-      },
-    ]);
-    console.log(parameters);
-  };
-
   return (
     <>
-      {toShow ? (
-        <div className="grid">
-          {artworks.map((item) => (
+      <div className="grid">
+        {artworks.map((item) => (
+          <>
             <div className="grid_item" key={item.accession_number}>
               <div className="card">
                 {/* {item.creators[0].description}:  */}
@@ -75,28 +57,16 @@ const Artworks = () => {
                   <p className="card_text">{item.creators[0].description}</p>
                   <button
                     className="card_btn"
-                    onClick={() =>
-                      loadartwork(
-                        item.accession_number,
-                        item.title,
-                        item.creators[0].description,
-                        item.images.web.url,
-                        item.fun_fact,
-                        item.creation_date,
-                        item.wall_description
-                      )
-                    }
+                    onClick={() => setToShow("block")}
                   >
                     More info... <span>&rarr;</span>
                   </button>
                 </div>
               </div>
             </div>
-          ))}
-        </div>
-      ) : (
-        <Artwork params={parameters} />
-      )}
+          </>
+        ))}
+      </div>
     </>
   );
 };
