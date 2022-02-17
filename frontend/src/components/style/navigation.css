@@ -21,6 +21,7 @@ nav {
   text-align: center;
   transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translateX(-50%) translateY(-50%);
+  z-index: 100;
 }
 nav:after {
   content: "";
@@ -52,19 +53,19 @@ nav ul li.active a {
   color: white;
 }
 nav ul li:nth-child(1) a {
-  background-color: #BF9270;
+  background-color: #9D5C0D;
 }
 nav ul li:nth-child(2n) a {
-  background-color: #E3B7A0;
+  background-color: #E5890A;
 }
 nav ul li:nth-child(3n) a {
-  background-color: #EDCDBB;
+  background-color: #F7D08A;
 }
 nav ul li:nth-child(4n) a {
   background-color: #FFEDDB;
 }
 nav ul li:nth-child(5n) a {
-  background-color: #552382;
+  background-color: #FAFAFA;
 }
 nav .dot {
   background-color: red;
