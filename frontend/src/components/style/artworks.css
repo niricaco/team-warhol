@@ -29,6 +29,9 @@ html {
 .grid {
   column-count: 4;
   column-gap: 15px;
+  padding-top: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .grid_item {
   display: inline-block;
