@@ -1,8 +1,8 @@
 // import axios from "axios";
 import http from "axios";
 import { useState } from "react";
-import "./registrationForm.css";
-import Picture from "./style/peakpx.jpg";
+import "./style/registrationForm.css";
+import Picture from "./style/img/peakpx.jpg";
 
 function SignupForm() {
 //  const [nameValue, setNameValue] = useState("");
