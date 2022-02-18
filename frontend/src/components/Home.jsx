@@ -49,7 +49,8 @@ const Home = () => {
 
         <section className="gallery">
           <div className="hrHolder"><hr /><hr className="separator" /></div>
-          <h2 className="h2Art">Gallery's finest</h2>
+          <h2 className="h2Art">Gallery's finest (under construction)</h2>
+          
           {displayImages}
           {/* ide jön még néhány kép, 5-10 kb, csak képek */}
         </section>
@@ -72,7 +73,7 @@ const Home = () => {
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua.{" "}
               </p>
-              <button className="serviceButtons">Wan to see more</button>
+              <button className="serviceButtons">Want to see more</button>
             </div>
 
             <div className="saveArt">

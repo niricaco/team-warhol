@@ -23,7 +23,7 @@ const Artworks = () => {
                     title={item.title}
                     index={item.accession_number}
                     image={item.images.web.url}
-                    creator={item.creators[0].description}
+                    creator={item.creators.length > 0 ? item.creators[0].description : "Creator unknown"}
                     date={item.creation_date}
                     desc={item.wall_description}
                     funfact={item.fun_fact} 

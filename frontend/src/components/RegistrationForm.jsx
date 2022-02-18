@@ -60,7 +60,7 @@ function SignupForm() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           ></input>
-          <button className="form-btn" onClick={signup}>
+          <button className="form-btn" onClick={signup} width="50%">
             Sign up
           </button>
         </div>
