@@ -5,19 +5,19 @@ import "./style/registrationForm.css";
 import Picture from "./style/img/peakpx.jpg";
 
 function SignupForm() {
-//  const [nameValue, setNameValue] = useState("");
+  //  const [nameValue, setNameValue] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const signup = async () => {
     try {
       await http.post("http://localhost:3000/api/signup", {
-//        name: nameValue,
+        //        name: nameValue,
         password: password,
         email: email,
       });
       alert("Successful sign up");
-//      setNameValue("");
+      //      setNameValue("");
       setPassword("");
       setEmail("");
     } catch (err) {
@@ -26,7 +26,7 @@ function SignupForm() {
       }
       if (err.response.status === 409) {
         alert("user already exists, please use the login");
-        login ()
+        login();
       }
       if (err.response.status === 400) {
         alert("Missing credentials");
@@ -36,7 +36,7 @@ function SignupForm() {
 
   const login = () => {
     console.log("itt");
-  }
+  };
 
   return (
     <>
