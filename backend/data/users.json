@@ -11,5 +11,13 @@
     {
         "password": "ertz",
         "email": "test2@mail.com"
+    },
+    {
+        "password": "123",
+        "email": "test3@gmail.com"
+    },
+    {
+        "password": "123",
+        "email": "test4@gmail.com"
     }
 ]
