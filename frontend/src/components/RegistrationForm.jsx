@@ -1,23 +1,48 @@
 // import axios from "axios";
 import http from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./style/registrationForm.css";
 import Picture from "./style/img/peakpx.jpg";
 
 function SignupForm() {
   //  const [nameValue, setNameValue] = useState("");
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
+  const [authEmail, setAuthEmail] = useState("");
+  const [authPassword, setAuthPassword] = useState("");
+  const [buttonToAppear, setToAppear] = useState("login");
 
+  const login = async () => {
+    console.log("LOGIN");
+    try {
+      await http.post("http://localhost:3000/api/login", {
+        
+      }, {
+        headers: {
+          authorization: authEmail + ":::" + authPassword
+        }
+      });
+      setToAppear("signup");
+      localStorage.setItem("email", authEmail);
+      localStorage.setItem("password", authPassword);
+      
+    } catch (err) {
+      
+        alert("Wrong email or password");
+//        setToAppear("signup")
+
+    }
+  };
+  
   const signup = async () => {
+    console.log("SIGNUP");
     try {
       await http.post("http://localhost:3000/api/signup", {
-        //        name: nameValue,
         password: password,
-        email: email,
+        email: email
       });
       alert("Successful sign up");
-      //      setNameValue("");
+      setToAppear("login");
       setPassword("");
       setEmail("");
     } catch (err) {
@@ -26,7 +51,6 @@ function SignupForm() {
       }
       if (err.response.status === 409) {
         alert("user already exists, please use the login");
-        login();
       }
       if (err.response.status === 400) {
         alert("Missing credentials");
@@ -34,12 +58,21 @@ function SignupForm() {
     }
   };
 
-  const login = () => {
-    console.log("itt");
-  };
+  /*useEffect(() => {
+    const email = localStorage.getItem('email')
+    const password = localStorage.getItem('password')
+    if (!email || !password) return
+    setAuthEmail(email)
+    setAuthPassword(password)
+//    setToAppear('login')
 
+  }, [])*/
+console.log(buttonToAppear);
   return (
+   
     <>
+      {buttonToAppear === "login" && <section >
+        {console.log("!!!!")}
       <hr className="separator1" /> <br />
       <div className="form-container">
         <div className="form-picture">
@@ -47,27 +80,67 @@ function SignupForm() {
         </div>
         <div className="form-register">
           <h3 className="h3Reg">Login to the Art Magazine</h3>
-          {/* <input type='text' placeholder='Username' value={nameValue} onChange={(e) => setNameValue(e.target.value)} ></input> */}
-          <input
-            type="email"
+          <input type="email"
             placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          ></input>
-          <input
-            type="password"
+            value={authEmail}
+            onChange={(e) => setAuthEmail(e.target.value)}
+          />
+          <input type="password"
             placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          ></input>
-          <button className="form-btn" onClick={signup} width="50%">
-            Sign up
+            value={authPassword}
+            onChange={(e) => setAuthPassword(e.target.value)}
+          />
+          {console.log(authPassword, authEmail)}
+          <button className="form-btn" onClick={login} width="50%">
+            Log in
+          </button>
+          <button className="form-btn" onClick={ () => setToAppear("signup")} width="50">
+            I don't have an account
           </button>
         </div>
       </div>
       <br></br>
       <br></br>
       <hr class="separator1" /> <br />
+      </section>}
+      
+      
+      
+      {buttonToAppear === "signup" && <section >
+      <hr className="separator1" /> <br />
+      <div className="form-container">
+        <div className="form-picture">
+          <img src={Picture} alt="" height={500} />{" "}
+        </div>
+        <div className="form-register">
+          <h3 className="h3Reg">Signup to the Art Magazine</h3>
+
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <button className="form-btn" onClick={signup} width="50%">
+            Sign up
+          </button>
+          <button className="form-btn" onClick={ () => setToAppear("login")} width="50">
+            I have an account
+          </button>
+        </div>
+      </div>
+      <br></br>
+      <br></br>
+      <hr class="separator1" /> <br />
+      </section>}
+
+      
     </>
   );
 }
