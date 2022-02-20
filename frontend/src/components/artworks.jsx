@@ -23,7 +23,7 @@ const Artworks = () => {
     const load = async () => {
         setLoading(true);
         const newArtworks = await getArtworks(page);
-        setArtworks(prev => [...prev, ...newArtworks]);
+        setArtworks((prev) => [...prev, ...newArtworks]);
         setLoading(false);
     };
 
