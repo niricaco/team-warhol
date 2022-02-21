@@ -25,6 +25,13 @@
     },
     {
         "password": "123123",
-        "email": "test123@gmail.com"
+        "email": "test123@gmail.com",
+        "photos":
+            [
+                {
+                    "url": "valami",
+                    "tags": ["tag1", "tag2"]
+                }
+            ]
     }
 ]
