@@ -195,3 +195,15 @@ p {
 .hidden {
   display: none;
 }
+
+@media only screen and (max-width: 840px) {
+  .grid {
+      column-count: 2;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .grid {
+      column-count: 1;
+  }
+}
