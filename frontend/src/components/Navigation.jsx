@@ -1,6 +1,6 @@
 import React, {useState, useEffect } from "react";
 import "./style/navigation.css";
-
+import http from 'axios';
 import { NavLink } from "react-router-dom";
 
 
@@ -20,9 +20,28 @@ const Navigation = (props) => {
   const loggedIn = props.loggedIn;
   const setLoggedIn = props.setLoggedIn;
 
-  const signOut = () => {
-    localStorage.removeItem("email");
-    localStorage.removeItem("password");
+  const signOut =  async () => {
+
+    try {
+      await http.delete("http://localhost:3000/api/logout", 
+    {
+        headers: {
+          authorization: localStorage.getItem("sessionId"),
+        },
+      },
+      {}
+      );
+      } catch(err) {
+      } finally {
+        localStorage.removeItem('sessionId')
+//        setAuthUser('')
+//        setAuthPassword('')
+//        setSectionToAppear('login')
+//***********
+        setLoggedIn(false);
+        localStorage.removeItem("email");
+        localStorage.removeItem("password");
+     }
   }
 
   console.log("Is it logged in?" + loggedIn);

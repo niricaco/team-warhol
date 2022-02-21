@@ -17,9 +17,8 @@ function SignupForm(props) {
   const [buttonToAppear, setToAppear] = useState("login");
 
   const login = async () => {
-    console.log("LOGIN");
     try {
-      await http.post(
+      const response = await http.post(
         "http://localhost:3000/api/login",
         {},
         {
@@ -29,8 +28,8 @@ function SignupForm(props) {
         }
       );
       setToAppear("collection");
-      localStorage.setItem("email", authEmail);
-      localStorage.setItem("password", authPassword);
+      localStorage.setItem("sessionId", response.data);
+ //     localStorage.setItem("password", authPassword);
       setLoggedIn("true");
       alert("Successful login!");
     } catch (err) {
@@ -40,7 +39,6 @@ function SignupForm(props) {
   };
 
   const signup = async () => {
-    //console.log("SIGNUP");
     try {
       await http.post("http://localhost:3000/api/signup", {
         password: password,

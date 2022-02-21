@@ -15,20 +15,25 @@ const users = require('./data/users.json')
 
 app.post('/api/login', (req, res) => {
   const authHeader=req.header("authorization");
-  console.log(authHeader);
   if (!authHeader) return res.sendStatus(401);
   const userEmail = authHeader.split(":::")[0];
   const password = authHeader.split(":::")[1];
-  console.log(userEmail, password);
 
   const user = users.find(user => user.email === userEmail && user.password === password);
   
   if (!user) {
     return res.sendStatus(401)
   }
+  const sessionId = Math.random().toString;
+  mySessionStorage [sessionId] = user;
+  console.log(mySessionStorage);
+  setTimeout(() => {
+    delete mySessionStorage[sessionId];
+  }, 10*60*1000);
   
-  console.log(`you are logged in`);
-  return res.sendStatus(200);
+  res.json(sessionId);
+
+  res.sendStatus(200);return res.sendStatus(200);
   
 })
 
@@ -54,6 +59,18 @@ app.post('/api/signup', (req, res) => {
   fs.writeFileSync('./data/users.json', JSON.stringify(users, null, 4))
   res.status(200).json("User registered")
 })
+
+/*app.delete("/api/logout", (req, res) => {
+
+  const sessionId=req.header('authorization');
+  if(!sessionId) return res.sendStatus(401)
+  delete mySessionStorage[sessionId];
+  res.sendStatus(200);
+  });
+  
+  app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+  })*/
 
 app.listen(port, () => {
   console.log(`Registration listening on port ${port}`);
