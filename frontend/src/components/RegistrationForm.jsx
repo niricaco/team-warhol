@@ -62,15 +62,14 @@ function SignupForm(props) {
     }
   };
 
-  /*useEffect(() => {
-    const email = localStorage.getItem('email')
-    const password = localStorage.getItem('password')
-    if (!email || !password) return
-    setAuthEmail(email)
-    setAuthPassword(password)
-//    setToAppear('login')
-
-  }, [])*/
+  useEffect(() => {
+    const email = localStorage.getItem("email");
+    const password = localStorage.getItem("password");
+    if (!email || !password) return;
+    setAuthEmail(email);
+    setAuthPassword(password);
+    //    setToAppear('login')
+  }, []);
   //console.log(buttonToAppear);
 
   return (
