@@ -5,8 +5,6 @@ import "./style/pagination.css";
 import Artwork from "./artwork";
 import { getArtworks } from "./API";
 
-
-
 const Artworks = () => {
     const [artworks, setArtworks] = useState([]);
     const [page, setPage] = useState(1);
@@ -19,6 +17,19 @@ const Artworks = () => {
             setPage(prev => prev + 1);
         }
     }
+
+            /*
+            <label for="ice-cream-choice">Choose a flavor:</label>
+            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+            <datalist id="ice-cream-flavors">
+                <option value="Chocolate">
+                <option value="Coconut">
+                <option value="Mint">
+                <option value="Strawberry">
+                <option value="Vanilla">
+            </datalist>
+            */
 
     const load = async () => {
         setLoading(true);

@@ -4,12 +4,13 @@ const Artwork = (props) => {
   
   const [style, setStyle] = useState("artwork");
   const [toShow, setToShow] = useState("hidden");
+  const [disable, setDisable] = useState(false);
 
   const doNotShowCardDesc = () => {
     setStyle("artwork hidden");
   };
 
-  const { title, index, image, creator, date, desc, funfact } = props;
+  const { title, index, image, creator, date, desc, funfact} = props;
   return (
   
       <div className="grid_item" key={index}>
@@ -23,7 +24,12 @@ const Artwork = (props) => {
                 <div className="card_content center">
                   <h1 className="card_header">{title}</h1>
                   <p className="card_text">{creator}</p>
-                  <button className="serviceButtons " onClick={() => setToShow("show")}>
+                  <button className="serviceButtons "
+                  onClick={() => {
+                      setToShow("show");
+                      setDisable(true);
+                  }
+                  }>
                     More info <span>&rarr;</span>
                   </button>
                 </div>
