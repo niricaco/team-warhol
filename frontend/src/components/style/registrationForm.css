@@ -16,13 +16,10 @@
   text-align: center;
 }
 
-.center {
-
-}
-
 input,
 .form-btn {
   max-width: 70%;
+  min-width: 250px;
   margin: 15px auto;
   padding: 10px;
   border-radius: 5px;
@@ -87,4 +84,18 @@ input:hover {
   height: 1.5px;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+
+@media only screen and (max-width: 770px) {
+  .form-container {
+      flex-direction: column;
+  }
+  .form-register{
+    width: 95%;
+    margin: 60px auto;
+  }
+  .form-picture{
+    display: none;
+  }
 }
