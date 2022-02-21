@@ -29,12 +29,13 @@ input,
 }
 
 input:hover {
-  background: linear-gradient(
+ /* background: linear-gradient(
     90deg,
     #9d5c0d 0%,
     rgba(204, 203, 199, 1) 100%
-  );
-  color: white;
+  );*/
+  background-color: #f7d08a;
+  color: black;
 }
 
 .form-btn {
@@ -69,7 +70,7 @@ input:hover {
 }
 
 .h3Reg {
-  margin-bottom: 50px;
+  margin: 10px auto 50px auto;
   font-size: 22px;
   color: rgb(208, 176, 1);
   color: linear-gradient(

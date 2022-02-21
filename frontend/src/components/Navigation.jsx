@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import "./style/navigation.css";
 
 import { NavLink } from "react-router-dom";
+
 
 /*
     <nav>
@@ -15,6 +16,9 @@ import { NavLink } from "react-router-dom";
 */
 
 const Navigation = () => {
+
+  const [isLoggedin, setIsLoggedIn] = useState(false);
+
   return (
     <nav>
       <div className="dot"></div>
@@ -23,10 +27,10 @@ const Navigation = () => {
           <NavLink to="/">Home</NavLink>
         </li>
         <li>
-          <NavLink to="/signup">Login or Sign up</NavLink>
+          <NavLink to="/artworks">Artworks</NavLink>
         </li>
         <li>
-          <NavLink to="/artworks">Artworks</NavLink>
+          <NavLink to="/signup">{isLoggedin ? "Login or Sign up" : "Logout"}</NavLink>
         </li>
       </ul>
     </nav>
@@ -35,10 +39,3 @@ const Navigation = () => {
 
 export default Navigation;
 
-/*
-<div className='navbar'>
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/signup">Register</NavLink>
-            <NavLink to="/artworks">Artworks</NavLink>
-        </div>
-*/

@@ -5,14 +5,18 @@ import "./style/registrationForm.css";
 import Picture from "./style/img/peakpx.jpg";
 
 function SignupForm() {
+
   //  const [nameValue, setNameValue] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [authEmail, setAuthEmail] = useState("");
   const [authPassword, setAuthPassword] = useState("");
   const [buttonToAppear, setToAppear] = useState("login");
+  
 
   const login = async () => {
+
+
     console.log("LOGIN");
     try {
       await http.post("http://localhost:3000/api/login", {
@@ -25,7 +29,8 @@ function SignupForm() {
       setToAppear("signup");
       localStorage.setItem("email", authEmail);
       localStorage.setItem("password", authPassword);
-      
+      //setIsLogged("true");
+
     } catch (err) {
       
         alert("Wrong email or password");

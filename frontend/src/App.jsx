@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import axios from "axios";
 // import { useEffect, useState } from "react";
@@ -14,12 +14,16 @@ import Error from "./components/Error";
 import Navigation from "./components/Navigation";
 
 
-class App extends Component {
-  render() {
+
+//class App extends Component {
+  const App = () => {
+    
+   
+  
     return (
       <BrowserRouter>
         <div>
-          <Navigation />
+          <Navigation/>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/artworks" element={<Artworks />} />
@@ -67,6 +71,6 @@ class App extends Component {
     </div>
   );
   */
-}
+
 
 export default App;

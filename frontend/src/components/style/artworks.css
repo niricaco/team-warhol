@@ -141,6 +141,13 @@ html {
 .center{
   text-align: center;
 }
+
+h2 {
+  text-align: center;
+  top: 50%;
+  transform: translate (-50%, -50%);
+
+}
 .art_image {
   flex: 50%;
   padding: 20px;

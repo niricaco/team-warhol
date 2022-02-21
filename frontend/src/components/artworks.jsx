@@ -53,7 +53,7 @@ const Artworks = () => {
     return (
         <>
             <div className="grid" onScroll={handleScroll}>{display}</div>
-            {loading && <p>Loading...</p>}
+            {loading && <h2 className="loading">Please wait, the gallery is loading...</h2>}
         </>
     );
 };
