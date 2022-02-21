@@ -3,6 +3,7 @@ import http from "axios";
 import { useState, useEffect } from "react";
 import "./style/registrationForm.css";
 import Picture from "./style/img/peakpx.jpg";
+import Navigation from "./Navigation";
 
 function SignupForm() {
 
@@ -15,7 +16,7 @@ function SignupForm() {
   
 
   const login = async () => {
-
+    
 
     console.log("LOGIN");
     try {
@@ -30,6 +31,7 @@ function SignupForm() {
       localStorage.setItem("email", authEmail);
       localStorage.setItem("password", authPassword);
       //setIsLogged("true");
+      alert("Successful login!");
 
     } catch (err) {
       
@@ -40,7 +42,7 @@ function SignupForm() {
   };
   
   const signup = async () => {
-    console.log("SIGNUP");
+    //console.log("SIGNUP");
     try {
       await http.post("http://localhost:3000/api/signup", {
         password: password,
@@ -72,12 +74,13 @@ function SignupForm() {
 //    setToAppear('login')
 
   }, [])*/
-console.log(buttonToAppear);
+//console.log(buttonToAppear);
+  
   return (
    
     <>
       {buttonToAppear === "login" && <section >
-        {console.log("!!!!")}
+        {/*console.log("!!!!")*/}
       <hr className="separator1" /> <br />
       <div className="form-container">
         <div className="form-picture">
@@ -95,7 +98,7 @@ console.log(buttonToAppear);
             value={authPassword}
             onChange={(e) => setAuthPassword(e.target.value)}
           />
-          {console.log(authPassword, authEmail)}
+          {/*console.log(authPassword, authEmail)*/}
           <button className="form-btn" onClick={login} width="50%">
             Log in
           </button>
@@ -108,8 +111,6 @@ console.log(buttonToAppear);
       <br></br>
       <hr className="separator1" /> <br />
       </section>}
-      
-      
       
       {buttonToAppear === "signup" && <section >
       <hr className="separator1" /> <br />

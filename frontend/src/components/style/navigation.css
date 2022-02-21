@@ -65,7 +65,9 @@ nav ul li:nth-child(3n) a {
 }
 nav ul li:nth-child(4n) a {
   background-color: #ffeddb;
+  color: #9d5c0d;
 }
 nav ul li:nth-child(5n) a {
   background-color: #fafafa;
+  color: #9d5c0d;
 }

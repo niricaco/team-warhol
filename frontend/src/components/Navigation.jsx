@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect } from "react";
 import "./style/navigation.css";
 
 import { NavLink } from "react-router-dom";
@@ -17,7 +17,12 @@ import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
 
-  const [isLoggedin, setIsLoggedIn] = useState(false);
+  const [loggedIn, setLoggedIn] = useState("");
+
+  useEffect(() => {
+    setLoggedIn(localStorage.getItem("email"));
+  }, [loggedIn]);
+  
 
   return (
     <nav>
@@ -29,8 +34,13 @@ const Navigation = () => {
         <li>
           <NavLink to="/artworks">Artworks</NavLink>
         </li>
+        {loggedIn.length > 1 && 
         <li>
-          <NavLink to="/signup">{isLoggedin ? "Login or Sign up" : "Logout"}</NavLink>
+          <NavLink to="/collection">Collection</NavLink>
+        </li>
+        }
+        <li>
+          <NavLink to="/signup">{!localStorage.getItem("email") ? "Login or Sign up" : "Logout"}</NavLink>
         </li>
       </ul>
     </nav>

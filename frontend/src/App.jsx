@@ -1,7 +1,6 @@
 import React, { Component, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import axios from "axios";
-// import { useEffect, useState } from "react";
 import "./App.css";
 // import { useArtworks } from "./api/useData";
 import Artworks from "./components/artworks";
@@ -17,8 +16,6 @@ import Navigation from "./components/Navigation";
 
 //class App extends Component {
   const App = () => {
-    
-   
   
     return (
       <BrowserRouter>
