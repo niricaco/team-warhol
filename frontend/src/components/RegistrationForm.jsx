@@ -28,8 +28,9 @@ function SignupForm(props) {
         }
       );
       setToAppear("collection");
+      console.log(response);
       localStorage.setItem("sessionId", response.data);
- //     localStorage.setItem("password", authPassword);
+      //     localStorage.setItem("password", authPassword);
       setLoggedIn("true");
       alert("Successful login!");
     } catch (err) {

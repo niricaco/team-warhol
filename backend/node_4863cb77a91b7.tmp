@@ -28,7 +28,7 @@ app.post("/api/login", (req, res) => {
   if (!user) {
     return res.sendStatus(401);
   }
-  const sessionId = Math.random().toString();
+  const sessionId = Math.random().toString;
   mySessionStorage[sessionId] = user;
   console.log(mySessionStorage);
   setTimeout(() => {
