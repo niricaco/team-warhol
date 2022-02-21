@@ -17,14 +17,16 @@ import Navigation from "./components/Navigation";
 //class App extends Component {
   const App = () => {
   
+  const [loggedIn, setLoggedIn] = useState(false);
+
     return (
       <BrowserRouter>
         <div>
-          <Navigation/>
+          <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/artworks" element={<Artworks />} />
-            <Route path="/signup" element={<Registration />} />
+            <Route path="/artworks" element={<Artworks loggedIn={loggedIn} />} />
+            <Route path="/signup" element={<Registration loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
             <Route element={<Error />} />
           </Routes>
         </div>

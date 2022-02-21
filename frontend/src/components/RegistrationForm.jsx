@@ -5,7 +5,10 @@ import "./style/registrationForm.css";
 import Picture from "./style/img/peakpx.jpg";
 import Navigation from "./Navigation";
 
-function SignupForm() {
+function SignupForm(props) {
+
+  const loggedIn = props.loggedIn;
+  const setLoggedIn = props.setLoggedIn;
 
   //  const [nameValue, setNameValue] = useState("");
   const [password, setPassword] = useState("");
@@ -30,7 +33,7 @@ function SignupForm() {
       setToAppear("signup");
       localStorage.setItem("email", authEmail);
       localStorage.setItem("password", authPassword);
-      //setIsLogged("true");
+      setLoggedIn("true");
       alert("Successful login!");
 
     } catch (err) {

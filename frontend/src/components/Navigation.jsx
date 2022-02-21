@@ -15,14 +15,17 @@ import { NavLink } from "react-router-dom";
 </nav>
 */
 
-const Navigation = () => {
+const Navigation = (props) => {
 
-  const [loggedIn, setLoggedIn] = useState("");
+  const loggedIn = props.loggedIn;
+  const setLoggedIn = props.setLoggedIn;
 
-  useEffect(() => {
-    setLoggedIn(localStorage.getItem("email"));
-  }, [loggedIn]);
-  
+  const signOut = () => {
+    localStorage.removeItem("email");
+    localStorage.removeItem("password");
+  }
+
+  console.log("Is it logged in?" + loggedIn);
 
   return (
     <nav>
@@ -34,14 +37,21 @@ const Navigation = () => {
         <li>
           <NavLink to="/artworks">Artworks</NavLink>
         </li>
-        {loggedIn.length > 1 && 
+        {loggedIn && 
         <li>
           <NavLink to="/collection">Collection</NavLink>
         </li>
         }
+        {!loggedIn &&
         <li>
-          <NavLink to="/signup">{!localStorage.getItem("email") ? "Login or Sign up" : "Logout"}</NavLink>
+          <NavLink to="/signup">Login or Sign up</NavLink>
         </li>
+        }
+        {loggedIn &&
+        <li>
+          <NavLink to="/" onClick={signOut}>Logout</NavLink>
+        </li>
+        }
       </ul>
     </nav>
   );
