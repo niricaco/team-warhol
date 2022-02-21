@@ -32,7 +32,7 @@ nav:after {
 nav ul li {
   list-style: none;
   display: inline-block;
-  oveflow: hidden;
+  /*oveflow: hidden;*/
 }
 nav ul li a {
   display: block;

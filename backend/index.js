@@ -22,11 +22,13 @@ app.post('/api/login', (req, res) => {
   console.log(userEmail, password);
 
   const user = users.find(user => user.email === userEmail && user.password === password);
-  console.log(user);
-
+  
   if (!user) {
     return res.sendStatus(401)
   }
+  
+  console.log(`you are logged in`);
+  return res.sendStatus(200);
   
 })
 

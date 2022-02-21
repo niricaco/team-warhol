@@ -101,7 +101,7 @@ console.log(buttonToAppear);
       </div>
       <br></br>
       <br></br>
-      <hr class="separator1" /> <br />
+      <hr className="separator1" /> <br />
       </section>}
       
       
@@ -127,17 +127,17 @@ console.log(buttonToAppear);
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <button className="form-btn" onClick={signup} width="50%">
+          <button className="form-btn" onClick={signup}>
             Sign up
           </button>
-          <button className="form-btn" onClick={ () => setToAppear("login")} width="50">
+          <button className="form-btn" onClick={ () => setToAppear("login")}>
             I have an account
           </button>
         </div>
       </div>
       <br></br>
       <br></br>
-      <hr class="separator1" /> <br />
+      <hr className="separator1" /> <br />
       </section>}
 
       

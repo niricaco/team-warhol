@@ -22,7 +22,7 @@
 
 input,
 .form-btn {
-  width: 40%;
+  max-width: 70%;
   margin: 15px auto;
   padding: 10px;
   border-radius: 5px;
@@ -31,28 +31,41 @@ input,
 input:hover {
   background: linear-gradient(
     90deg,
-    rgba(208, 176, 1, 0.7) 0%,
+    #9d5c0d 0%,
     rgba(204, 203, 199, 1) 100%
   );
+  color: white;
 }
 
 .form-btn {
-  margin-bottom: 50px;
-  background: rgb(208, 176, 1);
+  margin-bottom: 25px;
+
+  /*background: rgb(208, 176, 1);
   background: linear-gradient(
     90deg,
     rgba(208, 176, 1, 0.7) 0%,
     rgba(204, 203, 199, 1) 100%
-  );
+  );*/
+
+  border-radius: 50px;
+  border: none;
+  outline: none;
+  background: #E5890A;
+  font-size: 17px;
+  color: #fff;
+  box-shadow: 1px 1px 3px #91550C;
 }
 
 .form-btn:hover {
-  background: rgb(138, 1, 53);
+  /*background: rgb(138, 1, 53);
   background: linear-gradient(
     90deg,
     rgba(138, 1, 53, 1) 0%,
     rgba(204, 203, 199, 1) 100%
-  );
+  );*/
+  color: white;
+  font-size: 2.5rem;
+  transition-duration: 0.25s;
 }
 
 .h3Reg {
