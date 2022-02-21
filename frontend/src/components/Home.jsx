@@ -1,27 +1,21 @@
 import { useState, useEffect } from "react";
 import "./style/home.css";
-import Gallery from './Gallery'
+import Gallery from "./Gallery";
 import axios from "axios";
 
 const Home = () => {
   const [artworks, setArtworks] = useState([]);
 
   const displayImages = artworks.map((item) => {
-    return (
-
-      <Gallery
-        image={item.images.web.url}
-      />
-
-    )
-  })
+    return <Gallery key={item.id} image={item.images.web.url} />;
+  });
 
   const load = async () => {
     const response = await axios.get(
       `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=4`
     );
     setArtworks(response.data.data);
-  }
+  };
 
   useEffect(() => {
     load();
@@ -37,7 +31,7 @@ const Home = () => {
               Painting is poetry that is seen rather than felt, and poetry is
               painting that is felt rather than seen.
             </h2>
-            <p className='homeText'>
+            <p className="homeText">
               Search, browse, like and do stuff. Lorem ipsum dolor sit amet,
               consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
               labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -48,15 +42,21 @@ const Home = () => {
         </section>
 
         <section className="gallery">
-          <div className="hrHolder"><hr /><hr className="separator" /></div>
+          <div className="hrHolder">
+            <hr />
+            <hr className="separator" />
+          </div>
           <h2 className="h2Art">Gallery's finest (under construction)</h2>
-          
+
           {displayImages}
           {/* ide jön még néhány kép, 5-10 kb, csak képek */}
         </section>
 
         <section className="artServices">
-          <div className="hrHolder"><hr /><hr className="separator" /></div>
+          <div className="hrHolder">
+            <hr />
+            <hr className="separator" />
+          </div>
           <h2 className="h2Art">Dive deep into art with us</h2>
 
           <div className="serviceHolder">
@@ -64,7 +64,8 @@ const Home = () => {
               <h3 className="h3Art">Search categories</h3>
 
               <img
-                className='responsiveImage' src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
+                className="responsiveImage"
+                src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
                 alt="painting"
               ></img>
 
@@ -80,7 +81,8 @@ const Home = () => {
               <h3 className="h3Art">Save your favorites</h3>
               <div className="picHolder">
                 <img
-                  className='responsiveImage' src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
+                  className="responsiveImage"
+                  src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
                   alt="painting"
                 ></img>
               </div>
@@ -89,10 +91,15 @@ const Home = () => {
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua.{" "}
               </p>
-              <button className="serviceButtons">Let's make a collection</button>
+              <button className="serviceButtons">
+                Let's make a collection
+              </button>
             </div>
           </div>
-          <div className="hrHolder"><hr /><hr className="separator" /></div>
+          <div className="hrHolder">
+            <hr />
+            <hr className="separator" />
+          </div>
         </section>
       </div>
     </>
