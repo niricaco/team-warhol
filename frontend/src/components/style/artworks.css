@@ -26,6 +26,22 @@ html {
   }
 }
 
+.like {
+  position: absolute;
+  margin: 5px 7px;
+  z-index: 3;
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+.like:hover {
+  cursor: pointer;
+  opacity: 1;
+  width: 25px;
+  height: 25px;
+}
+
 #saveButton {
   margin-left: 10px;
 }
@@ -46,7 +62,7 @@ html {
   width: 100%;
   margin-bottom: 5px;
 }
-.grid_item img {
+.grid_item .card_img {
   display: block;
   width: 100%;
 }
@@ -144,7 +160,6 @@ html {
   width: 80%;
   border: 1px solid black;
   z-index: 100;
-
 }
 
 .center {
@@ -200,12 +215,12 @@ p {
 
 @media only screen and (max-width: 840px) {
   .grid {
-      column-count: 2;
+    column-count: 2;
   }
 }
 
 @media only screen and (max-width: 450px) {
   .grid {
-      column-count: 1;
+    column-count: 1;
   }
 }

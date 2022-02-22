@@ -35,9 +35,9 @@ app.post("/api/login", (req, res) => {
   const sessionId = Math.random().toString();
   mySessionStorage[sessionId] = user;
   console.log(mySessionStorage);
-  setTimeout(() => {
+  /*   setTimeout(() => {
     delete mySessionStorage[sessionId];
-  }, 10 * 60 * 1000);
+  }, 10 * 60 * 1000); */
 
   res.json(sessionId);
 

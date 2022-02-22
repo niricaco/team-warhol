@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import http from "axios";
+import heart from "./style/img/heart.png";
 
 const Artwork = (props) => {
   const [style, setStyle] = useState("artwork");
   const [toShow, setToShow] = useState("hidden");
-  const [emailValid, setEmailValid] = useState(undefined);
+  const [validSessionId, setValidSessionId] = useState(undefined);
 
   const doNotShowCardDesc = () => {
     setStyle("artwork hidden");
   };
 
- 
   const addPhoto = async (image) => {
     try {
       console.log(image);
@@ -35,17 +35,24 @@ const Artwork = (props) => {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("email")) {
-      setEmailValid(localStorage.getItem("email"));
+    if (localStorage.getItem("sessionId")) {
+      setValidSessionId(localStorage.getItem("sessionId"));
     }
-  }, [emailValid]);
+  }, [validSessionId]);
 
-  console.log(emailValid);
+  console.log(validSessionId);
 
   const { title, index, image, creator, date, desc, funfact } = props;
   return (
     <div className="grid_item" key={index}>
       <div className="card">
+        <img
+          className="like"
+          src={heart}
+          alt="like"
+          hidden={validSessionId === undefined ? true : false}
+          onClick={() => addPhoto(image)}
+        ></img>
         <img className="card_img" src={image} alt=""></img>
 
         <div className="card_content center">
@@ -74,7 +81,7 @@ const Artwork = (props) => {
               </button>
               <button
                 id="saveButton"
-                disabled={emailValid === undefined ? true : false}
+                disabled={validSessionId === undefined ? true : false}
                 className="serviceButtons "
                 onClick={() => addPhoto(image)}
               >

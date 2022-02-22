@@ -17,9 +17,8 @@ function SignupForm(props) {
   const [buttonToAppear, setToAppear] = useState("login");
 
   const login = async () => {
-    console.log("LOGIN");
     try {
-      await http.post(
+      const response = await http.post(
         "http://localhost:3000/api/login",
         {},
         {
@@ -29,8 +28,9 @@ function SignupForm(props) {
         }
       );
       setToAppear("collection");
-      localStorage.setItem("email", authEmail);
-      localStorage.setItem("password", authPassword);
+      console.log(response);
+      localStorage.setItem("sessionId", response.data);
+      //     localStorage.setItem("password", authPassword);
       setLoggedIn("true");
       alert("Successful login!");
     } catch (err) {
@@ -40,7 +40,6 @@ function SignupForm(props) {
   };
 
   const signup = async () => {
-    //console.log("SIGNUP");
     try {
       await http.post("http://localhost:3000/api/signup", {
         password: password,
@@ -63,15 +62,14 @@ function SignupForm(props) {
     }
   };
 
-  /*useEffect(() => {
-    const email = localStorage.getItem('email')
-    const password = localStorage.getItem('password')
-    if (!email || !password) return
-    setAuthEmail(email)
-    setAuthPassword(password)
-//    setToAppear('login')
-
-  }, [])*/
+  useEffect(() => {
+    const email = localStorage.getItem("email");
+    const password = localStorage.getItem("password");
+    if (!email || !password) return;
+    setAuthEmail(email);
+    setAuthPassword(password);
+    //    setToAppear('login')
+  }, []);
   //console.log(buttonToAppear);
 
   return (
