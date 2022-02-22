@@ -6,6 +6,7 @@ import Artwork from "./artwork";
 import { getArtworks} from "./API";
 import axios from 'axios'
 import ReactPaginate from 'react-paginate';
+import ScrollButton from "./Scrollbuttom";
 
 const Artworks = () => {
     const [artworks, setArtworks] = useState([]);
@@ -120,6 +121,8 @@ const Artworks = () => {
 
             {loading && <h2 className="loading">Please wait, the gallery is loading...</h2>} 
             {/* <div className="grid" onScroll={handleScroll}>{display}</div>*/}
+
+            <ScrollButton />
         </>
        
     );
