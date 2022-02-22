@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import "./style/home.css";
 import Gallery from "./Gallery";
 import axios from "axios";
+import searchPic from './style/img/search_categories.jpg';
+import savePic from './style/img/save_your_fav.jpg';
 
 const Home = () => {
   const [artworks, setArtworks] = useState([]);
@@ -65,7 +67,7 @@ const Home = () => {
 
               <img
                 className="responsiveImage"
-                src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
+                src={searchPic}
                 alt="painting"
               ></img>
 
@@ -74,7 +76,7 @@ const Home = () => {
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua.{" "}
               </p>
-              <button className="serviceButtons">Want to see more</button>
+              <a href="/artworks"> <button className="serviceButtons">Want to see more</button></a>
             </div>
 
             <div className="saveArt">
@@ -82,7 +84,7 @@ const Home = () => {
               <div className="picHolder">
                 <img
                   className="responsiveImage"
-                  src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5"
+                  src={savePic}
                   alt="painting"
                 ></img>
               </div>
@@ -91,9 +93,9 @@ const Home = () => {
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua.{" "}
               </p>
-              <button className="serviceButtons">
+              <a href="/signup"><button className="serviceButtons">
                 Let's make a collection
-              </button>
+              </button></a>
             </div>
           </div>
           <div className="hrHolder">
