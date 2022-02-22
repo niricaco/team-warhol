@@ -29,34 +29,48 @@
   text-align: left;
 }
 
-.introText h2 {
+.quote {
   font-size: 20px;
   letter-spacing: -0.04em;
   padding-bottom: 10px;
   color: #8E530C;
   font-style: italic;
+  text-align: left;
 }
 
+.quote span {
+  font-style: bold;
+  font-size: 17px;
+}
 .homeText {
   margin-bottom: 20px;
   font-size: 18px;
-
 }
 
 /* GALLERY */
 .gallery {
-  grid-auto-rows: minmax(min-content, max-content);
-  width: 100%;
+  padding: 20px 0 0;
+  height: fit-content;
 }
 
-.responsiveItem {
-  display: inline;
+.imageHolder {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 }
 
 .respImage {
-  object-fit: cover;
-  width: 20%;
+  width: auto;
+  height: 210px;
 
+  border: 1px solid #8E530C;
+  border-radius: 4px;
+  padding: 3px;
+}
+
+.respImage:hover {
+  padding: 5px;
+  height: 225px;
 }
 
 /* ART SERVICES */
@@ -112,14 +126,13 @@
   box-shadow: 1px 1px 3px #91550C;
 }
 
-
 .serviceButtons:hover {
   box-shadow: 1px 1px 5px #E5890A;
 }
 
 /* LINE */
 .hrHolder {
-  margin: 40px 0 10px;
+  margin: 30px 0 10px;
   height: 20px;
 }
 
@@ -145,4 +158,15 @@
 .saveArt {
   max-width: 100%;
 }
+.gallery {
+  margin: 20px 0 0;
+}
+
+.imageHolder {
+  justify-content: center;
+  gap: 10px;
+}
+.respImage {
+  max-width: 100%;
+  height: auto;}
 }

@@ -14,7 +14,7 @@ const Home = () => {
 
   const load = async () => {
     const response = await axios.get(
-      `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=4`
+      `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=5`
     );
     setArtworks(response.data.data);
   };
@@ -29,9 +29,9 @@ const Home = () => {
           <div className="headerImage"></div>
           <div className="introText">
             <h1>Welcome at Warhol Art Gallery</h1>
-            <h2>
-              Painting is poetry that is seen rather than felt, and poetry is
-              painting that is felt rather than seen.
+            <h2 className="quote">
+              "Painting is poetry that is seen rather than felt, and poetry is
+              painting that is felt rather than seen." <span>- Leonardo da Vinci</span>
             </h2>
             <p className="homeText">
               Search, browse, like and do stuff. Lorem ipsum dolor sit amet,
@@ -48,9 +48,9 @@ const Home = () => {
             <hr />
             <hr className="separator" />
           </div>
-          <h2 className="h2Art">Gallery's finest (under construction)</h2>
+          <h2 className="h2Art">Sneak peek to our gallery's finest and most liked paintings</h2>
 
-          {displayImages}
+          <div className="imageHolder">{displayImages}</div>
           {/* ide jön még néhány kép, 5-10 kb, csak képek */}
         </section>
 
