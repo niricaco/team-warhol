@@ -68,8 +68,8 @@ const Artworks = () => {
         setSearchUrl("&q=" + searchTitle);
       };
       //setSearchUrl(searchTitle.length < 3 ? "" : `&q=${searchTitle}`);
-      console.log(searchTitle.length);
-      console.log(searchUrl);
+      //console.log(searchTitle.length);
+      //console.log(searchUrl);
       e.preventDefault();
       load();
     }
