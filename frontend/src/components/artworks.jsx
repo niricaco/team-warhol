@@ -10,6 +10,13 @@ const Artworks = () => {
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(true);
 
+    const [ inputValue, setInputValue] = useState("")
+    
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log(`The name you entered was: ${inputValue}`)
+    }
+
     const handleScroll = event => {
         const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
 
@@ -18,18 +25,7 @@ const Artworks = () => {
         }
     }
 
-            /*
-            <label for="ice-cream-choice">Choose a flavor:</label>
-            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
-
-            <datalist id="ice-cream-flavors">
-                <option value="Chocolate">
-                <option value="Coconut">
-                <option value="Mint">
-                <option value="Strawberry">
-                <option value="Vanilla">
-            </datalist>
-            */
+           
 
     const load = async () => {
         setLoading(true);
@@ -65,6 +61,26 @@ const Artworks = () => {
         <>
             <div className="grid" onScroll={handleScroll}>{display}</div>
             {loading && <h2 className="loading">Please wait, the gallery is loading...</h2>}
+
+            <hr className="separator"/>
+
+            <form >
+                <div>{inputValue}</div> 
+                <label for="searchArt">Search for title:</label>
+                <input 
+                    list="creator-list" 
+                    id="searchArt" 
+                    placeholder="Search for title"
+                    value={ inputValue } 
+                    onChange={(e) => setInputValue(e.target.value)}/>
+
+                <datalist id="creator-list">
+                    {artworks.map((artwork) => {
+                        return <option value={artwork.title}/>
+                    })}
+                </datalist> 
+        
+        </form>
         </>
     );
 };
@@ -105,3 +121,18 @@ onClick={() => loadartwork(item.accession_number, item.title, item.creators[0].d
           <li key={item.accession_number}>{item.title}</li>
         ))}
       </ol> */
+
+
+
+       /*
+            <label for="ice-cream-choice">Choose a flavor:</label>
+            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+
+            <datalist id="ice-cream-flavors">
+                <option value="Chocolate">
+                <option value="Coconut">
+                <option value="Mint">
+                <option value="Strawberry">
+                <option value="Vanilla">
+            </datalist>
+            */
