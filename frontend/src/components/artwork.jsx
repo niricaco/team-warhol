@@ -70,8 +70,8 @@ const Artwork = (props) => {
             <div className="art_desc">
               <h1>{title}</h1>
               <h3>{creator}</h3>
-              <p>{desc}</p>
-              <p>{funfact}</p>
+              <p className="desc">{desc}</p>
+              <p className="funfact">{funfact}</p>
               <h5>Creation year: {date}</h5>
               <button
                 className="serviceButtons "
