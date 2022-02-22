@@ -11,6 +11,7 @@ import Collections from "./components/Collections";
 // import Contact from './components/Contact';
 import Error from "./components/Error";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer"
 
 
 
@@ -31,6 +32,8 @@ import Navigation from "./components/Navigation";
             <Route element={<Error />} />
           </Routes>
         </div>
+        
+        <Footer/>
       </BrowserRouter>
     );
   }
