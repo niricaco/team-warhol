@@ -6,6 +6,7 @@ import Artwork from "./artwork";
 import { getArtworks} from "./API";
 import axios from 'axios'
 import ReactPaginate from 'react-paginate';
+import ScrollButton from "./Scrollbuttom";
 
 const Artworks = () => {
     const [artworks, setArtworks] = useState([]);
@@ -41,6 +42,7 @@ const Artworks = () => {
         });
     
       const pageCount = Math.ceil(artworks.length / artworksPerPage);
+      
       const changePage = ({ selected }) => {
         setPageNumber(selected);
         console.log(selected + 1);
@@ -100,15 +102,15 @@ const Artworks = () => {
                 <>
                 <div className="paginate-container">
                     <ReactPaginate
-                        previousLabel={"Previous Arts"}
-                        nextLabel={"Next Arts"}
+                        previousLabel="< Previous Art"
+                        nextLabel="Next Arts >"
                         pageCount={pageCount}
                         onPageChange={changePage}
-                        containerClassName={"paginationBttns"}
-                        previousLinkClassName={"previousBttn"}
-                        nextLinkClassName={"nextBttn"}
-                        disabledClassName={"paginationDisabled"}
-                        activeClassName={"paginationActive"}
+                        containerClassName="paginationBttns"
+                        previousLinkClassName="previousBttn"
+                        nextLinkClassName="nextBttn"
+                        disabledClassName="paginationDisabled"
+                        activeClassName="paginationActive"
                     />
                 </div>
                 <div className="grid">{displayArts}</div>
@@ -119,6 +121,8 @@ const Artworks = () => {
 
             {loading && <h2 className="loading">Please wait, the gallery is loading...</h2>} 
             {/* <div className="grid" onScroll={handleScroll}>{display}</div>*/}
+
+            <ScrollButton />
         </>
        
     );

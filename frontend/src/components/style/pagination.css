@@ -43,3 +43,14 @@ activeClassName={"paginationActive"} */
   background-color: #9d5c0d;
   color: #ffeddb;
 }
+
+.paginationDisabled a {
+  background-color: #ffeddb;
+  color: #9d5c0d;
+  opacity: .6;
+}
+.paginationDisabled a:hover{
+  background-color: #ffeddb;
+  color: #9d5c0d;
+  
+}
