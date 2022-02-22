@@ -44,7 +44,7 @@ const Navigation = (props) => {
      }
   }
 
-  console.log("Is it logged in?" + loggedIn);
+  // console.log("Is it logged in?" + loggedIn);
 
   return (
     <nav>
