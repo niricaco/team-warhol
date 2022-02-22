@@ -25,8 +25,6 @@ const Artworks = () => {
         }
     }
 
-           
-
     const load = async () => {
         setLoading(true);
         const newArtworks = await getArtworks(page);
@@ -66,7 +64,7 @@ const Artworks = () => {
 
             <form >
                 <div>{inputValue}</div> 
-                <label for="searchArt">Search for title:</label>
+                <label>Search for title:</label>
                 <input 
                     list="creator-list" 
                     id="searchArt" 
@@ -80,7 +78,7 @@ const Artworks = () => {
                     })}
                 </datalist> 
         
-        </form>
+            </form>
         </>
     );
 };

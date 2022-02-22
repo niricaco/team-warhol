@@ -40,7 +40,7 @@ const Artwork = (props) => {
     }
   }, [validSessionId]);
 
-  console.log(validSessionId);
+  //console.log(validSessionId);
 
   const { title, index, image, creator, date, desc, funfact } = props;
   return (
