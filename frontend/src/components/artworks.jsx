@@ -9,8 +9,8 @@ import ReactPaginate from 'react-paginate';
 
 const Artworks = () => {
     const [artworks, setArtworks] = useState([]);
-    //const [displayArts, setDisplayArts] = useState([]);
-    const [page, setPage] = useState(1);
+    // const [displayArts, setDisplayArts] = useState([]);
+    // const [page, setPage] = useState(1);
     const [searchTitle, setSearchTitle] = useState("");
     const [loading, setLoading] = useState(true);
     const [searchUrl, setSearchUrl] = useState("");
@@ -47,8 +47,9 @@ const Artworks = () => {
       };
     
       const load = async () => {
+        setLoading(true);
         const response = await axios.get(
-          `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=120&page=${pageNumber}{searchUrl}`
+          `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=120&page=${pageNumber}${searchUrl}`
         );
         setArtworks(response.data.data);
         setLoading(false);
@@ -59,57 +60,23 @@ const Artworks = () => {
         load();
       }, [searchUrl]);
 
-    
-    // const handleScroll = event => {
-    //     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
-        
-    //     if (scrollHeight - scrollTop === clientHeight ) {
-    //         setPage(prev => prev + 1);
-    //     }
-    // }
-    
-    // const load = async () => {
-    //     setLoading(true);
-    //     const newArtworks = await getArtworks(page, searchUrl);
-    //     setArtworks(newArtworks);
-    //     setLoading(false);
-    //     //console.log(artworks);
-    // };
-
-    // useEffect(() => {
-    //     load();
-    // }, [page]);
-    
-    // useEffect(() => {
-    //     load();
-    // }, [searchUrl]);
-    
-    // const display = artworks.map((item) => {
-    //     return (
-    //         <Artwork
-    //             title={item.title}
-    //             index={item.accession_number}
-    //             image={item.images.web.url}
-    //             creator={
-    //                 item.creators.length > 0
-    //                 ? item.creators[0].description
-    //                 : "Creator unknown"
-    //             }
-    //             date={item.creation_date}
-    //             desc={item.wall_description}
-    //             funfact={item.fun_fact}
-    //             />
-    //             );
-    //         });
-            
+      
     const goSearch = (e) => {
-        e.preventDefault();
-        setSearchUrl(searchTitle.length < 3 ? "" : `&q=${searchTitle}`);
+      e.preventDefault();
+      if (searchTitle.length <3) {
+        setSearchUrl("");
+      } else {
+        setSearchUrl("&q=" + searchTitle);
+      };
+      //setSearchUrl(searchTitle.length < 3 ? "" : `&q=${searchTitle}`);
+      console.log(searchTitle.length);
+      console.log(searchUrl);
+      load();
     }
-
+    
             
     return (
-        <>
+      <>
             <form className="searchbar">
                 
                 <h2><label>Search for title:</label></h2>
@@ -130,6 +97,7 @@ const Artworks = () => {
         
             <hr className="separator"/>
             {!loading &&
+                <>
                 <div className="paginate-container">
                     <ReactPaginate
                         previousLabel={"Previous Arts"}
@@ -143,23 +111,15 @@ const Artworks = () => {
                         activeClassName={"paginationActive"}
                     />
                 </div>
+                <div className="grid">{displayArts}</div>
+                </>
             }
             
-                <div className="grid">{displayArts}</div>
 
 
             {loading && <h2 className="loading">Please wait, the gallery is loading...</h2>} 
             {/* <div className="grid" onScroll={handleScroll}>{display}</div>*/}
         </>
-
-
-
-
-
-
-
-
-
        
     );
 };
@@ -176,14 +136,14 @@ export default Artworks;
 onClick={() => loadartwork(item.accession_number, item.title, item.creators[0].description, item.images.web.url, item.fun_fact, item.creation_date, item.wall_description )}>
 
 {<Artwork
-                    title={item.title}
+  title={item.title}
                     image={item.images.web.url}
                     creator={item.creators[0].description}
                     date={item.creation_date}
                     desc={item.wall_description}
                     funfact={item.fun_fact}
                   />}
-*/
+                  */
 
 //console.log(artworks);
 //const titleList = artworks.map((item) => item.title);
@@ -196,22 +156,64 @@ onClick={() => loadartwork(item.accession_number, item.title, item.creators[0].d
 //kép elérése: https://openaccess-cdn.clevelandart.org/1915.534/1915.534_web.jpg <--- '1915.534', ezt mind a két helyen {} az accessNumList
 
 /* <ol></ol>
-        {artworks.map((item) => (
-          <li key={item.accession_number}>{item.title}</li>
+{artworks.map((item) => (
+  <li key={item.accession_number}>{item.title}</li>
         ))}
-      </ol> */
+        </ol> */
 
-
-
-       /*
-            <label for="ice-cream-choice">Choose a flavor:</label>
-            <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
-
-            <datalist id="ice-cream-flavors">
-                <option value="Chocolate">
-                <option value="Coconut">
-                <option value="Mint">
-                <option value="Strawberry">
-                <option value="Vanilla">
-            </datalist>
-            */
+        
+        
+        /*
+        <label for="ice-cream-choice">Choose a flavor:</label>
+        <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+        
+        <datalist id="ice-cream-flavors">
+        <option value="Chocolate">
+        <option value="Coconut">
+        <option value="Mint">
+        <option value="Strawberry">
+        <option value="Vanilla">
+        </datalist>
+        */
+           
+           // const handleScroll = event => {
+           //     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
+               
+           //     if (scrollHeight - scrollTop === clientHeight ) {
+           //         setPage(prev => prev + 1);
+           //     }
+           // }
+           
+           // const load = async () => {
+           //     setLoading(true);
+           //     const newArtworks = await getArtworks(page, searchUrl);
+           //     setArtworks(newArtworks);
+           //     setLoading(false);
+           //     //console.log(artworks);
+           // };
+           
+           // useEffect(() => {
+           //     load();
+           // }, [page]);
+           
+           // useEffect(() => {
+           //     load();
+           // }, [searchUrl]);
+           
+           // const display = artworks.map((item) => {
+           //     return (
+           //         <Artwork
+           //             title={item.title}
+           //             index={item.accession_number}
+           //             image={item.images.web.url}
+           //             creator={
+           //                 item.creators.length > 0
+           //                 ? item.creators[0].description
+           //                 : "Creator unknown"
+           //             }
+           //             date={item.creation_date}
+           //             desc={item.wall_description}
+           //             funfact={item.fun_fact}
+           //             />
+           //             );
+           //         });
