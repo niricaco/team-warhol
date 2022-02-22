@@ -3,11 +3,12 @@ import axios from "axios";
 import "./style/artworks.css";
 import "./style/pagination.css";
 import Artwork from "./artwork";
-import { getArtworks } from "./API";
+import { getArtworks, getArtworks_title } from "./API";
 
 const Artworks = () => {
     const [artworks, setArtworks] = useState([]);
     const [page, setPage] = useState(1);
+    const [title, setTitle] = useState("a");
     const [loading, setLoading] = useState(true);
 
     const [ inputValue, setInputValue] = useState("")
@@ -26,15 +27,29 @@ const Artworks = () => {
     }
 
     const load = async () => {
-        setLoading(true);
+        //setLoading(true);
         const newArtworks = await getArtworks(page);
         setArtworks((prev) => [...prev, ...newArtworks]);
-        setLoading(false);
+        //setLoading(false);
+        console.log(artworks);
+    };
+
+    
+    const load_title = async () => {
+        //setLoading(true);
+        const newArtworks_title = await getArtworks_title(title);
+        setArtworks((prev) => [prev, newArtworks_title]);
+        //setLoading(false);
+        console.log(artworks);
     };
 
     useEffect(() => {
         load();
     }, [page]);
+
+    /*useEffect(() => {
+        load_title();
+    }, [title]);*/
 
     const display = artworks.map((item) => {
         return (
@@ -57,28 +72,30 @@ const Artworks = () => {
 
     return (
         <>
-            <div className="grid" onScroll={handleScroll}>{display}</div>
-            {loading && <h2 className="loading">Please wait, the gallery is loading...</h2>}
-
-            <hr className="separator"/>
-
-            <form >
-                <div>{inputValue}</div> 
+            <form className="searchbar">
+                
                 <label>Search for title:</label>
                 <input 
                     list="creator-list" 
                     id="searchArt" 
                     placeholder="Search for title"
-                    value={ inputValue } 
-                    onChange={(e) => setInputValue(e.target.value)}/>
+                    value={ title } 
+                    onChange={(e) => setTitle(e.target.value)}/>
 
                 <datalist id="creator-list">
                     {artworks.map((artwork) => {
                         return <option value={artwork.title}/>
                     })}
                 </datalist> 
+            <hr className="separator"/>
         
             </form>
+
+
+            <div className="grid" onScroll={handleScroll}>{display}</div>
+            {loading && <h2 className="loading">Please wait, the gallery is loading...</h2>}
+
+
         </>
     );
 };

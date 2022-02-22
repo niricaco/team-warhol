@@ -213,6 +213,12 @@ p {
   display: none;
 }
 
+.searchbar {
+  margin-top: 60px;
+  text-align: center;
+
+}
+
 @media only screen and (max-width: 840px) {
   .grid {
     column-count: 2;
