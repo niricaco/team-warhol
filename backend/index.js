@@ -35,9 +35,9 @@ app.post("/api/login", (req, res) => {
   const sessionId = Math.random().toString();
   mySessionStorage[sessionId] = user;
   console.log(mySessionStorage);
-  setTimeout(() => {
+  /*setTimeout(() => {
     delete mySessionStorage[sessionId];
-  }, 10 * 60 * 1000);
+  }, 10 * 60 * 1000);*/
 
   res.json(sessionId);
 
@@ -86,13 +86,13 @@ app.post("/api/save", (req, res) => {
   const sessionId = req.header("authorization");
   if (!sessionId) return res.sendStatus(401);
   const user = mySessionStorage[sessionId];
-  console.log("87es sor user =", user);
+  //console.log("87es sor user =", user);
   if (!user) return res.sendStatus(401);
   if (!req.body.url) return res.sendStatus(400);
   const picture = req.body.url;
-  console.log(user.photos);
+  //console.log(user.photos);
   user.photos.push(picture);
-  console.log(user);
+  //console.log(user);
   fs.writeFileSync("./data/users.json", JSON.stringify(users, null, 4));
   /* const user = {
     password: user.password,

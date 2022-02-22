@@ -4,8 +4,10 @@ import Gallery from "./Gallery";
 import axios from "axios";
 import searchPic from './style/img/search_categories.jpg';
 import savePic from './style/img/save_your_fav.jpg';
+import { NavLink } from "react-router-dom";
 
-const Home = () => {
+const Home = (props) => {
+  const loggedIn = props.loggedIn;
   const [artworks, setArtworks] = useState([]);
 
   const displayImages = artworks.map((item) => {
@@ -76,7 +78,7 @@ const Home = () => {
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua.{" "}
               </p>
-              <a href="/artworks"> <button className="serviceButtons">Want to see more</button></a>
+              <NavLink to="/artworks"> <button className="serviceButtons">Want to see more</button></NavLink>
             </div>
 
             <div className="saveArt">
@@ -93,9 +95,7 @@ const Home = () => {
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua.{" "}
               </p>
-              <a href="/signup"><button className="serviceButtons">
-                Let's make a collection
-              </button></a>
+              <NavLink to={loggedIn ? "/collections" : "/signup"}><button className="serviceButtons">Let's make a collection</button></NavLink>
             </div>
           </div>
           <div className="hrHolder">

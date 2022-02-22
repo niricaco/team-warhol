@@ -218,6 +218,9 @@ p {
   text-align: center;
 
 }
+#searchArt {
+  margin-right: 20px;
+}
 
 @media only screen and (max-width: 840px) {
   .grid {
@@ -228,5 +231,8 @@ p {
 @media only screen and (max-width: 450px) {
   .grid {
     column-count: 1;
+  }
+  .artwork {
+    flex-direction: column;
   }
 }

@@ -25,7 +25,7 @@ import Navigation from "./components/Navigation";
         <div>
           <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home loggedIn={loggedIn}  />} />
             <Route path="/artworks" element={<Artworks loggedIn={loggedIn} />} />
             <Route path="/signup" element={<Registration loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
             <Route path="/collections" element={<Collections loggedIn={loggedIn} />} />

@@ -4,52 +4,43 @@ import "./style/artworks.css";
 import "./style/pagination.css";
 import Artwork from "./artwork";
 import { getArtworks, getArtworks_title } from "./API";
+import e from "cors";
 
 const Artworks = () => {
     const [artworks, setArtworks] = useState([]);
     const [page, setPage] = useState(1);
     const [searchTitle, setSearchTitle] = useState("");
     const [loading, setLoading] = useState(true);
-
-    const [ inputValue, setInputValue] = useState("")
+    const [searchUrl, setSearchUrl] = useState(undefined);
     
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(`The name you entered was: ${inputValue}`)
-    }
-
     const handleScroll = event => {
         const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
-
+        
         if (scrollHeight - scrollTop === clientHeight ) {
             setPage(prev => prev + 1);
         }
     }
-
+    
     const load = async () => {
         setLoading(true);
-        const newArtworks = await getArtworks(page);
-        setArtworks((prev) => [...prev, ...newArtworks]);
+        const newArtworks = await getArtworks(page, searchUrl);
+        setArtworks(newArtworks);
         setLoading(false);
-        //console.log(artworks);
-    };
-
-    
-    const load_title = async () => {
-        //setLoading(true);
-        const newArtworks_title = await getArtworks_title(searchTitle);
-        setArtworks((prev) => [prev, newArtworks_title]);
-        //setLoading(false);
         //console.log(artworks);
     };
 
     useEffect(() => {
         load();
     }, [page]);
-
-    /*useEffect(() => {
-        load_title();
-    }, [title]);*/
+    
+    useEffect(() => {
+        load();
+    }, [searchUrl]);
+    
+    const goSearch = (e) => {
+        e.preventDefault();
+        setSearchUrl(searchTitle.length < 3 ? undefined : `&q=${searchTitle}`);
+    }
 
     const display = artworks.map((item) => {
         return (
@@ -87,6 +78,7 @@ const Artworks = () => {
                         return <option value={artwork.title}/>
                     })}
                 </datalist> 
+                <button className="serviceButtons" disabled={searchTitle.length >= 3 || searchTitle.length === 0 ? false : true} onClick={(e) => goSearch(e)}>Search</button>
             <hr className="separator"/>
         
             </form>
