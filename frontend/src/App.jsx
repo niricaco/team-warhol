@@ -1,6 +1,5 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import axios from "axios";
 import "./App.css";
 // import { useArtworks } from "./api/useData";
 import Artworks from "./components/artworks";

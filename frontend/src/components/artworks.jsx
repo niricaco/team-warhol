@@ -1,66 +1,113 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+
 import "./style/artworks.css";
 import "./style/pagination.css";
 import Artwork from "./artwork";
-import { getArtworks, getArtworks_title } from "./API";
-import e from "cors";
+import { getArtworks} from "./API";
+import axios from 'axios'
+import ReactPaginate from 'react-paginate';
 
 const Artworks = () => {
     const [artworks, setArtworks] = useState([]);
+    //const [displayArts, setDisplayArts] = useState([]);
     const [page, setPage] = useState(1);
     const [searchTitle, setSearchTitle] = useState("");
     const [loading, setLoading] = useState(true);
     const [searchUrl, setSearchUrl] = useState("");
-    
-    const handleScroll = event => {
-        const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
-        
-        if (scrollHeight - scrollTop === clientHeight ) {
-            setPage(prev => prev + 1);
-        }
-    }
-    
-    const load = async () => {
-        setLoading(true);
-        const newArtworks = await getArtworks(page, searchUrl);
-        setArtworks(newArtworks);
-        setLoading(false);
-        //console.log(artworks);
-    };
 
-    useEffect(() => {
-        load();
-    }, [page]);
+    const artworksPerPage = 12;
+    const [pageNumber, setPageNumber] = useState(0);
     
-    useEffect(() => {
-        load();
-    }, [searchUrl]);
+    const pagesVisited = pageNumber * artworksPerPage;
+
+    const displayArts = artworks
+        .slice(pagesVisited, pagesVisited + artworksPerPage)
+        .map((item) => {
+          return (
+            <Artwork
+              title={item.title}
+              index={item.accession_number}
+              image={item.images.web.url}
+              creator={
+                item.creators.length > 0
+                  ? item.creators[0].description
+                  : "Creator unknown"
+              }
+              date={item.creation_date}
+              desc={item.wall_description}
+              funfact={item.fun_fact}
+            />
+          );
+        });
     
+      const pageCount = Math.ceil(artworks.length / artworksPerPage);
+      const changePage = ({ selected }) => {
+        setPageNumber(selected);
+        console.log(selected + 1);
+      };
+    
+      const load = async () => {
+        const response = await axios.get(
+          `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=120&page=${pageNumber}{searchUrl}`
+        );
+        setArtworks(response.data.data);
+        setLoading(false);
+      };
+      //console.log(artworks);
+    
+      useEffect(() => {
+        load();
+      }, [searchUrl]);
+
+    
+    // const handleScroll = event => {
+    //     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
+        
+    //     if (scrollHeight - scrollTop === clientHeight ) {
+    //         setPage(prev => prev + 1);
+    //     }
+    // }
+    
+    // const load = async () => {
+    //     setLoading(true);
+    //     const newArtworks = await getArtworks(page, searchUrl);
+    //     setArtworks(newArtworks);
+    //     setLoading(false);
+    //     //console.log(artworks);
+    // };
+
+    // useEffect(() => {
+    //     load();
+    // }, [page]);
+    
+    // useEffect(() => {
+    //     load();
+    // }, [searchUrl]);
+    
+    // const display = artworks.map((item) => {
+    //     return (
+    //         <Artwork
+    //             title={item.title}
+    //             index={item.accession_number}
+    //             image={item.images.web.url}
+    //             creator={
+    //                 item.creators.length > 0
+    //                 ? item.creators[0].description
+    //                 : "Creator unknown"
+    //             }
+    //             date={item.creation_date}
+    //             desc={item.wall_description}
+    //             funfact={item.fun_fact}
+    //             />
+    //             );
+    //         });
+            
     const goSearch = (e) => {
         e.preventDefault();
         setSearchUrl(searchTitle.length < 3 ? "" : `&q=${searchTitle}`);
     }
 
-    const display = artworks.map((item) => {
-        return (
-            <Artwork
-                title={item.title}
-                index={item.accession_number}
-                image={item.images.web.url}
-                creator={
-                    item.creators.length > 0
-                    ? item.creators[0].description
-                    : "Creator unknown"
-                }
-                date={item.creation_date}
-                desc={item.wall_description}
-                funfact={item.fun_fact}
-            />
-        );
-    });
-
-
+            
     return (
         <>
             <form className="searchbar">
@@ -79,16 +126,41 @@ const Artworks = () => {
                     })}
                 </datalist> 
                 <button className="serviceButtons" disabled={searchTitle.length >= 3 || searchTitle.length === 0 ? false : true} onClick={(e) => goSearch(e)}>Search</button>
-            <hr className="separator"/>
-        
             </form>
+        
+            <hr className="separator"/>
+            {!loading &&
+                <div className="paginate-container">
+                    <ReactPaginate
+                        previousLabel={"Previous Arts"}
+                        nextLabel={"Next Arts"}
+                        pageCount={pageCount}
+                        onPageChange={changePage}
+                        containerClassName={"paginationBttns"}
+                        previousLinkClassName={"previousBttn"}
+                        nextLinkClassName={"nextBttn"}
+                        disabledClassName={"paginationDisabled"}
+                        activeClassName={"paginationActive"}
+                    />
+                </div>
+            }
+            
+                <div className="grid">{displayArts}</div>
 
 
-            <div className="grid" onScroll={handleScroll}>{display}</div>
-            {loading && <h2 className="loading">Please wait, the gallery is loading...</h2>}
-
-
+            {loading && <h2 className="loading">Please wait, the gallery is loading...</h2>} 
+            {/* <div className="grid" onScroll={handleScroll}>{display}</div>*/}
         </>
+
+
+
+
+
+
+
+
+
+       
     );
 };
 
