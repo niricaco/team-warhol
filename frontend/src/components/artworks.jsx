@@ -11,7 +11,7 @@ const Artworks = () => {
     const [page, setPage] = useState(1);
     const [searchTitle, setSearchTitle] = useState("");
     const [loading, setLoading] = useState(true);
-    const [searchUrl, setSearchUrl] = useState(undefined);
+    const [searchUrl, setSearchUrl] = useState("");
     
     const handleScroll = event => {
         const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
@@ -39,7 +39,7 @@ const Artworks = () => {
     
     const goSearch = (e) => {
         e.preventDefault();
-        setSearchUrl(searchTitle.length < 3 ? undefined : `&q=${searchTitle}`);
+        setSearchUrl(searchTitle.length < 3 ? "" : `&q=${searchTitle}`);
     }
 
     const display = artworks.map((item) => {
