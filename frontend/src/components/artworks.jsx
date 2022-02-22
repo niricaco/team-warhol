@@ -62,7 +62,6 @@ const Artworks = () => {
 
       
     const goSearch = (e) => {
-      e.preventDefault();
       if (searchTitle.length <3) {
         setSearchUrl("");
       } else {
@@ -71,6 +70,7 @@ const Artworks = () => {
       //setSearchUrl(searchTitle.length < 3 ? "" : `&q=${searchTitle}`);
       console.log(searchTitle.length);
       console.log(searchUrl);
+      e.preventDefault();
       load();
     }
     
