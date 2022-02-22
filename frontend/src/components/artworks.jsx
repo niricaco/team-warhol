@@ -8,7 +8,7 @@ import { getArtworks, getArtworks_title } from "./API";
 const Artworks = () => {
     const [artworks, setArtworks] = useState([]);
     const [page, setPage] = useState(1);
-    const [title, setTitle] = useState("a");
+    const [searchTitle, setSearchTitle] = useState("");
     const [loading, setLoading] = useState(true);
 
     const [ inputValue, setInputValue] = useState("")
@@ -27,20 +27,20 @@ const Artworks = () => {
     }
 
     const load = async () => {
-        //setLoading(true);
+        setLoading(true);
         const newArtworks = await getArtworks(page);
         setArtworks((prev) => [...prev, ...newArtworks]);
-        //setLoading(false);
-        console.log(artworks);
+        setLoading(false);
+        //console.log(artworks);
     };
 
     
     const load_title = async () => {
         //setLoading(true);
-        const newArtworks_title = await getArtworks_title(title);
+        const newArtworks_title = await getArtworks_title(searchTitle);
         setArtworks((prev) => [prev, newArtworks_title]);
         //setLoading(false);
-        console.log(artworks);
+        //console.log(artworks);
     };
 
     useEffect(() => {
@@ -74,13 +74,13 @@ const Artworks = () => {
         <>
             <form className="searchbar">
                 
-                <label>Search for title:</label>
+                <h2><label>Search for title:</label></h2>
                 <input 
                     list="creator-list" 
                     id="searchArt" 
                     placeholder="Search for title"
-                    value={ title } 
-                    onChange={(e) => setTitle(e.target.value)}/>
+                    value={ searchTitle } 
+                    onChange={(e) => setSearchTitle(e.target.value)}/>
 
                 <datalist id="creator-list">
                     {artworks.map((artwork) => {

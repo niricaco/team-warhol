@@ -106,6 +106,23 @@ app.post("/api/save", (req, res) => {
   res.sendStatus(200);
 });
 
+app.get("/api/getCollection", (req, res) => {
+  /*   const rawdata = fs.readFileSync("./data/users.json");
+  const users = JSON.parse(rawdata);
+  console.log(users); */
+
+  const sessionId = req.header("authorization");
+  if (!sessionId) return res.sendStatus(401);
+  const user = mySessionStorage[sessionId].email;
+  //console.log("87es sor user =", user);
+  if (!user) return res.sendStatus(401);
+  //if (!req.body.url) return res.sendStatus(400);
+  //const picture = req.body.url;
+  console.log(mySessionStorage[sessionId].photos);
+  
+  res.sendStatus(200);
+});
+
 app.listen(port, () => {
   console.log(`Registration listening on port ${port}`);
 });

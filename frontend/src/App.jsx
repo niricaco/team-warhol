@@ -6,6 +6,7 @@ import "./App.css";
 import Artworks from "./components/artworks";
 import Registration from "./components/RegistrationForm";
 import Home from "./components/Home";
+import Collections from "./components/Collections";
 
 // import About from './components/About';
 // import Contact from './components/Contact';
@@ -27,6 +28,7 @@ import Navigation from "./components/Navigation";
             <Route path="/" element={<Home />} />
             <Route path="/artworks" element={<Artworks loggedIn={loggedIn} />} />
             <Route path="/signup" element={<Registration loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
+            <Route path="/collections" element={<Collections loggedIn={loggedIn} />} />
             <Route element={<Error />} />
           </Routes>
         </div>

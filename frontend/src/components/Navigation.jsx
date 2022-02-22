@@ -58,7 +58,7 @@ const Navigation = (props) => {
         </li>
         {loggedIn && 
         <li>
-          <NavLink to="/collection">Collection</NavLink>
+          <NavLink to="/collections">My collections</NavLink>
         </li>
         }
         {!loggedIn &&

@@ -29,7 +29,10 @@
                     "tag1",
                     "tag2"
                 ]
-            }
+            },
+            "https://openaccess-cdn.clevelandart.org/1947.209/1947.209_web.jpg",
+            "https://openaccess-cdn.clevelandart.org/1958.39/1958.39_web.jpg",
+            "https://openaccess-cdn.clevelandart.org/1962.2/1962.2_web.jpg"
         ]
     },
     {
@@ -39,10 +42,8 @@
             "https://openaccess-cdn.clevelandart.org/1915.534/1915.534_web.jpg",
             "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg",
             "https://openaccess-cdn.clevelandart.org/1977.43/1977.43_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1977.43/1977.43_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1977.43/1977.43_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1977.43/1977.43_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1979.80/1979.80_web.jpg"
+            "https://openaccess-cdn.clevelandart.org/1979.80/1979.80_web.jpg",
+            "https://openaccess-cdn.clevelandart.org/1962.2/1962.2_web.jpg"
         ]
     }
 ]

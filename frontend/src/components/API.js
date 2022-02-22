@@ -15,3 +15,4 @@ export const getArtworks_title = async (title) => {
   ).json();
   return api.data;
 };
+
