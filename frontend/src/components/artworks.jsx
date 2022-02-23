@@ -6,7 +6,7 @@ import Artwork from "./artwork";
 import { getArtworks } from "./API";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
-import ScrollButton from "./Scrollbuttom";
+import ScrollButton from "./Scrollbutton";
 
 const Artworks = (props) => {
   const setMessage = props.setMessage;
@@ -69,7 +69,7 @@ const Artworks = (props) => {
   };
 
   return (
-    <>
+    <main className="main">
       <form className="searchbar">
         <h2>
           <label>Search for title:</label>
@@ -88,7 +88,7 @@ const Artworks = (props) => {
           })}
         </datalist>
         <button
-          className="serviceButtons"
+          className="searchButtons"
           disabled={
             searchTitle.length >= 3 || searchTitle.length === 0 ? false : true
           }
@@ -124,7 +124,7 @@ const Artworks = (props) => {
       {/* <div className="grid" onScroll={handleScroll}>{display}</div>*/}
 
       <ScrollButton />
-    </>
+    </main>
   );
 };
 
