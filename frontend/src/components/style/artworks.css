@@ -239,6 +239,7 @@ p {
 .btn-up:hover {
   color: #e5890a;
   opacity: 1;
+  border: #e5890a 2px solid
 }
 
 @media only screen and (max-width: 840px) {
