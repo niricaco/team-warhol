@@ -43,23 +43,28 @@ function SignupForm(props) {
 
   const signup = async () => {
     try {
-      await http.post("http://localhost:4000/api/signup", {
-        password: password,
-        email: email,
-      });
+      await http.post(
+        "https://warhol-frontend-backend.sloppy.zone/api/signup",
+        {
+          password: password,
+          email: email,
+        }
+      );
       setToAppear("login");
       setPassword("");
       setEmail("");
-      return setMessage("Successful sign up");
+      setMessage("Successful sign up");
+      return;
     } catch (err) {
       if (!err.response) {
-        return setMessage("Ooops... something went wrong");
-      }
-      if (err.response.status === 409) {
-        return setMessage("User already exists, please use the login");
-      }
-      if (err.response.status === 400) {
-        return setMessage("Missing credentials");
+        setMessage("Ooops... something went wrong");
+        return;
+      } else if (err.response.status === 409) {
+        setMessage("User already exists, please use the login");
+        return;
+      } else if (err.response.status === 400) {
+        setMessage("Missing credentials");
+        return;
       }
     }
   };

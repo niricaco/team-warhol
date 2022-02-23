@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import "./style/home.css";
 import Gallery from "./Gallery";
 import axios from "axios";
-import searchPic from './style/img/search_categories.jpg';
-import savePic from './style/img/save_your_fav.jpg';
+import searchPic from "./style/img/search_categories.jpg";
+import savePic from "./style/img/save_your_fav.jpg";
 import { NavLink } from "react-router-dom";
 
 const Home = (props) => {
@@ -15,10 +15,14 @@ const Home = (props) => {
   });
 
   const load = async () => {
-    const response = await axios.get(
-      `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=5`
-    );
-    setArtworks(response.data.data);
+    try {
+      const response = await axios.get(
+        `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=5`
+      );
+      setArtworks(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
@@ -33,7 +37,8 @@ const Home = (props) => {
             <h1>Welcome at Warhol Art Gallery</h1>
             <h2 className="quote">
               "Painting is poetry that is seen rather than felt, and poetry is
-              painting that is felt rather than seen." <span>- Leonardo da Vinci</span>
+              painting that is felt rather than seen."{" "}
+              <span>- Leonardo da Vinci</span>
             </h2>
             <p className="homeText">
               Search, browse, like and do stuff. Lorem ipsum dolor sit amet,
@@ -50,7 +55,9 @@ const Home = (props) => {
             <hr />
             <hr className="separator" />
           </div>
-          <h2 className="h2Art">Sneak peek to our gallery's finest and most liked paintings</h2>
+          <h2 className="h2Art">
+            Sneak peek to our gallery's finest and most liked paintings
+          </h2>
 
           <div className="imageHolder">{displayImages}</div>
           {/* ide jön még néhány kép, 5-10 kb, csak képek */}
@@ -78,7 +85,10 @@ const Home = (props) => {
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua.{" "}
               </p>
-              <NavLink to="/artworks"> <button className="serviceButtons">Want to see more</button></NavLink>
+              <NavLink to="/artworks">
+                {" "}
+                <button className="serviceButtons">Want to see more</button>
+              </NavLink>
             </div>
 
             <div className="saveArt">
@@ -95,7 +105,11 @@ const Home = (props) => {
                 consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                 labore et dolore magna aliqua.{" "}
               </p>
-              <NavLink to={loggedIn ? "/collections" : "/signup"}><button className="serviceButtons">Let's make a collection</button></NavLink>
+              <NavLink to={loggedIn ? "/collections" : "/signup"}>
+                <button className="serviceButtons">
+                  Let's make a collection
+                </button>
+              </NavLink>
             </div>
           </div>
           <div className="hrHolder">

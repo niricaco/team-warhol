@@ -22,7 +22,7 @@ const Navigation = (props) => {
   const signOut = async () => {
     try {
       await http.delete(
-        "http://localhost:4000/api/logout",
+        "https://warhol-frontend-backend.sloppy.zone/api/logout",
         {
           headers: {
             authorization: localStorage.getItem("sessionId"),

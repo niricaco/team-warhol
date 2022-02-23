@@ -4,8 +4,18 @@ const port = 4000;
 const cors = require("cors");
 const fs = require("fs");
 
+const winston = require("winston");
+const expressWinston = require("express-winston");
+
 app.use(cors());
 app.use(express.json());
+
+/* const logLevel = "info";
+app.use(
+  expressWinston.logger({
+    transports: [new winston.transports.Console({ level: logLevel })],
+  })
+); */
 
 const users = require("./data/users.json");
 
@@ -78,13 +88,14 @@ app.post("/api/save", (req, res) => {
   /*   const rawdata = fs.readFileSync("./data/users.json");
   const users = JSON.parse(rawdata);
   console.log(users); */
-
+  console.log(req.body);
   const sessionId = req.header("authorization");
   if (!sessionId) return res.sendStatus(401);
   const user = mySessionStorage[sessionId];
-  //console.log("87es sor user =", user);
+  console.log("87es sor user =", user);
   if (!user) return res.sendStatus(401);
   if (!req.body.url) return res.sendStatus(400);
+  /*title, index, image, creator, date, desc, funfact*/
   const picture = req.body.url;
   //console.log(user.photos);
   user.photos.push(picture);
@@ -109,13 +120,17 @@ app.get("/api/getCollection", (req, res) => {
 
   const sessionId = req.header("authorization");
   if (!sessionId) return res.sendStatus(401);
-  const user = mySessionStorage[sessionId].email;
+  //console.log(sessionId);
+  const pictures = mySessionStorage[sessionId].photos;
   //console.log("87es sor user =", user);
-  if (!user) return res.sendStatus(401);
+  if (!pictures) return res.sendStatus(400);
+  //const user = mySessionStorage[sessionId];
+  //console.log(pictures);
+
   //if (!req.body.url) return res.sendStatus(400);
   //const picture = req.body.url;
 
-  res.sendStatus(200);
+  res.json(pictures);
 });
 
 app.listen(port, () => {

@@ -6,6 +6,7 @@ import http from "axios";
 const Collections = (props) => {
   const loggedIn = props.loggedIn;
   const [loading, setLoading] = useState(true);
+  const [collection, setCollection] = useState([]);
   const setMessage = props.setMessage;
   setMessage("");
 
@@ -13,20 +14,18 @@ const Collections = (props) => {
     try {
       const response = await http.get(
         "http://localhost:4000/api/getCollection",
-        {},
         {
           headers: {
-            authorization: localStorage.getItem("sessionID"),
+            authorization: localStorage.getItem("sessionId"),
           },
         }
       );
-
-      //console.log(response);
-      setMessage("Successful photos loading!");
-
+      setCollection(response.data);
+      console.log(response);
+      //setMessage("Successful photos loading!");
       setLoading(false);
     } catch (err) {
-      setMessage("Wrong email or password");
+      setMessage("Unauthorized user, sorry, please login again!");
     }
   };
 
@@ -40,6 +39,10 @@ const Collections = (props) => {
       {loading && (
         <h2 className="loading">Please wait, the gallery is loading...</h2>
       )}
+      {!loading && collection.map((pic, index) => {
+        return <img src={pic} alt="" key={index} />
+      })  
+      }
     </>
   );
 };
