@@ -4,8 +4,18 @@ const port = 4000;
 const cors = require("cors");
 const fs = require("fs");
 
+const winston = require("winston");
+const expressWinston = require("express-winston");
+
 app.use(cors());
 app.use(express.json());
+
+const logLevel = "info";
+app.use(
+  expressWinston.logger({
+    transports: [new winston.transports.Console({ level: logLevel })],
+  })
+);
 
 const users = require("./data/users.json");
 

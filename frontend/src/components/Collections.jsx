@@ -12,7 +12,7 @@ const Collections = (props) => {
   const getCollection = async () => {
     try {
       const response = await http.get(
-        "http://localhost:4000/api/getCollection",
+        "https://warhol-frontend-backend.sloppy.zone/api/getCollection",
         {},
         {
           headers: {

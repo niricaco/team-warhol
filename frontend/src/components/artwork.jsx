@@ -15,7 +15,7 @@ const Artwork = (props) => {
     try {
       console.log(image);
       await http.post(
-        "http://localhost:4000/api/save",
+        "https://warhol-frontend-backend.sloppy.zone/api/save",
         {
           url: image,
         },

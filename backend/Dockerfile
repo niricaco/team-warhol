@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM node:16-alpine3.14
 ADD . /appDir
 WORKDIR /appDir
 CMD ["npm", "start"]

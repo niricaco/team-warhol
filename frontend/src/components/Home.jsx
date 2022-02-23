@@ -19,7 +19,6 @@ const Home = (props) => {
       const response = await axios.get(
         `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=5`
       );
-      console.log(response);
       setArtworks(response.data.data);
     } catch (error) {
       console.log(error);
