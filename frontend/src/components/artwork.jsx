@@ -11,13 +11,34 @@ const Artwork = (props) => {
     setStyle("artwork hidden");
   };
 
-  const addPhoto = async (image) => {
+  const addPhoto = async (title, index, image, creator, date, desc, funfact) => {
     try {
       console.log(image);
       await http.post(
-        "https://warhol-frontend-backend.sloppy.zone/api/save",
+        "http://localhost:4000/api/save",
+        
         {
+          title: title,
+          index: index, 
           url: image,
+          creator: creator,
+          date: date,
+          desc: desc,
+          funfact: funfact
+
+          /*
+          title={item.title}
+          index={item.accession_number}
+          image={item.images.web.url}
+          creator={
+            item.creators.length > 0
+              ? item.creators[0].description
+              : "Creator unknown"
+          }
+          date={item.creation_date}
+          desc={item.wall_description}
+          funfact={item.fun_fact}
+          */
         },
         {
           headers: {
@@ -51,7 +72,7 @@ const Artwork = (props) => {
           src={heart}
           alt="like"
           hidden={validSessionId === undefined ? true : false}
-          onClick={() => addPhoto(image)}
+          onClick={() => addPhoto(title, index, image, creator, date, desc, funfact)}
         ></img>
         <img className="card_img" src={image} alt=""></img>
 
@@ -83,7 +104,7 @@ const Artwork = (props) => {
                 id="saveButton"
                 disabled={validSessionId === undefined ? true : false}
                 className="serviceButtons "
-                onClick={() => addPhoto(image)}
+                onClick={() => addPhoto(title, index, image, creator, date, desc, funfact)}
               >
                 Save
               </button>
