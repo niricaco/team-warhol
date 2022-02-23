@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { FaArrowCircleUp } from 'react-icons/fa';
+import { RiArrowUpSLine } from 'react-icons/ri';
 import "./style/artworks.css";
 
 const ScrollButton = () =>{
@@ -29,7 +29,7 @@ window.addEventListener('scroll', toggleVisible);
 
 return (
 	
-	<FaArrowCircleUp className='btn-up' onClick={scrollToTop}
+	<RiArrowUpSLine className='btn-up' onClick={scrollToTop}
 		style={{display: visible ? 'inline' : 'none'}} />
 	
 );
