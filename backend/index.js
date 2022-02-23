@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = 3000;
+const port = 4000;
 const cors = require("cors");
 const fs = require("fs");
 
@@ -34,15 +34,13 @@ app.post("/api/login", (req, res) => {
   }
   const sessionId = Math.random().toString();
   mySessionStorage[sessionId] = user;
-  console.log(mySessionStorage);
   /*setTimeout(() => {
     delete mySessionStorage[sessionId];
   }, 10 * 60 * 1000);*/
 
-  res.json(sessionId);
+  return res.json(sessionId);
 
-  res.sendStatus(200);
-  return res.sendStatus(200);
+  /* return res.sendStatus(200); */
 });
 
 /**** SIGN UP ****/
@@ -69,14 +67,12 @@ app.post("/api/signup", (req, res) => {
   res.status(200).json("User registered");
 });
 
-/*app.delete("/api/logout", (req, res) => {
-
-  const sessionId=req.header('authorization');
-  if(!sessionId) return res.sendStatus(401)
+app.delete("/api/logout", (req, res) => {
+  const sessionId = req.header("authorization");
+  if (!sessionId) return res.sendStatus(401);
   delete mySessionStorage[sessionId];
   res.sendStatus(200);
-  });
-*/
+});
 
 app.post("/api/save", (req, res) => {
   /*   const rawdata = fs.readFileSync("./data/users.json");
@@ -118,8 +114,7 @@ app.get("/api/getCollection", (req, res) => {
   if (!user) return res.sendStatus(401);
   //if (!req.body.url) return res.sendStatus(400);
   //const picture = req.body.url;
-  console.log(mySessionStorage[sessionId].photos);
-  
+
   res.sendStatus(200);
 });
 

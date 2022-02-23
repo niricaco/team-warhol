@@ -6,7 +6,6 @@ import Picture from "./style/img/peakpx.jpg";
 import Navigation from "./Navigation";
 
 function SignupForm(props) {
-  
   const loggedIn = props.loggedIn;
   const setLoggedIn = props.setLoggedIn;
   const setMessage = props.setMessage;
@@ -21,7 +20,7 @@ function SignupForm(props) {
   const login = async () => {
     try {
       const response = await http.post(
-        "http://localhost:3000/api/login",
+        "http://localhost:4000/api/login",
         {},
         {
           headers: {
@@ -35,17 +34,16 @@ function SignupForm(props) {
       //     localStorage.setItem("password", authPassword);
       setLoggedIn("true");
       setMessage("Succesful login");
-      
     } catch (err) {
       setMessage("Wrong email or password");
-      return
+      return;
       //        setToAppear("signup")
     }
   };
 
   const signup = async () => {
     try {
-      await http.post("http://localhost:3000/api/signup", {
+      await http.post("http://localhost:4000/api/signup", {
         password: password,
         email: email,
       });

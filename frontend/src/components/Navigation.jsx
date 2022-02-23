@@ -1,8 +1,7 @@
-import React, {useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./style/navigation.css";
-import http from 'axios';
+import http from "axios";
 import { NavLink } from "react-router-dom";
-
 
 /*
     <nav>
@@ -16,36 +15,34 @@ import { NavLink } from "react-router-dom";
 */
 
 const Navigation = (props) => {
-
   const loggedIn = props.loggedIn;
   const setLoggedIn = props.setLoggedIn;
   const setMessage = props.setMessage;
-  
 
-  const signOut =  async () => {
-
+  const signOut = async () => {
     try {
-      await http.delete("http://localhost:3000/api/logout", 
-    {
-        headers: {
-          authorization: localStorage.getItem("sessionId"),
+      await http.delete(
+        "http://localhost:4000/api/logout",
+        {
+          headers: {
+            authorization: localStorage.getItem("sessionId"),
+          },
         },
-      },
-      {}
+        {}
       );
-      } catch(err) {
-      } finally {
-        localStorage.removeItem('sessionId')
-//        setAuthUser('')
-//        setAuthPassword('')
-//        setSectionToAppear('login')
-//***********
-        setLoggedIn(false);
-        setMessage("");
-        //localStorage.removeItem("email");
-        //localStorage.removeItem("password");
-     }
-  }
+    } catch (err) {
+    } finally {
+      localStorage.removeItem("sessionId");
+      //        setAuthUser('')
+      //        setAuthPassword('')
+      //        setSectionToAppear('login')
+      //***********
+      setLoggedIn(false);
+      setMessage("");
+      //localStorage.removeItem("email");
+      //localStorage.removeItem("password");
+    }
+  };
 
   // console.log("Is it logged in?" + loggedIn);
 
@@ -59,25 +56,26 @@ const Navigation = (props) => {
         <li>
           <NavLink to="/artworks">Artworks</NavLink>
         </li>
-        {loggedIn && 
-        <li>
-          <NavLink to="/collections">My collections</NavLink>
-        </li>
-        }
-        {!loggedIn &&
-        <li>
-          <NavLink to="/signup">Login or Sign up</NavLink>
-        </li>
-        }
-        {loggedIn &&
-        <li>
-          <NavLink to="/" onClick={signOut}>Logout</NavLink>
-        </li>
-        }
+        {loggedIn && (
+          <li>
+            <NavLink to="/collections">My collections</NavLink>
+          </li>
+        )}
+        {!loggedIn && (
+          <li>
+            <NavLink to="/signup">Login or Sign up</NavLink>
+          </li>
+        )}
+        {loggedIn && (
+          <li>
+            <NavLink to="/" onClick={signOut}>
+              Logout
+            </NavLink>
+          </li>
+        )}
       </ul>
     </nav>
   );
 };
 
 export default Navigation;
-
