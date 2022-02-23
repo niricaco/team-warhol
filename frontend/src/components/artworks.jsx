@@ -8,7 +8,9 @@ import axios from 'axios'
 import ReactPaginate from 'react-paginate';
 import ScrollButton from "./Scrollbuttom";
 
-const Artworks = () => {
+const Artworks = (props) => {
+  const setMessage = props.setMessage;
+  setMessage("");
     const [artworks, setArtworks] = useState([]);
     // const [displayArts, setDisplayArts] = useState([]);
     // const [page, setPage] = useState(1);

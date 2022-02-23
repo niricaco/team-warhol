@@ -25,12 +25,12 @@ const Artwork = (props) => {
           },
         }
       );
-      alert("Successfully added");
+      return <div>Thank you, your item has been successfully added!</div>;
     } catch (err) {
       if (err.response.status === 401) {
-        alert("Session ended");
+        return <div>Session ended, please login again!</div>;
       }
-      return alert("Oops... Something went wrong");
+      return <div>Oops... Something went wrong</div>;
     }
   };
 

@@ -19,20 +19,21 @@ import Footer from "./components/Footer"
   const App = () => {
   
   const [loggedIn, setLoggedIn] = useState(false);
+  const [message, setMessage] = useState("");
 
     return (
       <BrowserRouter>
         <div>
-          <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} />
+          <Navigation loggedIn={loggedIn} setLoggedIn={setLoggedIn} setMessage={setMessage}/>
           <Routes>
-            <Route path="/" element={<Home loggedIn={loggedIn}  />} />
-            <Route path="/artworks" element={<Artworks loggedIn={loggedIn} />} />
-            <Route path="/signup" element={<Registration loggedIn={loggedIn} setLoggedIn={setLoggedIn} />} />
-            <Route path="/collections" element={<Collections loggedIn={loggedIn} />} />
+            <Route path="/" element={<Home loggedIn={loggedIn} setMessage={setMessage} />} />
+            <Route path="/artworks" element={<Artworks loggedIn={loggedIn} setMessage={setMessage}/>} />
+            <Route path="/signup" element={<Registration loggedIn={loggedIn} setLoggedIn={setLoggedIn} setMessage={setMessage} />} />
+            <Route path="/collections" element={<Collections loggedIn={loggedIn} setMessage={setMessage}/>} />
             <Route element={<Error />} />
           </Routes>
         </div>
-        
+        <div id="message">{message}</div>
         <Footer/>
       </BrowserRouter>
     );
