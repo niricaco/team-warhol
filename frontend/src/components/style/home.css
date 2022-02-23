@@ -147,38 +147,45 @@
   border: 0;
   height: .7px;
 }
+#message{
+  font-size: 40px;
+  margin: 50px auto;
+  text-align: center;
+}
 
 @media screen and (max-width: 600px) {
-  .headerBlock,
-.artServices {
-  margin: 20px 0 0;
-  height: fit-content;
-}
+    .headerBlock,
+  .artServices {
+    margin: 20px 0 0;
+    height: fit-content;
+  }
 
-.serviceHolder {
-  flex-direction: column;
-}
+  .serviceHolder {
+    flex-direction: column;
+  }
 
-.browseArt,
-.saveArt {
-  max-width: 100%;
-}
+  .browseArt,
+  .saveArt {
+    max-width: 100%;
+  }
 
-.gallery {
-  margin: 20px 0 0;
-}
+  .gallery {
+    margin: 20px 0 0;
+  }
 
-.imageHolder {
-  justify-content: center;
-  gap: 10px;
-}
-.respImage {
-  max-width: 100%;
-  height: auto;
-}
+  .imageHolder {
+    justify-content: center;
+    gap: 10px;
+  }
+  .respImage {
+    max-width: 100%;
+    height: auto;
+  }
 
-.respImage:hover {
-  padding: none;
-  height: inherit;
-}
+  .respImage:hover {
+    padding: none;
+    height: inherit;
+  }
+
+
 }

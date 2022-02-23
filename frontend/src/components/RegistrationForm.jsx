@@ -6,8 +6,10 @@ import Picture from "./style/img/peakpx.jpg";
 import Navigation from "./Navigation";
 
 function SignupForm(props) {
+  
   const loggedIn = props.loggedIn;
   const setLoggedIn = props.setLoggedIn;
+  const setMessage = props.setMessage;
 
   //  const [nameValue, setNameValue] = useState("");
   const [password, setPassword] = useState("");
@@ -28,13 +30,15 @@ function SignupForm(props) {
         }
       );
       setToAppear("collection");
-      console.log(response);
+      //console.log(response);
       localStorage.setItem("sessionId", response.data);
       //     localStorage.setItem("password", authPassword);
       setLoggedIn("true");
-      alert("Successful login!");
+      setMessage("Succesful login");
+      
     } catch (err) {
-      alert("Wrong email or password");
+      setMessage("Wrong email or password");
+      return
       //        setToAppear("signup")
     }
   };
@@ -45,19 +49,19 @@ function SignupForm(props) {
         password: password,
         email: email,
       });
-      alert("Successful sign up");
       setToAppear("login");
       setPassword("");
       setEmail("");
+      return setMessage("Successful sign up");
     } catch (err) {
       if (!err.response) {
-        alert("Ooops... something went wrong");
+        return setMessage("Ooops... something went wrong");
       }
       if (err.response.status === 409) {
-        alert("user already exists, please use the login");
+        return setMessage("User already exists, please use the login");
       }
       if (err.response.status === 400) {
-        alert("Missing credentials");
+        return setMessage("Missing credentials");
       }
     }
   };
@@ -112,6 +116,7 @@ function SignupForm(props) {
           <br></br>
           <br></br>
           <hr className="separator1" /> <br />
+          <div id="message"></div>
         </section>
       )}
 

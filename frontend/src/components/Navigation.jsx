@@ -19,6 +19,8 @@ const Navigation = (props) => {
 
   const loggedIn = props.loggedIn;
   const setLoggedIn = props.setLoggedIn;
+  const setMessage = props.setMessage;
+  
 
   const signOut =  async () => {
 
@@ -39,8 +41,9 @@ const Navigation = (props) => {
 //        setSectionToAppear('login')
 //***********
         setLoggedIn(false);
-        localStorage.removeItem("email");
-        localStorage.removeItem("password");
+        setMessage("");
+        //localStorage.removeItem("email");
+        //localStorage.removeItem("password");
      }
   }
 

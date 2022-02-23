@@ -6,6 +6,8 @@ import http from 'axios';
 const Collections = (props) => {
     const loggedIn = props.loggedIn;
     const [loading, setLoading] = useState(true);
+    const setMessage = props.setMessage;
+    setMessage("");
 
     const getCollection = async () => {
         
@@ -20,12 +22,12 @@ const Collections = (props) => {
                 }
               );
               
-              console.log(response);
-              alert("Successful photos loading!");
+              //console.log(response);
+              setMessage("Successful photos loading!");
 
               setLoading(false);
             } catch (err) {
-              alert("Wrong email or password");
+              setMessage("Wrong email or password");
               
             }
           }
