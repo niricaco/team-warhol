@@ -147,11 +147,14 @@
   border: 0;
   height: .7px;
 }
-#message{
+
+#message {
   font-size: 40px;
   margin: 50px auto;
   text-align: center;
 }
+
+
 
 @media screen and (max-width: 600px) {
     .headerBlock,

@@ -57,14 +57,16 @@ const Artwork = (props) => {
 
   useEffect(() => {
     if (localStorage.getItem("sessionId")) {
-      setValidSessionId(localStorage.getItem("sessionId"));
+        setValidSessionId(localStorage.getItem("sessionId"));
     }
   }, [validSessionId]);
 
   //console.log(validSessionId);
 
   const { title, index, image, creator, date, desc, funfact } = props;
+  
   return (
+    <main>
     <div className="grid_item" key={index}>
       <div className="card">
         <img
@@ -79,11 +81,14 @@ const Artwork = (props) => {
         <div className="card_content center">
           <h1 className="card_header">{title}</h1>
           <p className="card_text">{creator}</p>
-          <button className="serviceButtons " onClick={() => setToShow("show")}>
+          <button className="popupButton " onClick={() => setToShow("show")}>
             More info <span>&rarr;</span>
           </button>
         </div>
+
+        
         <div className={toShow} key={title} onClick={() => setToShow("hidden")}>
+          <div className="artworkBlocker">
           <div className="artwork">
             <div className="art_image">
               <img src={image} alt="" />
@@ -111,8 +116,11 @@ const Artwork = (props) => {
             </div>
           </div>
         </div>
+        </div>
+
       </div>
     </div>
+    </main>
   );
 };
 
