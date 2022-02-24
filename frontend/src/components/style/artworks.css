@@ -215,6 +215,7 @@ html {
     bottom: 0;  
     background-color: rgba(0,0,0, 0.8); 
     opacity: 1;
+    z-index:100;
 }
 
 .center {
