@@ -1,121 +1,136 @@
 [
-    {
-        "password": "anita",
-        "email": "anita@gmail.com",
-        "photos": [
-            {
-                "title": "In the Waves (Dans les Vagues)",
-                "index": "1978.63",
-                "url": "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg",
-                "creator": "Paul Gauguin (French, 1848-1903)",
-                "date": "1889",
-                "desc": "Painted at Pont-Aven in northwest France, this depiction of a nude figure throwing herself into the sea suggests a metaphor for a modern European woman forsaking civilization and abandoning herself to her natural, primitive instincts. The simplified lines and exaggerated colors, especially the contrasting green and orange, seem invented rather than observed from life. Exhibiting the painting at the Café Volpini in Paris in 1889, Gauguin established himself as a leader of the Symbolist movement in art.",
-                "funfact": "Gauguin likely painted this work of art during his time in a small coastal village called Pont-Aven where he sought to immerse himself in nature and escape modern civilization."
-            },
-            {
-                "title": "Twilight in the Wilderness",
-                "index": "1965.233",
-                "url": "https://openaccess-cdn.clevelandart.org/1965.233/1965.233_web.jpg",
-                "creator": "Frederic Edwin Church (American, 1826-1900)",
-                "date": "1860",
-                "desc": "In his New York studio, Church painted this spectacular view of a blazing sunset over wilderness near Mount Katahdin in Maine, which he had sketched during a visit nearly two years earlier. Although Church often extolled the grandeur of pristine American landscape in his work, this painting appears to have additional overtones. Created on the eve of the Civil War, the painting's subject can be interpreted as symbolically evoking the coming conflagration. Church's considerable technical skills and clever showmanship contributed to his fame as the premier artist of his generation. Rather than debut this painting in an annual exhibition with works by other artists as was the custom, Church instead exhibited it by itself at a prestigious art gallery. Coaxed by advance publicity and highly favorable press reviews, several hundred spectators flocked to admire it during its seven-week run.",
-                "funfact": "An image of this painting has a cameo in the Harrison Ford film <em>Clear and Present Danger</em>."
-            },
-            {
-                "title": "Church Street El",
-                "index": "1977.43",
-                "url": "https://openaccess-cdn.clevelandart.org/1977.43/1977.43_web.jpg",
-                "creator": "Charles Sheeler (American, 1883-1965)",
-                "date": "1920",
-                "desc": "Capturing the soaring heights of New York City, this painting is a dramatic bird's-eye view of Broadway and Wall Street, showing a conglomeration of buildings at left and center, and the Church Street elevated train at right. Sheeler based his composition on an image from the short movie <em>Manhatta</em> (1920-21), which he made with the photographer Paul Strand. One of the first avant-garde American films, <em>Manhatta</em> celebrates the dynamic metropolis through a series of carefully composed shots of Lower Manhattan. As typical with Sheeler's work, the artist simplified forms and eliminated textures in <em>Church Street El</em> to concentrate on rhythmic interplay of shapes and color, and patterns of light and shadow.",
-                "funfact": "Sheeler and his good friend, the poet William Carlos Williams, patronized speakeasies together during Prohibition."
-            }
-        ]
-    },
-    {
-        "password": "123",
-        "email": "test@gmail.com",
-        "photos": [
-            {
-                "title": "Tea Table",
-                "index": "1991.45",
-                "url": "https://openaccess-cdn.clevelandart.org/1991.45/1991.45_web.jpg",
-                "creator": "Carlo Bugatti (Italian, 1856-1940)",
-                "date": "c. 1907",
-                "desc": "Elaborate patterns of marquetry along with gilt-metal mounts based on highly stylized insect forms—motifs that dominated Carlo Bugatti's imagination through much of his career—adorn this fantastical tea table. Bugatti's use of ovoid arches as supporting elements also reflects his continued fascination with an Art Nouveau motif. Seldom has so much care and skill been brought to bear in the creation of luxury objects that were actually designed more to amaze and delight the viewer than to be truly useful. This tea set, salver, and table, together with some now missing cups, were all designed by Bugatti as an ensemble. They were probably acquired from his 1907 exhibition at the Galerie Hébrard in Paris by a wealthy South African widow, Anna Blake, who was living there at the time. It is said that Bugatti's work appealed to her because it reminded her of Africa. Some of the animal and insect motifs suggest mythical beasts or the fossils of prehistoric animals. When Mrs. Blake returned to Cape Town, she took these and other pieces designed by Bugatti with her, and they remained in South Africa until acquired by the Cleveland Museum of Art.",
-                "funfact": "Carlo Bugatti's sons achieved illustrious careers of their own. Rembrandt Bugatti (1884-1916) became a celebrated sculptor, and Ettore Bugatti (1881-1947) manufactured luxurious automobiles and racing cars."
-            }
-        ]
-    },
-    {
-        "password": "zsuzsa",
-        "email": "zsuzsa@gmail.com",
-        "photos": [
-            {
-                "title": "Spoon",
-                "index": "1917.347",
-                "url": "https://openaccess-cdn.clevelandart.org/1917.347/1917.347_web.jpg",
-                "creator": "Creator unknown",
-                "date": "918-1392",
-                "desc": null,
-                "funfact": "Bronze spoons are the most common burial item. Scholars have proposed that toward the end of the 14th century, Koreans enjoyed meat-based soups more than any other dishes, explaining why spoons became common household items as well as burial goods."
-            },
-            {
-                "title": "View of Schroon Mountain, Essex County, New York, After a Storm",
-                "index": "1917.1335",
-                "url": "https://openaccess-cdn.clevelandart.org/1917.1335/1917.1335_web.jpg",
-                "creator": "Thomas Cole (American, 1801-1848)",
-                "date": "1838",
-                "desc": "Championing the unspoiled American wilderness, Cole declared, \"We are still in Eden,\" in his Essay on American Scenery, published two years before he painted this view of the Adirondacks. Cole sketched the scene in early summer, but when he created the painting in his Catskill studio, he rendered it in a dramatic blaze of fall colors. Such a choice likely had nationalistic overtones, for Cole once proclaimed that autumn was \"one season where the American forest surpasses all the world in gorgeousness.\" Cole further underscored the New World character of his scene by depicting Native Americans in the right foreground foliage. At this time, the presence of Native Americans in the Adirondacks-as in most areas east of the Mississippi River-was rapidly diminishing due to forced resettlement and repression.",
-                "funfact": "Nicknamed \"Schroon Mountain\" by the artist, the peak's official name is Hoffman Mountain."
-            },
-            {
-                "title": "In the Waves (Dans les Vagues)",
-                "index": "1978.63",
-                "url": "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg",
-                "creator": "Paul Gauguin (French, 1848-1903)",
-                "date": "1889",
-                "desc": "Painted at Pont-Aven in northwest France, this depiction of a nude figure throwing herself into the sea suggests a metaphor for a modern European woman forsaking civilization and abandoning herself to her natural, primitive instincts. The simplified lines and exaggerated colors, especially the contrasting green and orange, seem invented rather than observed from life. Exhibiting the painting at the Café Volpini in Paris in 1889, Gauguin established himself as a leader of the Symbolist movement in art.",
-                "funfact": "Gauguin likely painted this work of art during his time in a small coastal village called Pont-Aven where he sought to immerse himself in nature and escape modern civilization."
-            },
-            {
-                "title": "The Red Kerchief",
-                "index": "1958.39",
-                "url": "https://openaccess-cdn.clevelandart.org/1958.39/1958.39_web.jpg",
-                "creator": "Claude Monet (French, 1840-1926)",
-                "date": "c. 1868–73",
-                "desc": "In its early stages, this composition contained two figures seated inside the room on either side of the window. Monet radically altered the composition by painting over the figures. They were replaced by an image of the artist's favorite model---his wife Camille, who passes outside the window in a red cape. Intense light---reflected from the snow-covered landscape---floods the room, obliterating details along the walls and floor. The off-center window frame and the blurriness achieved through sketchy brushstrokes suggest the scanning movement of the artist's eye as he viewed this scene. Contrasted with cold blues and silver whites, Camille's red cape draws the viewer's attention through the glass and into a swift exchange of glances, registering a brief moment in time. This painting evidently held special meaning for Monet, for he kept it with him until his death in 1926.",
-                "funfact": "Madame Monet’s red cape draws the viewer’s attention beyond the glass of the French doors capturing her glance, a brief moment frozen in time. This painting was very special to Monet and he kept it with him for his entire life."
-            },
-            {
-                "title": "Portrait of a Family Playing Music",
-                "index": "1951.355",
-                "url": "https://openaccess-cdn.clevelandart.org/1951.355/1951.355_web.jpg",
-                "creator": "Pieter de Hooch (Dutch, 1629-1684)",
-                "date": "1663",
-                "desc": "The identity of the sitters remains unknown, although the marble floor and mantelpiece, the Transylvanian prayer rug on the table, and the silk clothes all point to the family’s considerable wealth. Furthermore, the richly carved chest at the right supports Chinese vases and Japanese lacquered boxes, a reference to the flourishing Dutch trade with Asia. Music making often took place at home, and its appearance here also signifies the harmoniousness of the family.",
-                "funfact": "During this period, the Dutch Republic was the richest, most urbanized nation."
-            }
-        ]
-    },
-    {
-        "password": "dominik",
-        "email": "dominik@panczel.hu",
-        "photos": []
-    },
-    {
-        "password": "testreg",
-        "email": "testreg",
-        "photos": [
-            {
-                "title": "View of Schroon Mountain, Essex County, New York, After a Storm",
-                "index": "1917.1335",
-                "url": "https://openaccess-cdn.clevelandart.org/1917.1335/1917.1335_web.jpg",
-                "creator": "Thomas Cole (American, 1801-1848)",
-                "date": "1838",
-                "desc": "Championing the unspoiled American wilderness, Cole declared, \"We are still in Eden,\" in his Essay on American Scenery, published two years before he painted this view of the Adirondacks. Cole sketched the scene in early summer, but when he created the painting in his Catskill studio, he rendered it in a dramatic blaze of fall colors. Such a choice likely had nationalistic overtones, for Cole once proclaimed that autumn was \"one season where the American forest surpasses all the world in gorgeousness.\" Cole further underscored the New World character of his scene by depicting Native Americans in the right foreground foliage. At this time, the presence of Native Americans in the Adirondacks-as in most areas east of the Mississippi River-was rapidly diminishing due to forced resettlement and repression.",
-                "funfact": "Nicknamed \"Schroon Mountain\" by the artist, the peak's official name is Hoffman Mountain."
-            }
-        ]
-    }
+  {
+    "password": "anita",
+    "email": "anita@gmail.com",
+    "photos": [
+      {
+        "title": "In the Waves (Dans les Vagues)",
+        "index": "1978.63",
+        "url": "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg",
+        "creator": "Paul Gauguin (French, 1848-1903)",
+        "date": "1889",
+        "desc": "Painted at Pont-Aven in northwest France, this depiction of a nude figure throwing herself into the sea suggests a metaphor for a modern European woman forsaking civilization and abandoning herself to her natural, primitive instincts. The simplified lines and exaggerated colors, especially the contrasting green and orange, seem invented rather than observed from life. Exhibiting the painting at the Café Volpini in Paris in 1889, Gauguin established himself as a leader of the Symbolist movement in art.",
+        "funfact": "Gauguin likely painted this work of art during his time in a small coastal village called Pont-Aven where he sought to immerse himself in nature and escape modern civilization."
+      },
+      {
+        "title": "Twilight in the Wilderness",
+        "index": "1965.233",
+        "url": "https://openaccess-cdn.clevelandart.org/1965.233/1965.233_web.jpg",
+        "creator": "Frederic Edwin Church (American, 1826-1900)",
+        "date": "1860",
+        "desc": "In his New York studio, Church painted this spectacular view of a blazing sunset over wilderness near Mount Katahdin in Maine, which he had sketched during a visit nearly two years earlier. Although Church often extolled the grandeur of pristine American landscape in his work, this painting appears to have additional overtones. Created on the eve of the Civil War, the painting's subject can be interpreted as symbolically evoking the coming conflagration. Church's considerable technical skills and clever showmanship contributed to his fame as the premier artist of his generation. Rather than debut this painting in an annual exhibition with works by other artists as was the custom, Church instead exhibited it by itself at a prestigious art gallery. Coaxed by advance publicity and highly favorable press reviews, several hundred spectators flocked to admire it during its seven-week run.",
+        "funfact": "An image of this painting has a cameo in the Harrison Ford film <em>Clear and Present Danger</em>."
+      },
+      {
+        "title": "Church Street El",
+        "index": "1977.43",
+        "url": "https://openaccess-cdn.clevelandart.org/1977.43/1977.43_web.jpg",
+        "creator": "Charles Sheeler (American, 1883-1965)",
+        "date": "1920",
+        "desc": "Capturing the soaring heights of New York City, this painting is a dramatic bird's-eye view of Broadway and Wall Street, showing a conglomeration of buildings at left and center, and the Church Street elevated train at right. Sheeler based his composition on an image from the short movie <em>Manhatta</em> (1920-21), which he made with the photographer Paul Strand. One of the first avant-garde American films, <em>Manhatta</em> celebrates the dynamic metropolis through a series of carefully composed shots of Lower Manhattan. As typical with Sheeler's work, the artist simplified forms and eliminated textures in <em>Church Street El</em> to concentrate on rhythmic interplay of shapes and color, and patterns of light and shadow.",
+        "funfact": "Sheeler and his good friend, the poet William Carlos Williams, patronized speakeasies together during Prohibition."
+      }
+    ]
+  },
+  {
+    "password": "123",
+    "email": "test@gmail.com",
+    "photos": [
+      {
+        "title": "Tea Table",
+        "index": "1991.45",
+        "url": "https://openaccess-cdn.clevelandart.org/1991.45/1991.45_web.jpg",
+        "creator": "Carlo Bugatti (Italian, 1856-1940)",
+        "date": "c. 1907",
+        "desc": "Elaborate patterns of marquetry along with gilt-metal mounts based on highly stylized insect forms—motifs that dominated Carlo Bugatti's imagination through much of his career—adorn this fantastical tea table. Bugatti's use of ovoid arches as supporting elements also reflects his continued fascination with an Art Nouveau motif. Seldom has so much care and skill been brought to bear in the creation of luxury objects that were actually designed more to amaze and delight the viewer than to be truly useful. This tea set, salver, and table, together with some now missing cups, were all designed by Bugatti as an ensemble. They were probably acquired from his 1907 exhibition at the Galerie Hébrard in Paris by a wealthy South African widow, Anna Blake, who was living there at the time. It is said that Bugatti's work appealed to her because it reminded her of Africa. Some of the animal and insect motifs suggest mythical beasts or the fossils of prehistoric animals. When Mrs. Blake returned to Cape Town, she took these and other pieces designed by Bugatti with her, and they remained in South Africa until acquired by the Cleveland Museum of Art.",
+        "funfact": "Carlo Bugatti's sons achieved illustrious careers of their own. Rembrandt Bugatti (1884-1916) became a celebrated sculptor, and Ettore Bugatti (1881-1947) manufactured luxurious automobiles and racing cars."
+      }
+    ]
+  },
+  {
+    "password": "zsuzsa",
+    "email": "zsuzsa@gmail.com",
+    "photos": [
+      {
+        "title": "Spoon",
+        "index": "1917.347",
+        "url": "https://openaccess-cdn.clevelandart.org/1917.347/1917.347_web.jpg",
+        "creator": "Creator unknown",
+        "date": "918-1392",
+        "desc": null,
+        "funfact": "Bronze spoons are the most common burial item. Scholars have proposed that toward the end of the 14th century, Koreans enjoyed meat-based soups more than any other dishes, explaining why spoons became common household items as well as burial goods."
+      },
+      {
+        "title": "View of Schroon Mountain, Essex County, New York, After a Storm",
+        "index": "1917.1335",
+        "url": "https://openaccess-cdn.clevelandart.org/1917.1335/1917.1335_web.jpg",
+        "creator": "Thomas Cole (American, 1801-1848)",
+        "date": "1838",
+        "desc": "Championing the unspoiled American wilderness, Cole declared, \"We are still in Eden,\" in his Essay on American Scenery, published two years before he painted this view of the Adirondacks. Cole sketched the scene in early summer, but when he created the painting in his Catskill studio, he rendered it in a dramatic blaze of fall colors. Such a choice likely had nationalistic overtones, for Cole once proclaimed that autumn was \"one season where the American forest surpasses all the world in gorgeousness.\" Cole further underscored the New World character of his scene by depicting Native Americans in the right foreground foliage. At this time, the presence of Native Americans in the Adirondacks-as in most areas east of the Mississippi River-was rapidly diminishing due to forced resettlement and repression.",
+        "funfact": "Nicknamed \"Schroon Mountain\" by the artist, the peak's official name is Hoffman Mountain."
+      },
+      {
+        "title": "In the Waves (Dans les Vagues)",
+        "index": "1978.63",
+        "url": "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg",
+        "creator": "Paul Gauguin (French, 1848-1903)",
+        "date": "1889",
+        "desc": "Painted at Pont-Aven in northwest France, this depiction of a nude figure throwing herself into the sea suggests a metaphor for a modern European woman forsaking civilization and abandoning herself to her natural, primitive instincts. The simplified lines and exaggerated colors, especially the contrasting green and orange, seem invented rather than observed from life. Exhibiting the painting at the Café Volpini in Paris in 1889, Gauguin established himself as a leader of the Symbolist movement in art.",
+        "funfact": "Gauguin likely painted this work of art during his time in a small coastal village called Pont-Aven where he sought to immerse himself in nature and escape modern civilization."
+      },
+      {
+        "title": "The Red Kerchief",
+        "index": "1958.39",
+        "url": "https://openaccess-cdn.clevelandart.org/1958.39/1958.39_web.jpg",
+        "creator": "Claude Monet (French, 1840-1926)",
+        "date": "c. 1868–73",
+        "desc": "In its early stages, this composition contained two figures seated inside the room on either side of the window. Monet radically altered the composition by painting over the figures. They were replaced by an image of the artist's favorite model---his wife Camille, who passes outside the window in a red cape. Intense light---reflected from the snow-covered landscape---floods the room, obliterating details along the walls and floor. The off-center window frame and the blurriness achieved through sketchy brushstrokes suggest the scanning movement of the artist's eye as he viewed this scene. Contrasted with cold blues and silver whites, Camille's red cape draws the viewer's attention through the glass and into a swift exchange of glances, registering a brief moment in time. This painting evidently held special meaning for Monet, for he kept it with him until his death in 1926.",
+        "funfact": "Madame Monet’s red cape draws the viewer’s attention beyond the glass of the French doors capturing her glance, a brief moment frozen in time. This painting was very special to Monet and he kept it with him for his entire life."
+      },
+      {
+        "title": "Portrait of a Family Playing Music",
+        "index": "1951.355",
+        "url": "https://openaccess-cdn.clevelandart.org/1951.355/1951.355_web.jpg",
+        "creator": "Pieter de Hooch (Dutch, 1629-1684)",
+        "date": "1663",
+        "desc": "The identity of the sitters remains unknown, although the marble floor and mantelpiece, the Transylvanian prayer rug on the table, and the silk clothes all point to the family’s considerable wealth. Furthermore, the richly carved chest at the right supports Chinese vases and Japanese lacquered boxes, a reference to the flourishing Dutch trade with Asia. Music making often took place at home, and its appearance here also signifies the harmoniousness of the family.",
+        "funfact": "During this period, the Dutch Republic was the richest, most urbanized nation."
+      }
+    ]
+  },
+  {
+    "password": "dominik",
+    "email": "dominik@panczel.hu",
+    "photos": []
+  },
+  {
+    "password": "testreg",
+    "email": "testreg",
+    "photos": [
+      {
+        "title": "View of Schroon Mountain, Essex County, New York, After a Storm",
+        "index": "1917.1335",
+        "url": "https://openaccess-cdn.clevelandart.org/1917.1335/1917.1335_web.jpg",
+        "creator": "Thomas Cole (American, 1801-1848)",
+        "date": "1838",
+        "desc": "Championing the unspoiled American wilderness, Cole declared, \"We are still in Eden,\" in his Essay on American Scenery, published two years before he painted this view of the Adirondacks. Cole sketched the scene in early summer, but when he created the painting in his Catskill studio, he rendered it in a dramatic blaze of fall colors. Such a choice likely had nationalistic overtones, for Cole once proclaimed that autumn was \"one season where the American forest surpasses all the world in gorgeousness.\" Cole further underscored the New World character of his scene by depicting Native Americans in the right foreground foliage. At this time, the presence of Native Americans in the Adirondacks-as in most areas east of the Mississippi River-was rapidly diminishing due to forced resettlement and repression.",
+        "funfact": "Nicknamed \"Schroon Mountain\" by the artist, the peak's official name is Hoffman Mountain."
+      }
+    ]
+  },
+  {
+    "email": "wasdd",
+    "password": "wasdd",
+    "photos": []
+  },
+  {
+    "email": "wasd",
+    "password": "wasd",
+    "photos": []
+  },
+  {
+    "email": "wassd",
+    "password": "wassd",
+    "photos": []
+  }
 ]
