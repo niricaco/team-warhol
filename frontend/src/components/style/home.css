@@ -164,14 +164,9 @@
   100% {color: #9d5c0d;}
 }
 
-  
-
-
-
-
 
 @media screen and (max-width: 600px) {
-    .headerBlock,
+  .headerBlock,
   .artServices {
     margin: 20px 0 0;
     height: fit-content;
@@ -204,5 +199,9 @@
     height: inherit;
   }
 
+  #message {
+    font-size: 20px;
+    margin: 20px auto;
+  }
 
 }

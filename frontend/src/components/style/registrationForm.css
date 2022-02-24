@@ -86,20 +86,32 @@ input:hover {
   margin-bottom: 20px;
 }
 
-.wrongMess {
-  color: darkblue;
-}
 
 
 @media only screen and (max-width: 770px) {
   .form-container {
       flex-direction: column;
+      margin-top: 10px;
   }
   .form-register{
     width: 95%;
-    margin: 60px auto;
+    height: 400px;
+    margin: 20px auto;
   }
   .form-picture{
+    display: none;
+  }
+  
+  .h3Reg {
+    margin-bottom: 20px;
+  }
+  
+  .form-btn {
+    margin-bottom: 20px;
+    width: 90%;
+  }  
+  
+  .separator1 {
     display: none;
   }
 }
