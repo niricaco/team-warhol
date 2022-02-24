@@ -3,8 +3,10 @@ import "./style/artworks.css";
 import "./style/pagination.css";
 import http from "axios";
 import Artwork from "./artwork";
+import {backend_source} from "./API"
 
 const Collections = (props) => {
+  const backend = backend_source();
   const loggedIn = props.loggedIn;
   const [loading, setLoading] = useState(true);
   const [collection, setCollection] = useState([]);
@@ -14,7 +16,7 @@ const Collections = (props) => {
   const getCollection = async () => {
     try {
       const response = await http.get(
-        "http://localhost:4000/api/getCollection",
+        `${backend}/api/getCollection`,
         {
           headers: {
             authorization: localStorage.getItem("sessionId"),
@@ -22,7 +24,7 @@ const Collections = (props) => {
         }
       );
       setCollection(response.data);
-      console.log(response.data);
+      //console.log(response.data);
       setMessage("Action is done!");
       setLoading(false);
     } catch (err) {
