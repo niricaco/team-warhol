@@ -10,7 +10,5 @@ export const getArtworks = async (page, search) => {
 export const backend_source = () => {
   const sourceTarget_local = "http://localhost:4000";
   const sourceTarget_remote = "https://warhol-frontend-backend.sloppy.zone";
-  return sourceTarget_local;
+  return sourceTarget_remote;
 };
-
-
