@@ -17,10 +17,11 @@ app.use(
   })
 );*/
 
-const users = require("./users.json");
+//const users = require("./users.json");
 let mySessionStorage = {};
 
 app.post("/api/login", (req, res) => {
+  const users = require("./users.json");
   const authHeader = req.header("authorization");
   if (!authHeader) return res.sendStatus(401);
   const userEmail = authHeader.split(":::")[0];
@@ -37,6 +38,7 @@ app.post("/api/login", (req, res) => {
 });
 
 app.post("/api/signup", (req, res) => {
+  const users = require("./users.json");
   if (!req.body.email || !req.body.password) {
     return res.status(400).json("Missing credentials");
   }
@@ -62,6 +64,7 @@ app.delete("/api/logout", (req, res) => {
 });
 
 app.post("/api/save", (req, res) => {
+  const users = require("./users.json");
   const sessionId = req.header("authorization");
   if (!sessionId) return res.sendStatus(401);
   const user = mySessionStorage[sessionId];
@@ -82,8 +85,7 @@ app.get("/api/getCollection", (req, res) => {
 });
 
 app.post("/api/modifyCollection", (req, res) => {
-  const rawdata = fs.readFileSync("./users.json");
-  const users = JSON.parse(rawdata);
+  const users = require("./users.json");
   const sessionId = req.header("authorization");
   if (!sessionId) return res.sendStatus(401);
   const pictures = mySessionStorage[sessionId].photos;

@@ -102,5 +102,20 @@
         "password": "dominik",
         "email": "dominik@panczel.hu",
         "photos": []
+    },
+    {
+        "password": "testreg",
+        "email": "testreg",
+        "photos": [
+            {
+                "title": "View of Schroon Mountain, Essex County, New York, After a Storm",
+                "index": "1917.1335",
+                "url": "https://openaccess-cdn.clevelandart.org/1917.1335/1917.1335_web.jpg",
+                "creator": "Thomas Cole (American, 1801-1848)",
+                "date": "1838",
+                "desc": "Championing the unspoiled American wilderness, Cole declared, \"We are still in Eden,\" in his Essay on American Scenery, published two years before he painted this view of the Adirondacks. Cole sketched the scene in early summer, but when he created the painting in his Catskill studio, he rendered it in a dramatic blaze of fall colors. Such a choice likely had nationalistic overtones, for Cole once proclaimed that autumn was \"one season where the American forest surpasses all the world in gorgeousness.\" Cole further underscored the New World character of his scene by depicting Native Americans in the right foreground foliage. At this time, the presence of Native Americans in the Adirondacks-as in most areas east of the Mississippi River-was rapidly diminishing due to forced resettlement and repression.",
+                "funfact": "Nicknamed \"Schroon Mountain\" by the artist, the peak's official name is Hoffman Mountain."
+            }
+        ]
     }
 ]
