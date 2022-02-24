@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./style/artworks.css";
 import "./style/pagination.css";
 import http from "axios";
+import Artwork from "./artwork";
 
 const Collections = (props) => {
   const loggedIn = props.loggedIn;
@@ -21,8 +22,8 @@ const Collections = (props) => {
         }
       );
       setCollection(response.data);
-      console.log(response);
-      //setMessage("Successful photos loading!");
+      console.log(response.data);
+      setMessage("Action is done!");
       setLoading(false);
     } catch (err) {
       setMessage("Unauthorized user, sorry, please login again!");
@@ -39,10 +40,24 @@ const Collections = (props) => {
       {loading && (
         <h2 className="loading">Please wait, the gallery is loading...</h2>
       )}
-      {!loading && collection.map((pic, index) => {
-        return <img src={pic} alt="" key={index} />
-      })  
+        <div className="grid">
+      {!loading && collection.map((pic) => {
+        return (
+             <Artwork
+          title={pic.title}
+          index={pic.index}
+          image={pic.url}
+          creator={pic.creator}
+          date={pic.date}
+          desc={pic.desc}
+          funfact={pic.funfact}
+          setMessage={setMessage}
+          alreadySaved={true}
+          />
+          );
+        })  
       }
+      </div>
     </>
   );
 };

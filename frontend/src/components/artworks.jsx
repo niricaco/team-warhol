@@ -39,6 +39,8 @@ const Artworks = (props) => {
           date={item.creation_date}
           desc={item.wall_description}
           funfact={item.fun_fact}
+          setMessage={setMessage}
+          alreadySaved={false}
         />
       );
     });

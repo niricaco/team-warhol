@@ -1,60 +1,101 @@
 [
     {
-        "password": "asdfg",
-        "email": "test1@gmail.com"
-    },
-    {
-        "password": "ertz",
-        "email": "test2@mail.com"
-    },
-    {
-        "password": "User1",
-        "email": "user1@gmail.com"
-    },
-    {
-        "password": "123",
-        "email": "test4@gmail.com"
-    },
-    {
-        "password": "peter",
-        "email": "peter@gmail.com"
-    },
-    {
-        "password": "123123",
-        "email": "test123@gmail.com",
+        "password": "anita",
+        "email": "anita@gmail.com",
         "photos": [
             {
-                "url": "valami",
-                "tags": [
-                    "tag1",
-                    "tag2"
-                ]
+                "title": "Low Waterfall in a Wooded Landscape with a Dead Beech Tree",
+                "index": "1967.63",
+                "url": "https://openaccess-cdn.clevelandart.org/1967.63/1967.63_web.jpg",
+                "creator": "Jacob van Ruisdael (Dutch, 1628/29-1682)",
+                "date": "c. 1660–70",
+                "desc": "Jutting from a dune in the foreground, the massive silvery trunk of a dead tree leads the eye across a waterfall and toward a distant sunlit field where travelers and a dog traverse a sandy path. Partly masked by trees, a ruined building is turned gold by the sun. In Jacob van Ruisdael’s landscapes, dead trees, waterfalls, and ruined buildings were visual expressions of the passage of time. Ruisdael devoted equal attention to the cloud-filled skies looming above the land, creating dramatic patterns of light and shadow and revealing the unseen movements of the wind.",
+                "funfact": null
             },
-            "https://openaccess-cdn.clevelandart.org/1947.209/1947.209_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1958.39/1958.39_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1962.2/1962.2_web.jpg"
+            {
+                "title": "The Burning of the Houses of Lords and Commons, 16 October 1834",
+                "index": "1942.647",
+                "url": "https://openaccess-cdn.clevelandart.org/1942.647/1942.647_web.jpg",
+                "creator": "Joseph Mallord William Turner (British, 1775-1851)",
+                "date": "1835",
+                "desc": "Fire consumed London’s famous Houses of Parliament on the night of October 16, 1834, and people gathered along the banks of the river Thames to gaze in awe at the horrifying spectacle. Initially, a low tide made it difficult to pump water to land and hampered steamers towing firefighting equipment along the river. The blaze burned uncontrollably for hours.<br><br>J. M. W. Turner records the struggle as the boats in the lower-right corner head toward the flames. Although Turner based the painting on an actual event, he magnified the height of the flames, using the disaster as the starting point to express man’s helplessness when confronted with the destructive powers of nature. Brilliant swathes of color and variable atmospheric effects border on abstraction.",
+                "funfact": "Turner painted two versions of this event. Cleveland's painting views the fire downriver, from the southeast bank of the Thames, while the second version at the Philadelphia Museum of Art views the fire from directly across Westminster Bridge."
+            },
+            {
+                "title": "Virgin and Child",
+                "index": "1934.29",
+                "url": "https://openaccess-cdn.clevelandart.org/1934.29/1934.29_web.jpg",
+                "creator": "Hans Memling (Netherlandish, 1494)",
+                "date": "c. 1470–80",
+                "desc": "This small panel was once part of a devotional portrait diptych (a hinged two-panel painting). The Christ child’s attention seems drawn to something outside the picture and lifts his hand in recognition. The opposing panel, once hinged on the right, would have featured a portrait of its original owner in prayer, now unfortunately lost. Such devotional portrait diptychs were popular after 1400 and remained so until their production ceased around the 1530s. Used in private chapels or within the curtain folds of four-poster beds, they could easily be closed when not in use. Hans Memling was born near Frankfurt, Germany. He settled in Bruges around 1465 where he developed a reputation for his painting skills, and provided works to the Burgundian court, which likely cultivated the taste for small portrait diptychs. This example seems to have been painted by a member of Memling’s workshop, perhaps for a wealthy merchant or clergyman.",
+                "funfact": null
+            }
         ]
     },
     {
         "password": "123",
         "email": "test@gmail.com",
         "photos": [
-            "https://openaccess-cdn.clevelandart.org/1915.534/1915.534_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1977.43/1977.43_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1979.80/1979.80_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1962.2/1962.2_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1949.186/1949.186_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg"
+            {
+                "title": "Tea Table",
+                "index": "1991.45",
+                "url": "https://openaccess-cdn.clevelandart.org/1991.45/1991.45_web.jpg",
+                "creator": "Carlo Bugatti (Italian, 1856-1940)",
+                "date": "c. 1907",
+                "desc": "Elaborate patterns of marquetry along with gilt-metal mounts based on highly stylized insect forms—motifs that dominated Carlo Bugatti's imagination through much of his career—adorn this fantastical tea table. Bugatti's use of ovoid arches as supporting elements also reflects his continued fascination with an Art Nouveau motif. Seldom has so much care and skill been brought to bear in the creation of luxury objects that were actually designed more to amaze and delight the viewer than to be truly useful. This tea set, salver, and table, together with some now missing cups, were all designed by Bugatti as an ensemble. They were probably acquired from his 1907 exhibition at the Galerie Hébrard in Paris by a wealthy South African widow, Anna Blake, who was living there at the time. It is said that Bugatti's work appealed to her because it reminded her of Africa. Some of the animal and insect motifs suggest mythical beasts or the fossils of prehistoric animals. When Mrs. Blake returned to Cape Town, she took these and other pieces designed by Bugatti with her, and they remained in South Africa until acquired by the Cleveland Museum of Art.",
+                "funfact": "Carlo Bugatti's sons achieved illustrious careers of their own. Rembrandt Bugatti (1884-1916) became a celebrated sculptor, and Ettore Bugatti (1881-1947) manufactured luxurious automobiles and racing cars."
+            }
         ]
     },
     {
         "password": "zsuzsa",
         "email": "zsuzsa@gmail.com",
         "photos": [
-            "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg",
-            "https://openaccess-cdn.clevelandart.org/1965.233/1965.233_web.jpg"
+            {
+                "title": "Spoon",
+                "index": "1917.347",
+                "url": "https://openaccess-cdn.clevelandart.org/1917.347/1917.347_web.jpg",
+                "creator": "Creator unknown",
+                "date": "918-1392",
+                "desc": null,
+                "funfact": "Bronze spoons are the most common burial item. Scholars have proposed that toward the end of the 14th century, Koreans enjoyed meat-based soups more than any other dishes, explaining why spoons became common household items as well as burial goods."
+            },
+            {
+                "title": "View of Schroon Mountain, Essex County, New York, After a Storm",
+                "index": "1917.1335",
+                "url": "https://openaccess-cdn.clevelandart.org/1917.1335/1917.1335_web.jpg",
+                "creator": "Thomas Cole (American, 1801-1848)",
+                "date": "1838",
+                "desc": "Championing the unspoiled American wilderness, Cole declared, \"We are still in Eden,\" in his Essay on American Scenery, published two years before he painted this view of the Adirondacks. Cole sketched the scene in early summer, but when he created the painting in his Catskill studio, he rendered it in a dramatic blaze of fall colors. Such a choice likely had nationalistic overtones, for Cole once proclaimed that autumn was \"one season where the American forest surpasses all the world in gorgeousness.\" Cole further underscored the New World character of his scene by depicting Native Americans in the right foreground foliage. At this time, the presence of Native Americans in the Adirondacks-as in most areas east of the Mississippi River-was rapidly diminishing due to forced resettlement and repression.",
+                "funfact": "Nicknamed \"Schroon Mountain\" by the artist, the peak's official name is Hoffman Mountain."
+            },
+            {
+                "title": "In the Waves (Dans les Vagues)",
+                "index": "1978.63",
+                "url": "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg",
+                "creator": "Paul Gauguin (French, 1848-1903)",
+                "date": "1889",
+                "desc": "Painted at Pont-Aven in northwest France, this depiction of a nude figure throwing herself into the sea suggests a metaphor for a modern European woman forsaking civilization and abandoning herself to her natural, primitive instincts. The simplified lines and exaggerated colors, especially the contrasting green and orange, seem invented rather than observed from life. Exhibiting the painting at the Café Volpini in Paris in 1889, Gauguin established himself as a leader of the Symbolist movement in art.",
+                "funfact": "Gauguin likely painted this work of art during his time in a small coastal village called Pont-Aven where he sought to immerse himself in nature and escape modern civilization."
+            },
+            {
+                "title": "The Red Kerchief",
+                "index": "1958.39",
+                "url": "https://openaccess-cdn.clevelandart.org/1958.39/1958.39_web.jpg",
+                "creator": "Claude Monet (French, 1840-1926)",
+                "date": "c. 1868–73",
+                "desc": "In its early stages, this composition contained two figures seated inside the room on either side of the window. Monet radically altered the composition by painting over the figures. They were replaced by an image of the artist's favorite model---his wife Camille, who passes outside the window in a red cape. Intense light---reflected from the snow-covered landscape---floods the room, obliterating details along the walls and floor. The off-center window frame and the blurriness achieved through sketchy brushstrokes suggest the scanning movement of the artist's eye as he viewed this scene. Contrasted with cold blues and silver whites, Camille's red cape draws the viewer's attention through the glass and into a swift exchange of glances, registering a brief moment in time. This painting evidently held special meaning for Monet, for he kept it with him until his death in 1926.",
+                "funfact": "Madame Monet’s red cape draws the viewer’s attention beyond the glass of the French doors capturing her glance, a brief moment frozen in time. This painting was very special to Monet and he kept it with him for his entire life."
+            },
+            {
+                "title": "Portrait of a Family Playing Music",
+                "index": "1951.355",
+                "url": "https://openaccess-cdn.clevelandart.org/1951.355/1951.355_web.jpg",
+                "creator": "Pieter de Hooch (Dutch, 1629-1684)",
+                "date": "1663",
+                "desc": "The identity of the sitters remains unknown, although the marble floor and mantelpiece, the Transylvanian prayer rug on the table, and the silk clothes all point to the family’s considerable wealth. Furthermore, the richly carved chest at the right supports Chinese vases and Japanese lacquered boxes, a reference to the flourishing Dutch trade with Asia. Music making often took place at home, and its appearance here also signifies the harmoniousness of the family.",
+                "funfact": "During this period, the Dutch Republic was the richest, most urbanized nation."
+            }
         ]
     }
 ]

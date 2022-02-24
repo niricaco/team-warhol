@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import http from "axios";
 import heart from "./style/img/heart.png";
+import bin from "./style/img/heart.png";
 
 const Artwork = (props) => {
   const [style, setStyle] = useState("artwork");
@@ -26,19 +27,6 @@ const Artwork = (props) => {
           desc: desc,
           funfact: funfact
 
-          /*
-          title={item.title}
-          index={item.accession_number}
-          image={item.images.web.url}
-          creator={
-            item.creators.length > 0
-              ? item.creators[0].description
-              : "Creator unknown"
-          }
-          date={item.creation_date}
-          desc={item.wall_description}
-          funfact={item.fun_fact}
-          */
         },
         {
           headers: {
@@ -46,13 +34,51 @@ const Artwork = (props) => {
           },
         }
       );
-      return <div>Thank you, your item has been successfully added!</div>;
+      console.log("DONE!!!");
+      setMessage("Thank you, your item has been successfully added!");
+      return;
     } catch (err) {
       if (err.response.status === 401) {
-        return <div>Session ended, please login again!</div>;
+        setMessage("Session ended, please login again!");
+        return;
       }
-      return <div>Oops... Something went wrong</div>;
+      setMessage("Oops... Something went wrong");
+      return;
     }
+  };
+
+  const removePhoto = async (index) => {
+    /* try {
+      await http.post(
+        "http://localhost:4000/api/save",
+        
+        {
+          title: title,
+          index: index, 
+          url: image,
+          creator: creator,
+          date: date,
+          desc: desc,
+          funfact: funfact
+
+        },
+        {
+          headers: {
+            authorization: localStorage.getItem("sessionId"),
+          },
+        }
+      );
+      console.log("DONE!!!");
+      setMessage("Thank you, your item has been successfully added!");
+      return;
+    } catch (err) {
+      /*if (err.response.status === 401) {
+        setMessage("Session ended, please login again!");
+        return;
+      }
+      setMessage("Oops... Something went wrong");
+      return;
+    }*/
   };
 
   useEffect(() => {
@@ -63,19 +89,29 @@ const Artwork = (props) => {
 
   //console.log(validSessionId);
 
-  const { title, index, image, creator, date, desc, funfact } = props;
+  const { title, index, image, creator, date, desc, funfact, setMessage, alreadySaved } = props;
   
   return (
     <main>
     <div className="grid_item" key={index}>
       <div className="card">
-        <img
-          className="like"
-          src={heart}
-          alt="like"
-          hidden={validSessionId === undefined ? true : false}
-          onClick={() => addPhoto(title, index, image, creator, date, desc, funfact)}
-        ></img>
+      {alreadySaved === false ?
+          <img
+            className="like"
+            src={heart}
+            alt="like"
+            hidden={validSessionId === undefined ? true : false}
+            onClick={() => addPhoto(title, index, image, creator, date, desc, funfact)}
+          ></img>
+        :
+          <img
+            className="like"
+            src={bin}
+            alt="unlike"
+            hidden={validSessionId === undefined ? true : false}
+            onClick={() => removePhoto(index)}
+          ></img>
+      }
         <img className="card_img" src={image} alt=""></img>
 
         <div className="card_content center">
@@ -105,14 +141,21 @@ const Artwork = (props) => {
               >
                 Back
               </button>
+              {alreadySaved === false ?
+                 <button
+                  id="saveButton"
+                  disabled={validSessionId === undefined ? true : false}
+                  className="serviceButtons "
+                  onClick={() => addPhoto(title, index, image, creator, date, desc, funfact)}
+                >Save</button>
+              : 
               <button
-                id="saveButton"
-                disabled={validSessionId === undefined ? true : false}
-                className="serviceButtons "
-                onClick={() => addPhoto(title, index, image, creator, date, desc, funfact)}
-              >
-                Save
-              </button>
+                  id="removeButton"
+                  disabled={validSessionId === undefined ? true : false}
+                  className="serviceButtons "
+                  onClick={() => removePhoto(index)}
+                >Remove from collection</button>
+              }
             </div>
           </div>
         </div>
