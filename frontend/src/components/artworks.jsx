@@ -28,7 +28,7 @@ const Artworks = (props) => {
     .map((item) => {
       return (
         <Artwork
-          key={item.accession_number}  
+          key={item.accession_number}
           title={item.title}
           index={item.accession_number}
           image={item.images.web.url}
@@ -56,7 +56,13 @@ const Artworks = (props) => {
   const load = async () => {
     setLoading(true);
     const response = await axios.get(
-      `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=120&page=${pageNumber}${searchUrl}`
+      `https://openaccess-api.clevelandart.org/api/artworks/?has_image=1&limit=120&page=${pageNumber}${searchUrl}`,
+      {},
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
     setArtworks(response.data.data);
     setLoading(false);

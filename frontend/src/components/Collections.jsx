@@ -14,7 +14,7 @@ const Collections = (props) => {
   const getCollection = async () => {
     try {
       const response = await http.get(
-        "http://localhost:4000/api/getCollection",
+        "https://warhol-frontend-backend.sloppy.zone/api/getCollection",
         {
           headers: {
             authorization: localStorage.getItem("sessionId"),
@@ -40,24 +40,24 @@ const Collections = (props) => {
       {loading && (
         <h2 className="loading">Please wait, the gallery is loading...</h2>
       )}
-        <div className="grid">
-      {!loading && collection.map((pic) => {
-        return (
-             <Artwork
-              key={pic.index}
-              title={pic.title}
-              index={pic.index}
-              image={pic.url}
-              creator={pic.creator}
-              date={pic.date}
-              desc={pic.desc}
-              funfact={pic.funfact}
-              setMessage={setMessage}
-              alreadySaved={true}
-          />
-          );
-        })  
-      }
+      <div className="grid">
+        {!loading &&
+          collection.map((pic) => {
+            return (
+              <Artwork
+                key={pic.index}
+                title={pic.title}
+                index={pic.index}
+                image={pic.url}
+                creator={pic.creator}
+                date={pic.date}
+                desc={pic.desc}
+                funfact={pic.funfact}
+                setMessage={setMessage}
+                alreadySaved={true}
+              />
+            );
+          })}
       </div>
     </>
   );

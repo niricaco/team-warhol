@@ -16,7 +16,7 @@ const Artwork = (props) => {
     try {
       console.log(image);
       await http.post(
-        "http://localhost:4000/api/save",
+        "https://warhol-frontend-backend.sloppy.zone/api/save",
         
         {
           title: title,
@@ -50,7 +50,7 @@ const Artwork = (props) => {
   const removePhoto = async (index) => {
     /* try {
       await http.delete(
-        "http://localhost:4000/api/modifyCollection",
+        "https://warhol-frontend-backend.sloppy.zone/api/modifyCollection",
         {
           index: index, 
         },
