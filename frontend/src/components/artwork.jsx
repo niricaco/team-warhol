@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import http from "axios";
 import heart from "./style/img/heart.png";
 import bin from "./style/img/bin.png";
-import {backend_source} from "./API"
+import { backend_source } from "./API";
 
 const Artwork = (props) => {
   const [style, setStyle] = useState("artwork");
   const [toShow, setToShow] = useState(false);
   const [validSessionId, setValidSessionId] = useState(undefined);
-  
+
   const backend = backend_source();
 
   const doNotShowCardDesc = () => {
@@ -16,24 +16,31 @@ const Artwork = (props) => {
   };
 
   const ToggleClass = () => {
-    setToShow(!toShow)
-  }
+    setToShow(!toShow);
+  };
 
-  const addPhoto = async (title, index, image, creator, date, desc, funfact) => {
+  const addPhoto = async (
+    title,
+    index,
+    image,
+    creator,
+    date,
+    desc,
+    funfact
+  ) => {
     try {
       //console.log(image);
       await http.post(
         `${backend}/api/save`,
-        
+
         {
           title: title,
-          index: index, 
+          index: index,
           url: image,
           creator: creator,
           date: date,
           desc: desc,
-          funfact: funfact
-
+          funfact: funfact,
         },
         {
           headers: {
@@ -54,20 +61,19 @@ const Artwork = (props) => {
     }
   };
 
-  const removePhoto = async(i) => {
-     try {
+  const removePhoto = async (i) => {
+    console.log(backend);
+    try {
       await http.post(
         `${backend}/api/modifyCollection`,
-        {          
-          i: i, 
-        }, 
+        {
+          i: i,
+        },
         {
           headers: {
-            authorization: localStorage.getItem("sessionId")
-          }
+            authorization: localStorage.getItem("sessionId"),
+          },
         }
-        
-
       );
       console.log("DONE!!!");
       setMessage("Thank you, your item has been successfully removed!");
@@ -84,93 +90,115 @@ const Artwork = (props) => {
 
   useEffect(() => {
     if (localStorage.getItem("sessionId")) {
-        setValidSessionId(localStorage.getItem("sessionId"));
+      setValidSessionId(localStorage.getItem("sessionId"));
     }
   }, [validSessionId]);
 
   //console.log(validSessionId);
 
-  const { title, index, image, creator, date, desc, funfact, setMessage, alreadySaved } = props;
-  
+  const {
+    title,
+    index,
+    image,
+    creator,
+    date,
+    desc,
+    funfact,
+    setMessage,
+    alreadySaved,
+  } = props;
+
   return (
     <main>
-    <div className="grid_item" key={index}>
-      <div className="card">
-      {alreadySaved === false ?
-          <img
-            className="like"
-            src={heart}
-            alt="like"
-            hidden={validSessionId === undefined ? true : false}
-            onClick={() => addPhoto(title, index, image, creator, date, desc, funfact)}
-          ></img>
-        :
-          <img
-            className="like"
-            src={bin}
-            alt="unlike"
-            hidden={validSessionId === undefined ? true : false}
-            onClick={() => removePhoto(index)}
-          ></img>
-      }
-        <img className="card_img" src={image} alt=""></img>
-
-        <div className="card_content center">
-          <h1 className="card_header">{title}</h1>
-          <p className="card_text">{creator}</p>
-          {/* <button className="popupButton " onClick={() => setToShow("show")}> */}
-          <button className="popupButton " onClick={ToggleClass}>
-            More info <span>&rarr;</span>
-          </button>
-        </div>
-
-        
-        {/* <div className={toShow} key={title} onClick={() => setToShow("hidden")}> */}
-        <div className={toShow ? "active" : "inactive"}>
-          {toShow ?
-          <div className="artworkBlocker">
-          <div className="artwork">
-            <div className="art_image">
-              <img src={image} alt="" />
-            </div>
-            <div className="art_desc">
-              <h1>{title}</h1>
-              <h3>{creator}</h3>
-              <p className="desc">{desc}</p>
-              <p className="funfact">{funfact}</p>
-              <h5>Creation year: {date}</h5>
-              <button
-                className="popupButton "
-                // onClick={() => setToShow("hidden")}
-                onClick={ToggleClass}
-              >
-                Back
-              </button>
-              {alreadySaved === false ?
-                 <button
-                  id="saveButton"
-                  disabled={validSessionId === undefined ? true : false}
-                  className="serviceButtons "
-                  onClick={() => addPhoto(title, index, image, creator, date, desc, funfact)}
-                >Save</button>
-              : 
-              <button
-                  id="removeButton"
-                  disabled={validSessionId === undefined ? true : false}
-                  className="serviceButtons "
-                  onClick={() => removePhoto(index)}
-                >Remove from collection</button>
+      <div className="grid_item" key={index}>
+        <div className="card">
+          {alreadySaved === false ? (
+            <img
+              className="like"
+              src={heart}
+              alt="like"
+              hidden={validSessionId === undefined ? true : false}
+              onClick={() =>
+                addPhoto(title, index, image, creator, date, desc, funfact)
               }
-            </div>
+            ></img>
+          ) : (
+            <img
+              className="like"
+              src={bin}
+              alt="unlike"
+              hidden={validSessionId === undefined ? true : false}
+              onClick={() => removePhoto(index)}
+            ></img>
+          )}
+          <img className="card_img" src={image} alt=""></img>
+
+          <div className="card_content center">
+            <h1 className="card_header">{title}</h1>
+            <p className="card_text">{creator}</p>
+            {/* <button className="popupButton " onClick={() => setToShow("show")}> */}
+            <button className="popupButton " onClick={ToggleClass}>
+              More info <span>&rarr;</span>
+            </button>
+          </div>
+
+          {/* <div className={toShow} key={title} onClick={() => setToShow("hidden")}> */}
+          <div className={toShow ? "active" : "inactive"}>
+            {toShow ? (
+              <div className="artworkBlocker">
+                <div className="artwork">
+                  <div className="art_image">
+                    <img src={image} alt="" />
+                  </div>
+                  <div className="art_desc">
+                    <h1>{title}</h1>
+                    <h3>{creator}</h3>
+                    <p className="desc">{desc}</p>
+                    <p className="funfact">{funfact}</p>
+                    <h5>Creation year: {date}</h5>
+                    <button
+                      className="popupButton "
+                      // onClick={() => setToShow("hidden")}
+                      onClick={ToggleClass}
+                    >
+                      Back
+                    </button>
+                    {alreadySaved === false ? (
+                      <button
+                        id="saveButton"
+                        disabled={validSessionId === undefined ? true : false}
+                        className="serviceButtons "
+                        onClick={() =>
+                          addPhoto(
+                            title,
+                            index,
+                            image,
+                            creator,
+                            date,
+                            desc,
+                            funfact
+                          )
+                        }
+                      >
+                        Save
+                      </button>
+                    ) : (
+                      <button
+                        id="removeButton"
+                        disabled={validSessionId === undefined ? true : false}
+                        className="serviceButtons "
+                        onClick={() => removePhoto(index)}
+                      >
+                        Remove from collection
+                      </button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ) : null}
           </div>
         </div>
-        : null
-}
-        </div>
-        
-
       </div>
-    </div>
     </main>
   );
 };
