@@ -88,28 +88,18 @@ app.post("/api/save", (req, res) => {
   /*   const rawdata = fs.readFileSync("./data/users.json");
   const users = JSON.parse(rawdata);
   console.log(users); */
-  console.log(req.body);
+  //console.log(req.body);
   const sessionId = req.header("authorization");
   if (!sessionId) return res.sendStatus(401);
   const user = mySessionStorage[sessionId];
-  console.log("87es sor user =", user);
+  //console.log("87es sor user =", user);
   if (!user) return res.sendStatus(401);
   if (!req.body.url) return res.sendStatus(400);
   /*title, index, image, creator, date, desc, funfact*/
-  const picture = req.body.url;
-  //console.log(user.photos);
+  const picture = req.body;
   user.photos.push(picture);
-  //console.log(user);
+  //console.log(user.photos);
   fs.writeFileSync("./data/users.json", JSON.stringify(users, null, 4));
-  /* const user = {
-    password: user.password,
-    email: user.email,
-    photos: {
-      url: picture,
-      tags: [],
-    },
-  }; */
-
   res.sendStatus(200);
 });
 
