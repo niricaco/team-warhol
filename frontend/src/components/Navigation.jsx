@@ -65,7 +65,7 @@ const Navigation = (props) => {
         )}
         {!loggedIn && (
           <li>
-            <NavLink to="/signup">Login or Sign up</NavLink>
+            <NavLink to="/signup">Account</NavLink>
           </li>
         )}
         {loggedIn && (
