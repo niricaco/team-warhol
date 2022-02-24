@@ -92,8 +92,8 @@ const Artworks = (props) => {
         />
 
         <datalist id="creator-list">
-          {artworks.map((artwork) => {
-            return <option value={artwork.title} />;
+          {artworks.map((artwork, index) => {
+            return <option key={index} value={artwork.title} />;
           })}
         </datalist>
         <button

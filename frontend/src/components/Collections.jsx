@@ -31,7 +31,7 @@ const Collections = (props) => {
 
   useEffect(() => {
     getCollection();
-  }, []);
+  }, [collection]);
 
   return (
     <>

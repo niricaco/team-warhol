@@ -10,12 +10,12 @@ const expressWinston = require("express-winston");
 app.use(cors());
 app.use(express.json());
 
-const logLevel = "info";
+/*const logLevel = "info";
 app.use(
   expressWinston.logger({
     transports: [new winston.transports.Console({ level: logLevel })],
   })
-);
+);*/
 
 const users = require("./users.json");
 
@@ -123,16 +123,26 @@ app.get("/api/getCollection", (req, res) => {
   res.json(pictures);
 });
 
-app.delete("/api/modifyCollection", (req, res) => {
+app.post("/api/modifyCollection", (req, res) => {
   const rawdata = fs.readFileSync("./users.json");
   const users = JSON.parse(rawdata);
-  console.log(users);
+  //console.log(users);
 
   const sessionId = req.header("authorization");
+  //console.log(sessionId);
   if (!sessionId) return res.sendStatus(401);
   const pictures = mySessionStorage[sessionId].photos;
+  //console.log(pictures);
   if (!pictures) return res.sendStatus(400);
-
+  let foundUser = users.find((u) => u.email === mySessionStorage[sessionId].email);
+  const foundPic = foundUser.photos.filter((p) => p.index !== req.body.i);
+  foundUser.photos = foundPic;
+  mySessionStorage[sessionId].photos = foundPic;
+  //console.log(foundUser.photos);
+  fs.writeFileSync("./users.json", JSON.stringify(users, null, 4));
+  res.status(200).json("Item removed");
+  
+ });
   /*
     app.delete("/api/logout", (req, res) => {
     const sessionId = req.header("authorization");
@@ -142,8 +152,6 @@ app.delete("/api/modifyCollection", (req, res) => {
     });
   */
 
-  res.sendStatus(200);
-});
 
 app.listen(port, () => {
   console.log(`Registration listening on port ${port}`);
