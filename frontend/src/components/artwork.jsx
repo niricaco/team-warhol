@@ -54,30 +54,32 @@ const Artwork = (props) => {
     }
   };
 
-  const removePhoto = async (index) => {
-    /* try {
-      await http.delete(
-        "https://warhol-frontend-backend.sloppy.zone/api/modifyCollection",
-        {
-          index: index, 
-        },
+  const removePhoto = async(i) => {
+     try {
+      await http.post(
+        `${backend}/api/modifyCollection`,
+        {          
+          i: i, 
+        }, 
         {
           headers: {
-            authorization: localStorage.getItem("sessionId"),
-          },
+            authorization: localStorage.getItem("sessionId")
+          }
         }
+        
+
       );
       console.log("DONE!!!");
       setMessage("Thank you, your item has been successfully removed!");
       return;
     } catch (err) {
-      /*if (err.response.status === 401) {
+      if (err.response.status === 401) {
         setMessage("Session ended, please login again!");
         return;
       }
       setMessage("Oops... Something went wrong");
       return;
-    }*/
+    }
   };
 
   useEffect(() => {

@@ -17,7 +17,7 @@ const Home = (props) => {
   const load = async () => {
     try {
       const response = await axios.get(
-        `https://artproxy.sloppy.zone/api/artworks/?has_image=1&limit=5`
+        `https://warhol-frontend-proxy.sloppy.zone/api/artworks/?has_image=1&limit=5`
       );
       setArtworks(response.data.data);
     } catch (error) {
