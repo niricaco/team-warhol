@@ -150,14 +150,23 @@
 
 #message {
   font-size: 40px;
-  margin: 50px auto;
+  font-weight: 600;
+  margin: 46px auto;
   text-align: center;
+  text-shadow: 0px 5px 5px rgba(0,0,0,.25);
+	white-space: nowrap;
+  animation: example 4s linear infinite;
+}
+
+@keyframes example {
+  0%  {color: #8E530C;}
+  70%   {color: #ffeddb;}
+  100% {color: #9d5c0d;}
 }
 
 
-
 @media screen and (max-width: 600px) {
-    .headerBlock,
+  .headerBlock,
   .artServices {
     margin: 20px 0 0;
     height: fit-content;
@@ -190,5 +199,9 @@
     height: inherit;
   }
 
+  #message {
+    font-size: 20px;
+    margin: 20px auto;
+  }
 
 }

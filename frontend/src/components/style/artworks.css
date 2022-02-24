@@ -337,4 +337,16 @@ p {
   .funfact{
     display: none;
   }
+
+  .btn-up {
+    right: 10%;
+  }
+
+  .searchButtons {
+    width: 25%;
+    font-size: 12px;
+    padding: 8px;
+    margin-bottom: 5px;
+
+  }
 }

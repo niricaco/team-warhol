@@ -1,9 +1,3 @@
-/* containerClassName={"paginationBttns"}
-previousLinkClassName={"previousBttn"}
-nextLinkClassName={"nextBttn"}
-disabledClassName={"paginationDisabled"}
-activeClassName={"paginationActive"} */
-
 .paginate-container {
   display: flex;
   flex-direction: column;
@@ -49,8 +43,23 @@ activeClassName={"paginationActive"} */
   color: #9d5c0d;
   opacity: .6;
 }
+
 .paginationDisabled a:hover{
   background-color: #ffeddb;
   color: #9d5c0d;
+}
+
+
+@media only screen and (max-width: 450px) {
+  .paginate-container {
+    width: 100vw;
+    margin-left: -40px;
+  }
+
+  .paginationBttns a {
+    padding: 4px;
+    margin: 2px;
+    font-size: 12px;
+  }
   
 }

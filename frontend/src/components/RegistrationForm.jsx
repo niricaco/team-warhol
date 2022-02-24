@@ -115,8 +115,6 @@ function SignupForm(props) {
               </button>
             </div>
           </div>
-          <br></br>
-          <br></br>
           <hr className="separator1" /> <br />
           <div id="message"></div>
         </section>
@@ -152,8 +150,6 @@ function SignupForm(props) {
               </button>
             </div>
           </div>
-          <br></br>
-          <br></br>
           <hr className="separator1" /> <br />
         </section>
       )}
