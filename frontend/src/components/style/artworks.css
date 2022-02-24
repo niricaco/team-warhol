@@ -183,6 +183,8 @@ html {
 .card_btn:active span {
   margin-left: 1.5rem;
 }
+.popup { display: none; }
+.popup.open { display: block; } 
 
 .artwork {
   position: fixed;
