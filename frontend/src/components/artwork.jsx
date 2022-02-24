@@ -2,11 +2,14 @@ import React, { useState, useEffect } from "react";
 import http from "axios";
 import heart from "./style/img/heart.png";
 import bin from "./style/img/bin.png";
+import {backend_source} from "./API"
 
 const Artwork = (props) => {
   const [style, setStyle] = useState("artwork");
   const [toShow, setToShow] = useState("hidden");
   const [validSessionId, setValidSessionId] = useState(undefined);
+  
+  const backend = backend_source();
 
   const doNotShowCardDesc = () => {
     setStyle("artwork hidden");
@@ -14,9 +17,9 @@ const Artwork = (props) => {
 
   const addPhoto = async (title, index, image, creator, date, desc, funfact) => {
     try {
-      console.log(image);
+      //console.log(image);
       await http.post(
-        "https://warhol-frontend-backend.sloppy.zone/api/save",
+        `${backend}/api/save`,
         
         {
           title: title,
@@ -34,7 +37,7 @@ const Artwork = (props) => {
           },
         }
       );
-      console.log("DONE!!!");
+      //console.log("DONE!!!");
       setMessage("Thank you, your item has been successfully added!");
       return;
     } catch (err) {

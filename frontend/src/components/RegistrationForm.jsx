@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import "./style/registrationForm.css";
 import Picture from "./style/img/peakpx.jpg";
 import Navigation from "./Navigation";
+import { backend_source } from "./API";
 
 function SignupForm(props) {
+  const backend = backend_source();
   const loggedIn = props.loggedIn;
   const setLoggedIn = props.setLoggedIn;
   const setMessage = props.setMessage;
@@ -20,7 +22,7 @@ function SignupForm(props) {
   const login = async () => {
     try {
       const response = await http.post(
-        "https://warhol-frontend-backend.sloppy.zone/api/login",
+        `${backend}/api/login`,
         {},
         {
           headers: {
@@ -43,13 +45,10 @@ function SignupForm(props) {
 
   const signup = async () => {
     try {
-      await http.post(
-        "https://warhol-frontend-backend.sloppy.zone/api/signup",
-        {
-          password: password,
-          email: email,
-        }
-      );
+      await http.post(`${backend}/api/signup`, {
+        password: password,
+        email: email,
+      });
       setToAppear("login");
       setPassword("");
       setEmail("");

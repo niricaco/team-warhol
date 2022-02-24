@@ -38,6 +38,24 @@
                 "date": "c. 1868–73",
                 "desc": "In its early stages, this composition contained two figures seated inside the room on either side of the window. Monet radically altered the composition by painting over the figures. They were replaced by an image of the artist's favorite model---his wife Camille, who passes outside the window in a red cape. Intense light---reflected from the snow-covered landscape---floods the room, obliterating details along the walls and floor. The off-center window frame and the blurriness achieved through sketchy brushstrokes suggest the scanning movement of the artist's eye as he viewed this scene. Contrasted with cold blues and silver whites, Camille's red cape draws the viewer's attention through the glass and into a swift exchange of glances, registering a brief moment in time. This painting evidently held special meaning for Monet, for he kept it with him until his death in 1926.",
                 "funfact": "Madame Monet’s red cape draws the viewer’s attention beyond the glass of the French doors capturing her glance, a brief moment frozen in time. This painting was very special to Monet and he kept it with him for his entire life."
+            },
+            {
+                "title": "The Annunciation",
+                "index": "1942.635",
+                "url": "https://openaccess-cdn.clevelandart.org/1942.635/1942.635_web.jpg",
+                "creator": "Albert Bouts (Netherlandish, 1451-55-1549)",
+                "date": "c. 1480",
+                "desc": "Bouts was the son of the painter Dieric, from a family of painters in Leuven. He specialized in small devotional paintings for a ready market in Antwerp and other Flemish cities. This painting depicts an important event in the life of Mary—the Annunciation by the angel Gabriel that she will conceive and bear a son. The Incarnation of Christ is believed to have taken place at precisely this moment. The prevalence of this scene in medieval Christian art reflects its doctrinal importance and its role as a meditative event. The Virgin is represented here in a luxurious private chapel. The vase with lilies on the floor symbolizes her purity. The orange on the window sill is a symbol of chastity and generosity, and the closed book suggests the Old Testament prophecies have now been fulfilled. Mary is praying from her book of hours, much like an affluent merchant’s wife in medieval Bruges or Antwerp. Books of hours, private devotional books for lay people, were at their peak of popularity, especially among women. Startled by the angel, she seems to turn slightly to greet him. Both the angel and Mary are wrapped in sumptuous draperies, perhaps a reflection of the importance of the Flemish cloth industry. Surprised by the angel Gabriel's sudden appearance and his message that she will bear the son of God, the Mary rises from prayer. The artist sets the scene in a room with decor and furnishings familiar to viewers of his time. Though religious, paintings like this offer a glimpse of life among the urban elite. The small size of the panel suggests that it was used for private devotions (much like the altarpiece behind the Virgin), and also prized as a highly finished collector's item.",
+                "funfact": "Netherlandish artists are known for their attention to lifelike detail: notice the sliver of landscape through the window at the left of this composition."
+            },
+            {
+                "title": "In the Waves (Dans les Vagues)",
+                "index": "1978.63",
+                "url": "https://openaccess-cdn.clevelandart.org/1978.63/1978.63_web.jpg",
+                "creator": "Paul Gauguin (French, 1848-1903)",
+                "date": "1889",
+                "desc": "Painted at Pont-Aven in northwest France, this depiction of a nude figure throwing herself into the sea suggests a metaphor for a modern European woman forsaking civilization and abandoning herself to her natural, primitive instincts. The simplified lines and exaggerated colors, especially the contrasting green and orange, seem invented rather than observed from life. Exhibiting the painting at the Café Volpini in Paris in 1889, Gauguin established himself as a leader of the Symbolist movement in art.",
+                "funfact": "Gauguin likely painted this work of art during his time in a small coastal village called Pont-Aven where he sought to immerse himself in nature and escape modern civilization."
             }
         ]
     },
@@ -106,5 +124,10 @@
                 "funfact": "During this period, the Dutch Republic was the richest, most urbanized nation."
             }
         ]
+    },
+    {
+        "password": "dominik",
+        "email": "dominik@panczel.hu",
+        "photos": []
     }
 ]

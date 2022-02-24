@@ -50,7 +50,7 @@ const Artworks = (props) => {
 
   const changePage = ({ selected }) => {
     setPageNumber(selected);
-    console.log(selected + 1);
+    //console.log(selected + 1);
   };
 
   const load = async () => {

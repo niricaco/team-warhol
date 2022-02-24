@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./style/navigation.css";
 import http from "axios";
 import { NavLink } from "react-router-dom";
+import {backend_source} from "./API"
 
 /*
     <nav>
@@ -15,6 +16,7 @@ import { NavLink } from "react-router-dom";
 */
 
 const Navigation = (props) => {
+  const backend = backend_source();
   const loggedIn = props.loggedIn;
   const setLoggedIn = props.setLoggedIn;
   const setMessage = props.setMessage;
@@ -22,7 +24,7 @@ const Navigation = (props) => {
   const signOut = async () => {
     try {
       await http.delete(
-        "https://warhol-frontend-backend.sloppy.zone/api/logout",
+        `${backend}/api/logout`,
         {
           headers: {
             authorization: localStorage.getItem("sessionId"),

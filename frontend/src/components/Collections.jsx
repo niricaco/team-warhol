@@ -3,8 +3,10 @@ import "./style/artworks.css";
 import "./style/pagination.css";
 import http from "axios";
 import Artwork from "./artwork";
+import { backend_source } from "./API";
 
 const Collections = (props) => {
+  const backend = backend_source();
   const loggedIn = props.loggedIn;
   const [loading, setLoading] = useState(true);
   const [collection, setCollection] = useState([]);
@@ -13,16 +15,13 @@ const Collections = (props) => {
 
   const getCollection = async () => {
     try {
-      const response = await http.get(
-        "https://warhol-frontend-backend.sloppy.zone/api/getCollection",
-        {
-          headers: {
-            authorization: localStorage.getItem("sessionId"),
-          },
-        }
-      );
+      const response = await http.get(`${backend}/api/getCollection`, {
+        headers: {
+          authorization: localStorage.getItem("sessionId"),
+        },
+      });
       setCollection(response.data);
-      console.log(response.data);
+      //console.log(response.data);
       setMessage("Action is done!");
       setLoading(false);
     } catch (err) {
