@@ -98,6 +98,6 @@ nav ul li:nth-child(4n) a {
     width: 20%;
     margin: 2px;
     padding: 8px;
-    right: 0;
+    right: 10px;
   }
 }
