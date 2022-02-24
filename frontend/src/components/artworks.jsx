@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { isValidElement, useEffect, useState } from "react";
 
 import "./style/artworks.css";
 import "./style/pagination.css";
@@ -28,6 +28,7 @@ const Artworks = (props) => {
     .map((item) => {
       return (
         <Artwork
+          key={item.accession_number}  
           title={item.title}
           index={item.accession_number}
           image={item.images.web.url}
@@ -125,7 +126,7 @@ const Artworks = (props) => {
       )}
       {/* <div className="grid" onScroll={handleScroll}>{display}</div>*/}
 
-      <ScrollButton />
+      {/*<ScrollButton /> */}
     </main>
   );
 };

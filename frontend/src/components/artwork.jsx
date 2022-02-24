@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import http from "axios";
 import heart from "./style/img/heart.png";
-import bin from "./style/img/heart.png";
+import bin from "./style/img/bin.png";
 
 const Artwork = (props) => {
   const [style, setStyle] = useState("artwork");
@@ -49,18 +49,10 @@ const Artwork = (props) => {
 
   const removePhoto = async (index) => {
     /* try {
-      await http.post(
-        "http://localhost:4000/api/save",
-        
+      await http.delete(
+        "http://localhost:4000/api/modifyCollection",
         {
-          title: title,
           index: index, 
-          url: image,
-          creator: creator,
-          date: date,
-          desc: desc,
-          funfact: funfact
-
         },
         {
           headers: {
@@ -69,7 +61,7 @@ const Artwork = (props) => {
         }
       );
       console.log("DONE!!!");
-      setMessage("Thank you, your item has been successfully added!");
+      setMessage("Thank you, your item has been successfully removed!");
       return;
     } catch (err) {
       /*if (err.response.status === 401) {

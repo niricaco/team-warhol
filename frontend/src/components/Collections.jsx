@@ -44,15 +44,16 @@ const Collections = (props) => {
       {!loading && collection.map((pic) => {
         return (
              <Artwork
-          title={pic.title}
-          index={pic.index}
-          image={pic.url}
-          creator={pic.creator}
-          date={pic.date}
-          desc={pic.desc}
-          funfact={pic.funfact}
-          setMessage={setMessage}
-          alreadySaved={true}
+              key={pic.index}
+              title={pic.title}
+              index={pic.index}
+              image={pic.url}
+              creator={pic.creator}
+              date={pic.date}
+              desc={pic.desc}
+              funfact={pic.funfact}
+              setMessage={setMessage}
+              alreadySaved={true}
           />
           );
         })  

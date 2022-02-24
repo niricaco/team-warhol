@@ -123,6 +123,28 @@ app.get("/api/getCollection", (req, res) => {
   res.json(pictures);
 });
 
+app.delete("/api/modifyCollection", (req, res) => {
+  const rawdata = fs.readFileSync("./data/users.json");
+  const users = JSON.parse(rawdata);
+  console.log(users); 
+
+  const sessionId = req.header("authorization");
+  if (!sessionId) return res.sendStatus(401);
+  const pictures = mySessionStorage[sessionId].photos;
+  if (!pictures) return res.sendStatus(400);
+
+  /*
+    app.delete("/api/logout", (req, res) => {
+    const sessionId = req.header("authorization");
+    if (!sessionId) return res.sendStatus(401);
+    delete mySessionStorage[sessionId];
+    res.sendStatus(200);
+    });
+  */
+
+  res.sendStatus(200);
+});
+
 app.listen(port, () => {
   console.log(`Registration listening on port ${port}`);
 });
