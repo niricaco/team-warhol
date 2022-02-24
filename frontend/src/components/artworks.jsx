@@ -112,8 +112,8 @@ const Artworks = (props) => {
         <>
           <div className="paginate-container">
             <ReactPaginate
-              previousLabel="< Previous Art"
-              nextLabel="Next Arts >"
+              previousLabel="< Prev"
+              nextLabel="Next >"
               pageCount={pageCount}
               onPageChange={changePage}
               containerClassName="paginationBttns"
@@ -132,7 +132,7 @@ const Artworks = (props) => {
       )}
       {/* <div className="grid" onScroll={handleScroll}>{display}</div>*/}
 
-      {/*<ScrollButton /> */}
+      <ScrollButton />
     </main>
   );
 };
