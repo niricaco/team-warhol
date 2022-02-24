@@ -6,7 +6,7 @@ import {backend_source} from "./API"
 
 const Artwork = (props) => {
   const [style, setStyle] = useState("artwork");
-  const [toShow, setToShow] = useState("hidden");
+  const [toShow, setToShow] = useState(false);
   const [validSessionId, setValidSessionId] = useState(undefined);
   
   const backend = backend_source();
@@ -14,6 +14,10 @@ const Artwork = (props) => {
   const doNotShowCardDesc = () => {
     setStyle("artwork hidden");
   };
+
+  const ToggleClass = () => {
+    setToShow(!toShow)
+  }
 
   const addPhoto = async (title, index, image, creator, date, desc, funfact) => {
     try {
@@ -112,13 +116,16 @@ const Artwork = (props) => {
         <div className="card_content center">
           <h1 className="card_header">{title}</h1>
           <p className="card_text">{creator}</p>
-          <button className="popupButton " onClick={() => setToShow("show")}>
+          {/* <button className="popupButton " onClick={() => setToShow("show")}> */}
+          <button className="popupButton " onClick={ToggleClass}>
             More info <span>&rarr;</span>
           </button>
         </div>
 
         
-        <div className={toShow} key={title} onClick={() => setToShow("hidden")}>
+        {/* <div className={toShow} key={title} onClick={() => setToShow("hidden")}> */}
+        <div className={toShow ? "active" : "inactive"}>
+          {toShow ?
           <div className="artworkBlocker">
           <div className="artwork">
             <div className="art_image">
@@ -131,8 +138,9 @@ const Artwork = (props) => {
               <p className="funfact">{funfact}</p>
               <h5>Creation year: {date}</h5>
               <button
-                className="serviceButtons "
-                onClick={() => setToShow("hidden")}
+                className="popupButton "
+                // onClick={() => setToShow("hidden")}
+                onClick={ToggleClass}
               >
                 Back
               </button>
@@ -154,7 +162,10 @@ const Artwork = (props) => {
             </div>
           </div>
         </div>
+        : null
+}
         </div>
+        
 
       </div>
     </div>
