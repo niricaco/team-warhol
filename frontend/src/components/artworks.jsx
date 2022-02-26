@@ -22,7 +22,7 @@ const Artworks = (props) => {
   const [pageNumber, setPageNumber] = useState(0);
 
   const pagesVisited = pageNumber * artworksPerPage;
-
+  //comment
   const displayArts = artworks
     .slice(pagesVisited, pagesVisited + artworksPerPage)
     .map((item) => {
